@@ -85,7 +85,7 @@ Tin-plated copper terminals designed for 28-24 AWG wire gauges. Proper crimp too
 
 While genuine JST connectors are excellent, cost-effective alternatives are available:
 
-- **HARNESS+LAB SFR Series**: Direct JST PH compatible
+- **Trycay SFR Series**: Direct JST PH compatible
 - **Major Brand Equivalents**: Various manufacturers offer PH-compatible options
 - **Key Consideration**: Always verify dimensional and electrical compatibility
 
