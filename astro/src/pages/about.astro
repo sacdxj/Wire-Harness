@@ -1,0 +1,185 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' }
+];
+---
+
+<MainLayout
+  title="About Us | Wire Harness Manufacturing Excellence"
+  description="Learn about HARNESS+LAB - ISO 9001 certified wire harness manufacturer. 15+ years experience in JST, Molex, TE compatible connector solutions."
+>
+  <Breadcrumb items={breadcrumbItems} />
+
+  <section class="px-4 py-16">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-8">
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-4">About Us</p>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">Precision Wire Harness Manufacturing</h1>
+        <p class="text-lg text-text-secondary leading-relaxed">
+          HARNESS+LAB is a leading manufacturer of custom wire harnesses and connector systems, specializing in JST, Molex, and TE Connectivity compatible solutions. With over 15 years of experience, we deliver engineering-grade quality from prototype to mass production.
+        </p>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 py-12 border-y border-border mb-12">
+        <div class="text-center">
+          <div class="font-mono text-4xl font-bold text-accent-cyan mb-2">15+</div>
+          <div class="font-mono text-xs text-text-muted uppercase tracking-wider">Years Experience</div>
+        </div>
+        <div class="text-center">
+          <div class="font-mono text-4xl font-bold text-accent-cyan mb-2">15K+</div>
+          <div class="font-mono text-xs text-text-muted uppercase tracking-wider">Connector SKUs</div>
+        </div>
+        <div class="text-center">
+          <div class="font-mono text-4xl font-bold text-accent-cyan mb-2">500+</div>
+          <div class="font-mono text-xs text-text-muted uppercase tracking-wider">Global Clients</div>
+        </div>
+        <div class="text-center">
+          <div class="font-mono text-4xl font-bold text-accent-cyan mb-2">99.7%</div>
+          <div class="font-mono text-xs text-text-muted uppercase tracking-wider">Quality Rate</div>
+        </div>
+      </div>
+
+      <!-- Mission -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold mb-4">Our Mission</h2>
+        <p class="text-text-secondary leading-relaxed mb-4">
+          To be the most trusted partner for custom wire harness solutions by delivering exceptional quality, rapid response times, and engineering expertise that helps our customers bring their products to market faster and more reliably.
+        </p>
+      </div>
+
+      <!-- Engineering Team -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">Our Engineering Team</h2>
+        <div class="rounded-lg overflow-hidden border border-border mb-6">
+          <img
+            src="/images/about/engineering-team.jpg"
+            alt="Engineering Team Collaborating"
+            class="w-full h-auto"
+            loading="lazy"
+          />
+        </div>
+        <p class="text-text-secondary leading-relaxed">
+          Our diverse team of experienced engineers specializes in connector selection, custom design, and quality optimization. We work closely with customers from concept to production.
+        </p>
+      </div>
+
+      <!-- Certifications -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">Certifications & Standards</h2>
+        <div class="rounded-lg overflow-hidden border border-border mb-6">
+          <img
+            src="/images/about/certifications.jpg"
+            alt="ISO and UL Certifications"
+            class="w-full h-48 object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-bg-secondary border border-border p-6">
+            <div class="font-mono text-sm font-bold text-accent-green mb-2">ISO 9001:2015</div>
+            <p class="text-text-secondary text-sm">Quality management system certified for consistent product quality and customer satisfaction.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <div class="font-mono text-sm font-bold text-accent-green mb-2">UL Certified</div>
+            <p class="text-text-secondary text-sm">Underwriters Laboratories certified for wire harness safety and compliance.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <div class="font-mono text-sm font-bold text-accent-green mb-2">REACH Compliant</div>
+            <p class="text-text-secondary text-sm">Full compliance with EU chemical regulations for environmental safety.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Capabilities -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">Manufacturing Capabilities</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="border-l-2 border-accent-cyan pl-6">
+            <h3 class="font-bold mb-2">Design & Engineering</h3>
+            <p class="text-text-secondary text-sm">Custom harness design, CAD modeling, and DFM analysis to optimize for manufacturability and cost.</p>
+          </div>
+          <div class="border-l-2 border-accent-cyan pl-6">
+            <h3 class="font-bold mb-2">Rapid Prototyping</h3>
+            <p class="text-text-secondary text-sm">48-hour prototype turnaround for design validation and quick iterations.</p>
+          </div>
+          <div class="border-l-2 border-accent-cyan pl-6">
+            <h3 class="font-bold mb-2">Volume Production</h3>
+            <p class="text-text-secondary text-sm">Scalable manufacturing from hundreds to millions of units with consistent quality.</p>
+          </div>
+          <div class="border-l-2 border-accent-cyan pl-6">
+            <h3 class="font-bold mb-2">Quality Testing</h3>
+            <p class="text-text-secondary text-sm">100% continuity testing, pull testing, and electrical verification on every harness.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Global Partnership -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">Global Partnership</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="rounded-lg overflow-hidden border border-border">
+            <img
+              src="/images/about/business-partnership.jpg"
+              alt="Business Partnership Handshake"
+              class="w-full h-56 object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="flex flex-col justify-center">
+            <div class="space-y-4">
+              <div class="border-l-2 border-accent-cyan pl-6">
+                <h3 class="font-bold mb-2">Trusted Partner</h3>
+                <p class="text-text-secondary text-sm">Long-term partnerships with OEMs and CMs worldwide. Direct factory relationship ensures consistent quality and competitive pricing.</p>
+              </div>
+              <div class="border-l-2 border-accent-cyan pl-6">
+                <h3 class="font-bold mb-2">Flexible Collaboration</h3>
+                <p class="text-text-secondary text-sm">From design consultation to mass production, we adapt to your workflow and communication preferences.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Training -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">Continuous Learning</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="rounded-lg overflow-hidden border border-border">
+            <img
+              src="/images/about/technical-training.jpg"
+              alt="Technical Training Session"
+              class="w-full h-56 object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="flex flex-col justify-center">
+            <div class="space-y-4">
+              <div class="border-l-2 border-accent-cyan pl-6">
+                <h3 class="font-bold mb-2">Skill Development</h3>
+                <p class="text-text-secondary text-sm">Regular training programs keep our team updated with latest connector technologies and industry standards.</p>
+              </div>
+              <div class="border-l-2 border-accent-cyan pl-6">
+                <h3 class="font-bold mb-2">Knowledge Sharing</h3>
+                <p class="text-text-secondary text-sm">We provide technical guidance and best practices to help customers optimize their wire harness designs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-bg-secondary border border-accent-cyan p-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">Ready to Work Together?</h2>
+        <p class="text-text-secondary mb-6">Let's discuss your wire harness requirements and how we can help.</p>
+        <a href="/contact" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

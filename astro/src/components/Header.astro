@@ -1,0 +1,101 @@
+---
+const currentPath = Astro.url.pathname;
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/products', label: 'Products' },
+  { href: '/applications', label: 'Applications' },
+  { href: '/compatibility', label: 'Compatibility' },
+  { href: '/services', label: 'Services' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-bg-primary/90 backdrop-blur-sm border-b border-border transition-shadow duration-300" id="main-header">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <a href="/" class="logo font-mono text-xl font-extrabold text-accent-cyan tracking-tight relative">
+      HARNESS+LAB
+      <span class="absolute -right-5 top-1/2 -translate-y-1/2 text-[0.6em] text-accent-amber">▲</span>
+    </a>
+
+    <nav class="hidden md:flex gap-8 items-center">
+      {navItems.map(item => (
+        <a
+          href={item.href}
+          class:list={[
+            "font-mono text-xs font-medium text-text-secondary uppercase tracking-wider relative transition-colors",
+            { "text-accent-cyan": currentPath === item.href }
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden text-text-secondary" id="mobile-menu-btn" aria-label="Toggle menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <nav class="md:hidden hidden bg-bg-secondary border-t border-border" id="mobile-menu">
+    <div class="px-4 py-2 space-y-1">
+      {navItems.map(item => (
+        <a
+          href={item.href}
+          class:list={[
+            "block px-3 py-2 font-mono text-sm text-text-secondary uppercase tracking-wider rounded",
+            { "bg-accent-cyan/10 text-accent-cyan": currentPath === item.href }
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </nav>
+</header>
+
+<script>
+  const header = document.getElementById('main-header');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  // Header scroll effect
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        header.classList.add('shadow-lg', 'shadow-accent-cyan/10');
+        header.style.background = 'rgba(10, 14, 23, 0.98)';
+      } else {
+        header.classList.remove('shadow-lg', 'shadow-accent-cyan/10');
+        header.style.background = 'rgba(10, 14, 23, 0.9)';
+      }
+    });
+  }
+
+  // Mobile menu toggle
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>
+
+<style>
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #00d4ff;
+    transition: width 0.3s;
+  }
+
+  nav a:hover::after {
+    width: 100%;
+  }
+</style>

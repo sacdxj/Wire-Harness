@@ -1,0 +1,117 @@
+backend:
+  name: git-gateway
+  branch: main
+
+display_url: https://your-wire-harness-factory.com
+logo_url: /images/logo.png
+show_preview_links: true
+
+media_folder: "src/assets/images"
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
+    editor:
+      preview: false
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text", hint: "Short description for SEO and preview"}
+      - {label: "Publish Date", name: "pubDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: "HH:mm"}
+      - {label: "Updated Date", name: "updatedDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: "HH:mm", required: false}
+      - {label: "Category", name: "category", widget: "select", options: ["Technical Guides", "Design & Engineering", "Quality & Testing", "Industry News"], required: false}
+      - {label: "Author", name: "author", widget: "string", default: "WireHarness Pro", required: false}
+      - {label: "Hero Image", name: "heroImage", widget: "image", required: false, hint: "Featured image for blog post"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "products"
+    label: "Products"
+    label_singular: "Product"
+    folder: "src/content/products"
+    create: true
+    slug: "{{slug}}"
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
+    editor:
+      preview: false
+    fields:
+      - {label: "Product Code", name: "code", widget: "string", hint: "e.g., SFR-001"}
+      - {label: "Product Name", name: "title", widget: "string"}
+      - {label: "Series", name: "series", widget: "select", options: ["PH", "XH", "EH", "VH", "ZH", "Custom"], required: false}
+      - {label: "Short Description", name: "description", widget: "text"}
+      - {label: "Full Description", name: "body", widget: "markdown", required: false}
+      - {label: "Specifications", name: "specs", widget: "object", fields: [
+          {label: "Pitch", name: "pitch", widget: "string", required: false},
+          {label: "Positions", name: "positions", widget: "string", required: false},
+          {label: "Voltage", name: "voltage", widget: "string", required: false},
+          {label: "Current", name: "current", widget: "string", required: false},
+          {label: "Material", name: "material", widget: "string", required: false}
+        ]}
+      - {label: "Hero Image", name: "heroImage", widget: "image", required: false}
+
+  - name: "applications"
+    label: "Applications"
+    label_singular: "Application"
+    folder: "src/content/applications"
+    create: true
+    slug: "{{slug}}"
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
+    editor:
+      preview: false
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Icon", name: "icon", widget: "string", required: false, hint: "SVG icon name or emoji"}
+      - {label: "Order", name: "order", widget: "number", default: 0, hint: "Display order (lower numbers first)"}
+      - {label: "Content", name: "body", widget: "markdown"}
+      - {label: "Featured Image", name: "heroImage", widget: "image", required: false}
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "src/content/pages/home.md"
+        fields:
+          - {label: "Hero Title", name: "heroTitle", widget: "string"}
+          - {label: "Hero Description", name: "heroDescription", widget: "text"}
+          - {label: "Hero CTA Text", name: "heroCTA", widget: "string", default: "Get a Quote"}
+          - {label: "Hero CTA Link", name: "heroLink", widget: "string", default: "/contact"}
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "General Settings"
+        name: "general"
+        file: "src/content/settings/general.md"
+        fields:
+          - {label: "Site Name", name: "siteName", widget: "string", default: "HARNESS+LAB"}
+          - {label: "Site Description", name: "siteDescription", widget: "text"}
+          - {label: "Site URL", name: "siteUrl", widget: "string", default: "https://your-wire-harness-factory.com"}
+          - {label: "Contact Email", name: "contactEmail", widget: "string", default: "engineering@harnesslab.com"}
+          - {label: "Contact Phone", name: "contactPhone", widget: "string", default: "+1 (555) 234-5678"}
+          - {label: "Social Media Links", name: "socialLinks", widget: "object", fields: [
+              {label: "LinkedIn", name: "linkedin", widget: "string", required: false},
+              {label: "Twitter", name: "twitter", widget: "string", required: false},
+              {label: "Facebook", name: "facebook", widget: "string", required: false}
+            ]}
+
+editor:
+  preview: false
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+local_backend: true

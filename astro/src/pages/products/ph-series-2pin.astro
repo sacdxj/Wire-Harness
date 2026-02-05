@@ -1,0 +1,293 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Products', href: '/products' },
+  { name: 'PH Series 2-Pin Housing', href: '/products/ph-series-2pin' }
+];
+
+const product = {
+  code: 'SFR-001',
+  series: 'PH',
+  name: 'PH Series 2-Pin Receptacle Housing',
+  pitch: '2.0mm',
+  positions: '2',
+  voltage: '100V',
+  current: '2A',
+  material: 'PA66 GF',
+  rating: 'UL94V-0'
+};
+---
+
+<MainLayout
+  title="PH Series 2-Pin Receptacle Housing | SFR-001 JST Compatible"
+  description="2.0mm pitch 2-position wire-to-board connector housing. Friction lock design, PA66 GF material, UL94V-0 flame rated. Compatible with JST PH series."
+  image="/images/products/ph-series-2pin-housing.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "PH Series 2-Pin Receptacle Housing",
+    "model": "SFR-001",
+    "description": "2.0mm pitch 2-position wire-to-board connector housing with friction lock",
+    "brand": {
+      "@type": "Brand",
+      "name": "HARNESS+LAB"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "USD"
+    },
+    "properties": {
+      "pitch": "2.0mm",
+      "positions": "2",
+      "voltage": "100V",
+      "current": "2A"
+    }
+  })} />
+
+  <Breadcrumb items={breadcrumbItems} />
+
+  <section class="px-4 py-16">
+    <div class="max-w-5xl mx-auto">
+      <!-- Header -->
+      <div class="mb-12">
+        <div class="flex flex-wrap items-center gap-4 mb-4">
+          <span class="font-mono text-xs text-accent-cyan uppercase tracking-widest">PH Series</span>
+          <span class="font-mono text-xs text-accent-amber uppercase tracking-wider px-2 py-1 bg-accent-amber/10 border border-accent-amber/30">
+            {product.code}
+          </span>
+          <span class="flex items-center gap-2 font-mono text-xs text-text-muted">
+            <span class="w-2 h-2 rounded-full bg-accent-green"></span>
+            In Stock
+          </span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          {product.name}
+        </h1>
+        <p class="text-xl text-text-secondary leading-relaxed">
+          Compact 2.0mm pitch wire-to-board connector housing with friction lock mechanism. Ideal for high-density PCB applications in consumer electronics, LED lighting, and portable devices.
+        </p>
+      </div>
+
+      <!-- Product Image -->
+      <div class="mb-12 bg-bg-secondary border border-border rounded-lg overflow-hidden">
+        <img
+          src="/images/products/ph-series-2pin-housing.jpg"
+          alt="PH Series 2-Pin Receptacle Housing - SFR-001"
+          class="w-full h-auto"
+          loading="eager"
+        />
+      </div>
+
+      <!-- Quick Specs -->
+      <section class="mb-16">
+        <div class="bg-bg-secondary border border-accent-cyan p-8">
+          <h2 class="text-2xl font-bold mb-6">Quick Specifications</h2>
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+            <div>
+              <div class="font-mono text-xs text-text-muted uppercase tracking-wider mb-1">Part Number</div>
+              <div class="font-mono text-xl font-bold">{product.code}</div>
+            </div>
+            <div>
+              <div class="font-mono text-xs text-text-muted uppercase tracking-wider mb-1">Pitch</div>
+              <div class="font-mono text-2xl font-bold text-accent-cyan">{product.pitch}</div>
+            </div>
+            <div>
+              <div class="font-mono text-xs text-text-muted uppercase tracking-wider mb-1">Positions</div>
+              <div class="font-mono text-2xl font-bold text-accent-cyan">{product.positions}</div>
+            </div>
+            <div>
+              <div class="font-mono text-xs text-text-muted uppercase tracking-wider mb-1">Voltage</div>
+              <div class="font-mono text-2xl font-bold text-accent-cyan">{product.voltage}</div>
+            </div>
+            <div>
+              <div class="font-mono text-xs text-text-muted uppercase tracking-wider mb-1">Current</div>
+              <div class="font-mono text-2xl font-bold text-accent-cyan">{product.current}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Detailed Specifications -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6">Technical Specifications</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold text-lg mb-4">Electrical Ratings</h3>
+            <table class="w-full text-sm">
+              <tbody class="text-text-secondary">
+                <tr class="border-b border-border/50">
+                  <td class="py-2 font-medium">Current Rating</td>
+                  <td class="py-2 font-mono">{product.current} (AWG #28)</td>
+                </tr>
+                <tr class="border-b border-border/50">
+                  <td class="py-2 font-medium">Voltage Rating</td>
+                  <td class="py-2 font-mono">{product.voltage} AC/DC</td>
+                </tr>
+                <tr class="border-b border-border/50">
+                  <td class="py-2 font-medium">Contact Resistance</td>
+                  <td class="py-2 font-mono">20 mΩ max</td>
+                </tr>
+                <tr class="border-b border-border/50">
+                  <td class="py-2 font-medium">Insulation Resistance</td>
+                  <td class="py-2 font-mono">1000 MΩ min</td>
+                </tr>
+                <tr>
+                  <td class="py-2 font-medium">Withstanding Voltage</td>
+                  <td class="py-2 font-mono">500V AC</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold text-lg mb-4">Mechanical Characteristics</h3>
+            <table class="w-full text-sm">
+              <tbody class="text-text-secondary">
+                <tr class="border-b border-border/50">
+                  <td class="py-2 font-medium">Pitch</td>
+                  <td class="py-2 font-mono">{product.pitch}</td>
+                </tr>
+                <tr class="border-b border-border/50">
+                  <td class="py-2 font-medium">Number of Positions</td>
+                  <td class="py-2 font-mono">{product.positions}</td>
+                </tr>
+                <tr class="border-b border-border/50">
+                  <td class="py-2 font-medium">Housing Material</td>
+                  <td class="py-2 font-mono">{product.material}</td>
+                </tr>
+                <tr class="border-b border-border/50">
+                  <td class="py-2 font-medium">Flame Rating</td>
+                  <td class="py-2 font-mono">{product.rating}</td>
+                </tr>
+                <tr>
+                  <td class="py-2 font-medium">Operating Temperature</td>
+                  <td class="py-2 font-mono">-25°C to +85°C</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6">Key Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="flex gap-4">
+            <div class="w-12 h-12 flex-shrink-0 bg-accent-cyan/10 border border-accent-cyan/30 flex items-center justify-center text-accent-cyan">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold mb-2">Ultra-Compact Design</h3>
+              <p class="text-text-secondary text-sm">2.0mm pitch for high-density PCB layouts in space-constrained devices.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-12 h-12 flex-shrink-0 bg-accent-cyan/10 border border-accent-cyan/30 flex items-center justify-center text-accent-cyan">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold mb-2">Friction Lock Mechanism</h3>
+              <p class="text-text-secondary text-sm">Secure connection retention without additional locking mechanisms.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-12 h-12 flex-shrink-0 bg-accent-cyan/10 border border-accent-cyan/30 flex items-center justify-center text-accent-cyan">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold mb-2">PA66 GF Material</h3>
+              <p class="text-text-secondary text-sm">Glass-filled polyamide with UL94V-0 flame rating for safety.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-12 h-12 flex-shrink-0 bg-accent-cyan/10 border border-accent-cyan/30 flex items-center justify-center text-accent-cyan">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold mb-2">JST Compatible</h3>
+              <p class="text-text-secondary text-sm">100% compatible with JST PH series connectors and terminals.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Applications -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6">Typical Applications</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-2">Consumer Electronics</h3>
+            <p class="text-text-secondary text-sm">Smartphones, tablets, wearables, portable devices.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-2">LED Lighting</h3>
+            <p class="text-text-secondary text-sm">LED strips, luminaires, signage, drivers.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-2">Computer Peripherals</h3>
+            <p class="text-text-secondary text-sm">Internal connections, power delivery, signals.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-2">IoT Devices</h3>
+            <p class="text-text-secondary text-sm">Smart home devices, sensors, controllers.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-2">Automotive</h3>
+            <p class="text-text-secondary text-sm">Dashboard modules, sensors, infotainment.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-2">Medical Devices</h3>
+            <p class="text-text-secondary text-sm">Portable equipment, monitoring systems.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Compatible Products -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6">Related Products</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="/products/ph-series-4pin" class="group block bg-bg-secondary border border-border p-6 transition-all duration-300 hover:border-accent-cyan">
+            <span class="font-mono text-xs text-accent-amber uppercase">SFR-004</span>
+            <h3 class="font-bold mt-2 mb-1 group-hover:text-accent-cyan">PH Series 4-Pin</h3>
+            <p class="text-text-secondary text-sm">4-position housing for higher density applications</p>
+          </a>
+          <a href="/products/ph-terminal" class="group block bg-bg-secondary border border-border p-6 transition-all duration-300 hover:border-accent-cyan">
+            <span class="font-mono text-xs text-accent-amber uppercase">SFR-201</span>
+            <h3 class="font-bold mt-2 mb-1 group-hover:text-accent-cyan">PH Crimp Terminal</h3>
+            <p class="text-text-secondary text-sm">Tin-plated terminal for 28-24 AWG wires</p>
+          </a>
+          <a href="/compatibility/jst-ph-cable-assembly" class="group block bg-bg-secondary border border-border p-6 transition-all duration-300 hover:border-accent-cyan">
+            <span class="font-mono text-xs text-accent-cyan uppercase">PH Cable Assembly</span>
+            <h3 class="font-bold mt-2 mb-1 group-hover:text-accent-cyan">Custom PH Assemblies</h3>
+            <p class="text-text-secondary text-sm">Complete cable assemblies with PH connectors</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="bg-bg-secondary border border-accent-cyan p-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">Request Quote for SFR-001</h2>
+        <p class="text-text-secondary mb-6 max-w-2xl mx-auto">
+          Volume pricing available. Specify quantity, delivery requirements, and any customization needs for a competitive quote within 24 hours.
+        </p>
+        <a href="/contact" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
+          Get Quote
+        </a>
+      </section>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,262 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Applications', href: '/applications' },
+  { name: 'LED & General Electronics', href: '/applications/led-lighting' }
+];
+---
+
+<MainLayout
+  title="LED Terminal Wire Assembly | LED Lighting Wire Harness Solutions"
+  description="LED terminal wire assembly specialist. LED strip connections, lighting power cables, driver interconnects. JST PH/XH compatible. UL certified, cost-effective solutions."
+>
+  <Breadcrumb items={breadcrumbItems} />
+
+  <section class="px-4 py-16">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-12">
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-4">LED & Electronics Applications</p>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          LED Terminal Wire <span class="text-accent-cyan">Assembly</span>
+        </h1>
+        <p class="text-xl text-text-secondary leading-relaxed">
+          Specialized wire assemblies for LED lighting, signage, displays, and general electronics applications. Cost-effective JST-compatible solutions with quick-turn prototyping and volume production.
+        </p>
+      </div>
+
+      <!-- Applications Overview -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6">LED & Lighting Applications</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-bg-secondary border border-border p-6">
+            <div class="w-12 h-12 bg-accent-cyan/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">LED Strip Lighting</h3>
+            <p class="text-text-secondary text-sm">Flexible LED strip power connections, jumper cables, and extension assemblies for residential and commercial lighting.</p>
+          </div>
+
+          <div class="bg-bg-secondary border border-border p-6">
+            <div class="w-12 h-12 bg-accent-cyan/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">LED Displays & Signs</h3>
+            <p class="text-text-secondary text-sm">Digital signage, channel letters, backlight panels, and LED display board wire harnesses.</p>
+          </div>
+
+          <div class="bg-bg-secondary border border-border p-6">
+            <div class="w-12 h-12 bg-accent-cyan/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">LED Drivers</h3>
+            <p class="text-text-secondary text-sm">LED power supply input/output cables, dimmer control wires, and driver interconnects.</p>
+          </div>
+
+          <div class="bg-bg-secondary border border-border p-6">
+            <div class="w-12 h-12 bg-accent-cyan/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">Lighting Fixtures</h3>
+            <p class="text-text-secondary text-sm">Ceiling lights, recessed lighting, pendant fixtures, and architectural lighting wire assemblies.</p>
+          </div>
+
+          <div class="bg-bg-secondary border border-border p-6">
+            <div class="w-12 h-12 bg-accent-cyan/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">General Electronics</h3>
+            <p class="text-text-secondary text-sm">Power supplies, control boards, electronic device internal wiring, and prototype assemblies.</p>
+          </div>
+
+          <div class="bg-bg-secondary border border-border p-6">
+            <div class="w-12 h-12 bg-accent-cyan/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">DIY & Hobby</h3>
+            <p class="text-text-secondary text-sm">Arduino, Raspberry Pi, maker projects, and hobby electronics wire assemblies.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- LED Industry Requirements -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6">LED Industry Requirements We Meet</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-sm">✓</span>
+              Cost-Effective Production
+            </h3>
+            <p class="text-text-secondary text-sm">High-volume manufacturing at competitive prices essential for the LED lighting market's cost sensitivity.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-sm">✓</span>
+              Safety Certifications
+            </h3>
+            <p class="text-text-secondary text-sm">UL certified materials and assemblies for compliant LED lighting products.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-sm">✓</span>
+              Custom Lengths
+            </h3>
+            <p class="text-text-secondary text-sm">Tailored cable lengths for specific lighting installations and fixture designs.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-sm">✓</span>
+              Quick Turnaround
+            </h3>
+            <p class="text-text-secondary text-sm">Fast prototyping and production to meet lighting project schedules and market demands.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-sm">✓</span>
+              Color Coding Options
+            </h3>
+            <p class="text-text-secondary text-sm">Standard and custom wire color coding for easy identification during installation.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-sm">✓</span>
+              Strain Relief
+            </h3>
+            <p class="text-text-secondary text-sm">Overmolded and mechanical strain relief for durable LED strip and fixture connections.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Popular Connector Series -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6">Common LED Connector Series</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-bg-secondary border-l-2 border-accent-cyan p-6">
+            <h3 class="font-bold mb-2">JST PH Series</h3>
+            <p class="text-text-secondary text-sm mb-3">2.0mm pitch compact connectors. Most common for LED strips and low-profile lighting applications.</p>
+            <ul class="space-y-1 text-xs text-text-muted font-mono">
+              <li>• 2-15 positions available</li>
+              <li>• 100V 2A rating</li>
+              <li>• Low-profile design</li>
+            </ul>
+          </div>
+          <div class="bg-bg-secondary border-l-2 border-accent-cyan p-6">
+            <h3 class="font-bold mb-2">JST XH Series</h3>
+            <p class="text-text-secondary text-sm mb-3">2.5mm pitch with secure locking. Preferred for LED drivers and power supply connections.</p>
+            <ul class="space-y-1 text-xs text-text-muted font-mono">
+              <li>• 2-15 positions available</li>
+              <li>• 250V 3A rating</li>
+              <li>• Positive lock</li>
+            </ul>
+          </div>
+          <div class="bg-bg-secondary border-l-2 border-accent-cyan p-6">
+            <h3 class="font-bold mb-2">Molex KK Series</h3>
+            <p class="text-text-secondary text-sm mb-3">3.96mm pitch robust connectors. For higher current LED power connections.</p>
+            <ul class="space-y-1 text-xs text-text-muted font-mono">
+              <li>• 2-15 circuits available</li>
+              <li>• Up to 7A per circuit</li>
+              <li>• Secure connection</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Examples -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6">LED Project Examples</h2>
+        <div class="space-y-6">
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold text-lg mb-2">LED Strip Connection Kit</h3>
+            <p class="text-text-secondary text-sm mb-3">Complete wire assembly kit for connecting LED strips to power supplies. Includes 2-pin and 4-pin configurations in custom lengths.</p>
+            <div class="flex gap-2">
+              <span class="font-mono text-xs px-2 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan">PH Series</span>
+              <span class="font-mono text-xs px-2 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan">2-Pin & 4-Pin</span>
+              <span class="font-mono text-xs px-2 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan">Custom Lengths</span>
+            </div>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold text-lg mb-2">LED Driver Harness Assembly</h3>
+            <p class="text-text-secondary text-sm mb-3">Multi-branch cable assembly connecting LED driver to multiple LED modules. Color-coded for easy installation.</p>
+            <div class="flex gap-2">
+              <span class="font-mono text-xs px-2 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan">Multi-Branch</span>
+              <span class="font-mono text-xs px-2 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan">Color-Coded</span>
+              <span class="font-mono text-xs px-2 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan">UL Listed</span>
+            </div>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold text-lg mb-2">Channel Letter Lighting Wire</h3>
+            <p class="text-text-secondary text-sm mb-3">Weather-resistant wire assemblies for outdoor LED channel letter signage. IP67-rated connectors.</p>
+            <div class="flex gap-2">
+              <span class="font-mono text-xs px-2 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan">Weather-Resistant</span>
+              <span class="font-mono text-xs px-2 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan">IP67</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Wire Gauge Guide -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6">LED Wire Gauge Selection Guide</h2>
+        <div class="bg-bg-secondary border border-border p-6">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-border">
+                <th class="text-left py-3 font-mono text-xs text-accent-cyan uppercase">Application</th>
+                <th class="text-left py-3 font-mono text-xs text-accent-cyan uppercase">Recommended Wire Gauge</th>
+                <th class="text-left py-3 font-mono text-xs text-accent-cyan uppercase">Current Capacity</th>
+              </tr>
+            </thead>
+            <tbody class="text-text-secondary">
+              <tr class="border-b border-border/50">
+                <td class="py-3">Low-power LED strips</td>
+                <td class="py-3 font-mono">24-22 AWG</td>
+                <td class="py-3">Up to 1.5A</td>
+              </tr>
+              <tr class="border-b border-border/50">
+                <td class="py-3">Medium-power LED modules</td>
+                <td class="py-3 font-mono">20-18 AWG</td>
+                <td class="py-3">Up to 4A</td>
+              </tr>
+              <tr class="border-b border-border/50">
+                <td class="py-3">High-power LED arrays</td>
+                <td class="py-3 font-mono">16-14 AWG</td>
+                <td class="py-3">Up to 10A</td>
+              </tr>
+              <tr>
+                <td class="py-3">LED driver input power</td>
+                <td class="py-3 font-mono">18-16 AWG</td>
+                <td class="py-3">Up to 6A</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="bg-bg-secondary border border-accent-cyan p-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">LED Wiring Project Requirements?</h2>
+        <p class="text-text-secondary mb-6 max-w-2xl mx-auto">
+          From prototype to production, we deliver LED terminal wire solutions optimized for lighting applications.
+        </p>
+        <a href="/contact" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
+          Get LED Wiring Quote
+        </a>
+      </section>
+    </div>
+  </section>
+</MainLayout>

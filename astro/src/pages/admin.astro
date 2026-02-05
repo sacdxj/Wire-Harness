@@ -1,0 +1,52 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Admin Login | Content Management"
+  description="Login to manage website content through Decap CMS"
+>
+  <section class="px-4 py-20">
+    <div class="max-w-md mx-auto">
+      <div class="bg-bg-secondary border border-border p-8">
+        <h1 class="text-2xl font-bold mb-4 text-center">Admin Login</h1>
+        <p class="text-text-secondary text-sm text-center mb-6">
+          Access the content management system to update blog posts, pages, and site settings.
+        </p>
+
+        <div id="decap-cms"></div>
+      </div>
+
+      <div class="mt-6 p-6 bg-bg-secondary/50 border border-border">
+        <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan mb-3">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/" class="text-text-secondary hover:text-accent-cyan transition">← Back to Home</a></li>
+          <li><a href="/blog" class="text-text-secondary hover:text-accent-cyan transition">View Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<script>
+  // Decap CMS (formerly Netlify CMS) will be loaded here
+  // When hosted on Netlify or similar platforms, the CMS will automatically initialize
+</script>
+
+<style>
+  #decap-cms {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-tertiary);
+    border-radius: 0.5rem;
+  }
+
+  #decap-cms::after {
+    content: 'Decap CMS loads when deployed';
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+  }
+</style>

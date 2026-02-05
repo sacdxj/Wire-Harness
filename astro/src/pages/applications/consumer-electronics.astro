@@ -1,0 +1,223 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Applications', href: '/applications' },
+  { name: 'Consumer Electronics', href: '/applications/consumer-electronics' }
+];
+---
+
+<MainLayout
+  title="Terminal Wire for Consumer Electronics | Custom Cable Assemblies"
+  description="Specialist in terminal wire assembly for consumer electronics. Smartphones, wearables, audio devices, IoT products. JST PH/XH compatible. Factory-direct pricing."
+>
+  <Breadcrumb items={breadcrumbItems} />
+
+  <section class="px-4 py-16">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-12">
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-4">Consumer Electronics Applications</p>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          Terminal Wire for <span class="text-accent-cyan">Consumer Electronics</span>
+        </h1>
+        <p class="text-xl text-text-secondary leading-relaxed">
+          Precision wire assemblies for smartphones, wearables, portable devices, and IoT products. We understand the unique requirements of consumer electronics—compact size, reliability, and cost-effectiveness.
+        </p>
+      </div>
+
+      <!-- Applications Overview -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6">Key Applications</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-bg-secondary border border-border p-6">
+            <div class="w-12 h-12 bg-accent-cyan/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">Smartphones & Tablets</h3>
+            <p class="text-text-secondary text-sm">Internal power and signal connections with ultra-compact 2.0mm pitch connectors.</p>
+          </div>
+
+          <div class="bg-bg-secondary border border-border p-6">
+            <div class="w-12 h-12 bg-accent-cyan/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">Wearable Devices</h3>
+            <p class="text-text-secondary text-sm">Ultra-fine pitch assemblies for smartwatches, fitness trackers, and health monitors.</p>
+          </div>
+
+          <div class="bg-bg-secondary border border-border p-6">
+            <div class="w-12 h-12 bg-accent-cyan/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">Audio Equipment</h3>
+            <p class="text-text-secondary text-sm">Headphones, earbuds, speakers, and portable audio player wire assemblies.</p>
+          </div>
+
+          <div class="bg-bg-secondary border border-border p-6">
+            <div class="w-12 h-12 bg-accent-cyan/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">Smart Home Devices</h3>
+            <p class="text-text-secondary text-sm">IoT hubs, smart controllers, home automation sensor connections.</p>
+          </div>
+
+          <div class="bg-bg-secondary border border-border p-6">
+            <div class="w-12 h-12 bg-accent-cyan/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">Portable Power</h3>
+            <p class="text-text-secondary text-sm">Power bank battery connections, charging cables, portable power solutions.</p>
+          </div>
+
+          <div class="bg-bg-secondary border border-border p-6">
+            <div class="w-12 h-12 bg-accent-cyan/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="font-bold mb-2">Camera & Imaging</h3>
+            <p class="text-text-secondary text-sm">Action cameras, drones, security cameras, imaging device wire assemblies.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Consumer Electronics Requirements -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6">Industry Requirements We Understand</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-sm">✓</span>
+              Ultra-Compact Design
+            </h3>
+            <p class="text-text-secondary text-sm">2.0mm and 2.5mm pitch connectors for high-density PCB layouts in space-constrained devices.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-sm">✓</span>
+              Cost Sensitivity
+            </h3>
+            <p class="text-text-secondary text-sm">High-volume production with competitive unit costs to meet consumer price point requirements.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-sm">✓</span>
+              Fast Time-to-Market
+            </h3>
+            <p class="text-text-secondary text-sm">Rapid prototyping and quick production scaling for product launches and seasonal demands.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-sm">✓</span>
+              Regulatory Compliance
+            </h3>
+            <p class="text-text-secondary text-sm">UL, RoHS, REACH certified materials and processes for global market access.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-sm">✓</span>
+              Quality Consistency
+            </h3>
+            <p class="text-text-secondary text-sm">100% testing and statistical process control for minimal field failures and returns.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-sm">✓</span>
+              Supply Chain Reliability
+            </h3>
+            <p class="text-text-secondary text-sm">Inventory management and flexible scheduling to support just-in-time manufacturing.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Popular Connector Series -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6">Popular Connector Series for Consumer Electronics</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-bg-secondary border-l-2 border-accent-cyan p-6">
+            <h3 class="font-bold mb-2">JST PH Series</h3>
+            <p class="text-text-secondary text-sm mb-3">2.0mm pitch wire-to-board. Ideal for smartphones, tablets, and compact devices.</p>
+            <ul class="space-y-1 text-xs text-text-muted font-mono">
+              <li>• 2-15 positions available</li>
+              <li>• 100V 2A rating</li>
+              <li>• Ultra-compact footprint</li>
+            </ul>
+          </div>
+          <div class="bg-bg-secondary border-l-2 border-accent-cyan p-6">
+            <h3 class="font-bold mb-2">JST XH Series</h3>
+            <p class="text-text-secondary text-sm mb-3">2.5mm pitch with positive lock. Used in power delivery and battery connections.</p>
+            <ul class="space-y-1 text-xs text-text-muted font-mono">
+              <li>• 2-15 positions available</li>
+              <li>• 250V 3A rating</li>
+              <li>• Secure locking</li>
+            </ul>
+          </div>
+          <div class="bg-bg-secondary border-l-2 border-accent-cyan p-6">
+            <h3 class="font-bold mb-2">Molex PicoBlade</h3>
+            <p class="text-text-secondary text-sm mb-3">1.25mm ultra-fine pitch. For wearables and miniaturized devices.</p>
+            <ul class="space-y-1 text-xs text-text-muted font-mono">
+              <li>• 2-12 positions available</li>
+              <li>• Low-profile design</li>
+              <li>• High current density</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Examples -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6">Consumer Electronics Project Examples</h2>
+        <div class="space-y-6">
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold text-lg mb-2">Smartwatch Power Assembly</h3>
+            <p class="text-text-secondary text-sm mb-3">Custom 4-wire battery charging assembly with JST PH-compatible connector, integrated strain relief, and flexible routing for compact wearable design.</p>
+            <div class="flex gap-2">
+              <span class="font-mono text-xs px-2 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan">2.0mm Pitch</span>
+              <span class="font-mono text-xs px-2 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan">4-Wire</span>
+              <span class="font-mono text-xs px-2 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan">Overmolded</span>
+            </div>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold text-lg mb-2">Bluetooth Audio Cable Assembly</h3>
+            <p class="text-text-secondary text-sm mb-3">Shielded twisted pair assembly with custom connectors for premium headphones. Includes EMI protection and flexible strain relief for user comfort.</p>
+            <div class="flex gap-2">
+              <span class="font-mono text-xs px-2 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan">Shielded</span>
+              <span class="font-mono text-xs px-2 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan">Custom Length</span>
+            </div>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold text-lg mb-2">IoT Sensor Hub Wiring</h3>
+            <p class="text-text-secondary text-sm mb-3">Multi-branch wire loom connecting main controller to 8 sensors. JST XH-compatible connectors for reliable power and signal distribution.</p>
+            <div class="flex gap-2">
+              <span class="font-mono text-xs px-2 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan">Multi-Branch</span>
+              <span class="font-mono text-xs px-2 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan">XH Series</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="bg-bg-secondary border border-accent-cyan p-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">Consumer Electronics Wire Requirements?</h2>
+        <p class="text-text-secondary mb-6 max-w-2xl mx-auto">
+          From prototype to mass production, we deliver terminal wire solutions optimized for consumer electronics applications.
+        </p>
+        <a href="/contact" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
+          Get Quote for Consumer Electronics
+        </a>
+      </section>
+    </div>
+  </section>
+</MainLayout>

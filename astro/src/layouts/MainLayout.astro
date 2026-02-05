@@ -1,0 +1,99 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonical?: string;
+  type?: string;
+}
+
+const { title, description, image, canonical, type, ...rest } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+      image={image}
+      canonical={canonical}
+      type={type}
+    />
+  </head>
+  <body class="bg-bg-primary text-text-primary font-sans antialiased">
+    <!-- Technical Grid Background -->
+    <div class="fixed inset-0 pointer-events-none tech-grid-bg z-0"></div>
+
+    <!-- Blueprint Corner Markers -->
+    <div class="fixed top-5 left-5 w-[60px] h-[60px] border-2 border-accent-cyan opacity-30 z-10 border-r-0 border-b-0"></div>
+    <div class="fixed top-5 right-5 w-[60px] h-[60px] border-2 border-accent-cyan opacity-30 z-10 border-l-0 border-b-0"></div>
+    <div class="fixed bottom-5 left-5 w-[60px] h-[60px] border-2 border-accent-cyan opacity-30 z-10 border-r-0 border-t-0"></div>
+    <div class="fixed bottom-5 right-5 w-[60px] h-[60px] border-2 border-accent-cyan opacity-30 z-10 border-l-0 border-t-0"></div>
+
+    <!-- Header -->
+    <Header />
+
+    <!-- Main Content -->
+    <main class="relative z-10 pt-20">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --bg-primary: #0a0e17;
+    --bg-secondary: #111827;
+    --bg-tertiary: #1f2937;
+    --accent-cyan: #00d4ff;
+    --accent-amber: #f59e0b;
+    --accent-green: #10b981;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+    --border-color: #1f2937;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    line-height: 1.6;
+  }
+
+  .tech-grid-bg {
+    background-size: 40px 40px;
+    background-image:
+      linear-gradient(rgba(0, 212, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 212, 255, 0.08) 1px, transparent 1px);
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out backwards;
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+/* Decap CMS - Identity Widget & Admin Interface */
+/* This script enables the CMS admin interface */
+/* React 18.3.1 - Compatible with Decap CMS 3.x */
+---
+
+<!-- Load Decap CMS with React 18 support -->
+<script src="https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js"></script>
+
+<script define:vars={{ decapConfigUrl: '/admin/config.yml' }}>
+  // Initialize Decap CMS when loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.CMS) {
+      // Decap CMS v3.x is compatible with React 18
+      window.CMS.init();
+    }
+  });
+</script>
+
+<style>
+  /* Decap CMS Custom Dark Theme Styles */
+  .cms-editor-modal {
+    font-family: 'Space Grotesk', sans-serif !important;
+    background-color: #0a0e17 !important;
+  }
+
+  .cms-editor-modal input,
+  .cms-editor-modal textarea {
+    background-color: #1f2937 !important;
+    color: #f9fafb !important;
+    border-color: #374151 !important;
+  }
+
+  .cms-editor-modal .cm-preview {
+    background-color: #111827 !important;
+  }
+
+  /* Fix for React 18 compatibility */
+  .cms-plugin-link {
+    pointer-events: none;
+  }
+</style>

@@ -1,0 +1,77 @@
+---
+const today = new Date();
+const currentYear = today.getFullYear();
+---
+
+<footer class="border-t border-border bg-bg-secondary relative z-10 mt-20">
+  <div class="max-w-7xl mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      <!-- Brand -->
+      <div>
+        <h3 class="font-mono text-lg font-bold text-accent-cyan mb-4">HARNESS+LAB</h3>
+        <p class="text-text-secondary text-sm leading-relaxed">
+          UL certified wire harness manufacturer. Specializing in JST, Molex, and TE compatible connectors.
+          From prototype to mass production.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan mb-4">Products</h4>
+        <ul class="space-y-2 text-sm text-text-secondary">
+          <li><a href="/products" class="hover:text-accent-cyan transition">All Products</a></li>
+          <li><a href="/products/ph-series" class="hover:text-accent-cyan transition">PH Series</a></li>
+          <li><a href="/products/xh-series" class="hover:text-accent-cyan transition">XH Series</a></li>
+          <li><a href="/products/eh-series" class="hover:text-accent-cyan transition">EH Series</a></li>
+          <li><a href="/products/custom-harness" class="hover:text-accent-cyan transition">Custom Harness</a></li>
+        </ul>
+      </div>
+
+      <!-- Applications -->
+      <div>
+        <h4 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan mb-4">Applications</h4>
+        <ul class="space-y-2 text-sm text-text-secondary">
+          <li><a href="/applications" class="hover:text-accent-cyan transition">All Applications</a></li>
+          <li><a href="/applications/consumer-electronics" class="hover:text-accent-cyan transition">Consumer Electronics</a></li>
+          <li><a href="/applications/industrial-control" class="hover:text-accent-cyan transition">Industrial Control</a></li>
+          <li><a href="/applications/led-lighting" class="hover:text-accent-cyan transition">LED Lighting</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div>
+        <h4 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan mb-4">Resources</h4>
+        <ul class="space-y-2 text-sm text-text-secondary">
+          <li><a href="/compatibility" class="hover:text-accent-cyan transition">Connector Compatibility</a></li>
+          <li><a href="/blog" class="hover:text-accent-cyan transition">Technical Blog</a></li>
+          <li><a href="/services" class="hover:text-accent-cyan transition">Capabilities</a></li>
+          <li><a href="/contact" class="hover:text-accent-cyan transition">Request Quote</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan mb-4">Contact</h4>
+        <ul class="space-y-2 text-sm text-text-secondary">
+          <li>engineering@harnesslab.com</li>
+          <li>+1 (555) 234-5678</li>
+          <li class="pt-2 font-mono text-xs text-text-muted">Mon-Fri: 8AM-6PM EST</li>
+        </ul>
+        <div class="flex gap-3 mt-4">
+          <span class="font-mono text-[0.6rem] px-2 py-1 bg-accent-green/10 border border-accent-green text-accent-green">ISO 9001:2015</span>
+          <span class="font-mono text-[0.6rem] px-2 py-1 bg-accent-green/10 border border-accent-green text-accent-green">UL Certified</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-text-muted">
+      <p class="font-mono text-xs">
+        &copy; {currentYear} HARNESS+LAB. All specifications subject to change without notice.
+      </p>
+      <div class="flex gap-4 text-sm">
+        <a href="#" class="hover:text-accent-cyan transition">Privacy Policy</a>
+        <a href="#" class="hover:text-accent-cyan transition">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>

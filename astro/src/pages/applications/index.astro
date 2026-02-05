@@ -1,0 +1,133 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const applications = [
+  {
+    title: 'Consumer Electronics',
+    description: 'Precision wire assemblies for smartphones, wearables, portable devices, and IoT products with ultra-compact connectors.',
+    href: '/applications/consumer-electronics',
+    image: '/images/applications/consumer-electronics.jpg'
+  },
+  {
+    title: 'Industrial Control',
+    description: 'Reliable wire harness solutions for industrial automation, PLC systems, motor controls, and sensor networks.',
+    href: '/applications/industrial-control',
+    image: '/images/applications/industrial-control.jpg'
+  },
+  {
+    title: 'LED & General Lighting',
+    description: 'Efficient power delivery assemblies for LED strips, luminaires, signage, and architectural lighting systems.',
+    href: '/applications/led-lighting',
+    image: '/images/applications/led-lighting.jpg'
+  }
+];
+
+const breadcrumbItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Applications', href: '/applications' }
+];
+---
+
+<MainLayout
+  title="Wire Harness Applications | Industry Solutions & Use Cases"
+  description="Discover how our custom wire harnesses and connectors serve diverse industries. Consumer electronics, industrial control, LED lighting, and more."
+>
+  <Breadcrumb items={breadcrumbItems} />
+
+  <section class="px-4 py-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-4">Industry Applications</p>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Wire Harness Solutions by Industry</h1>
+        <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+          From consumer electronics to industrial automation, our precision-engineered wire harnesses and connector systems power critical applications across diverse industries.
+        </p>
+      </div>
+
+      <!-- Applications Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {applications.map((app, index) => (
+          <a
+            href={app.href}
+            class="group block bg-bg-secondary border border-border overflow-hidden transition-all duration-300 hover:border-accent-cyan hover:-translate-y-1"
+            style={`animation: fadeInUp 0.6s ease-out ${index * 0.1}s backwards`}
+          >
+            <div class="aspect-video overflow-hidden">
+              <img
+                src={app.image}
+                alt={app.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-8">
+              <h2 class="text-2xl font-bold mb-3 group-hover:text-accent-cyan transition-colors">
+                {app.title}
+              </h2>
+              <p class="text-text-secondary mb-4">
+                {app.description}
+              </p>
+              <div class="flex items-center text-accent-cyan font-mono text-sm">
+                <span>Explore Solutions</span>
+                <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Why Choose Us Section -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-center">Industry-Expert Engineering</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-2 flex items-center gap-2">
+              <span class="w-6 h-6 bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-sm">✓</span>
+              Industry-Specific Expertise
+            </h3>
+            <p class="text-text-secondary text-sm">Deep understanding of regulatory requirements, environmental conditions, and performance standards across industries.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-2 flex items-center gap-2">
+              <span class="w-6 h-6 bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-sm">✓</span>
+              Rapid Prototyping
+            </h3>
+            <p class="text-text-secondary text-sm">48-hour rapid prototyping for quick design validation and testing before volume production.</p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-2 flex items-center gap-2">
+              <span class="w-6 h-6 bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-sm">✓</span>
+              Certified Quality
+            </h3>
+            <p class="text-text-secondary text-sm">ISO 9001:2015 certified manufacturing with UL, RoHS, and REACH compliance for global market access.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="bg-bg-secondary border border-accent-cyan p-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">Don't See Your Industry?</h2>
+        <p class="text-text-secondary mb-6 max-w-2xl mx-auto">
+          We serve diverse industries beyond those listed. Contact us to discuss your specific application requirements.
+        </p>
+        <a href="/contact" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
+          Discuss Your Application
+        </a>
+      </section>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

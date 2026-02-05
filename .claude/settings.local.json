@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl:*)",
+      "Bash(done:*)",
+      "Bash(grep:*)",
+      "Bash(cd:*)",
+      "Bash(# 创建完整的图片目录结构 cd /e/trae/Custom\\\\ Wire\\\\ Harness/astro/public echo \"\"=== 创建图片目录结构 ===\"\" mkdir -p images/homepage mkdir -p images/factory mkdir -p images/products mkdir -p images/applications mkdir -p images/compatibility mkdir -p images/about mkdir -p images/services echo \"\"✅ 目录创建完成\"\" echo \"\"\"\" echo \"\"目录结构:\"\" tree -L 2 images || find images -type d)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(git fetch:*)",
+      "Bash(git pull:*)",
+      "Bash(git diff:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm install:*)",
+      "Bash(ping:*)",
+      "Bash(python:*)",
+      "Skill(gemini-image-skill-main)",
+      "Bash(git init:*)"
+    ]
+  }
+}

@@ -1,0 +1,144 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Products', href: '/products' }
+];
+
+// Sample product data - in a real app, this would come from a CMS or API
+const products = [
+  {
+    code: 'SFR-001',
+    series: 'PH',
+    name: 'PH Series 2-Pin Receptacle Housing',
+    description: 'Compact 2.0mm pitch wire-to-board connector housing with friction lock mechanism',
+    specs: { pitch: '2.0mm', positions: '2', voltage: '100V', current: '2A' },
+    href: '/products/ph-series-2pin'
+  },
+  {
+    code: 'SFR-004',
+    series: 'PH',
+    name: 'PH Series 4-Pin Receptacle Housing',
+    description: '4-position 2.0mm pitch housing for high-density circuit applications',
+    specs: { pitch: '2.0mm', positions: '4', voltage: '100V', current: '2A' },
+    href: '/products/ph-series-4pin'
+  },
+  {
+    code: 'SFR-042',
+    series: 'XH',
+    name: 'XH Series 4-Pin Header',
+    description: 'Through-hole 2.5mm pitch header with positive locking mechanism',
+    specs: { pitch: '2.5mm', positions: '4', voltage: '250V', current: '3A' },
+    href: '/products/xh-series-header'
+  },
+  {
+    code: 'SEP-015',
+    series: 'EH',
+    name: 'EH Series Ejector Header 8-Pin',
+    description: '2.5mm pitch ejector header for tool-free disconnect operations',
+    specs: { pitch: '2.5mm', positions: '8', voltage: '250V', current: '3A' },
+    href: '/products/eh-series-ejector'
+  },
+  {
+    code: 'CWH-088',
+    series: 'CUSTOM',
+    name: 'Custom Multi-Branch Wire Harness',
+    description: 'Shielded twisted pair assembly with custom breakouts and connectors',
+    specs: { type: 'Custom', connectors: 'Multiple', certification: 'UL', shielding: 'Foil+Braid' },
+    href: '/contact'
+  },
+  {
+    code: 'SFR-201',
+    series: 'PH',
+    name: 'PH Series Crimp Terminal Contact',
+    description: 'Crimp terminal for PH Series 2.0mm pitch connectors',
+    specs: { wire: '28-24AWG', material: 'Tin-plated', finish: 'Tin', packaging: 'Reel' },
+    href: '/products/ph-terminal'
+  }
+];
+---
+
+<MainLayout
+  title="Wire Harness Products | JST Compatible Connectors Catalog"
+  description="Complete catalog of wire harness products and JST-compatible connectors. PH Series, XH Series, EH Series with specifications, pricing, and availability."
+>
+  <Breadcrumb items={breadcrumbItems} />
+
+  <section class="px-4 py-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-8">
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-3">Product Catalog</p>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Wire Harness Solutions</h1>
+        <p class="text-lg text-text-secondary max-w-3xl">
+          Complete catalog of precision-engineered wire harness products and JST-compatible connector systems for industrial, automotive, and consumer electronics applications.
+        </p>
+      </div>
+
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+        <p class="font-mono text-sm text-text-muted">
+          Showing <span class="text-accent-cyan">{products.length}</span> products
+        </p>
+        <select class="font-mono text-xs px-4 py-2 bg-bg-secondary border border-border text-text-secondary focus:border-accent-cyan outline-none cursor-pointer">
+          <option>Sort by: Featured</option>
+          <option>Name: A to Z</option>
+          <option>Name: Z to A</option>
+          <option>Pitch: Low to High</option>
+        </select>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map(product => (
+          <a
+            href={product.href}
+            class="group block bg-bg-secondary border border-border overflow-hidden transition-all duration-300 hover:border-accent-cyan hover:-translate-y-1"
+          >
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-3">
+                <span class="font-mono text-xs text-accent-amber uppercase tracking-wider">{product.code}</span>
+                <span class="font-mono text-[0.6rem] uppercase tracking-wider px-2 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan">
+                  {product.series}
+                </span>
+              </div>
+
+              <h3 class="text-lg font-bold mb-2 group-hover:text-accent-cyan transition-colors">
+                {product.name}
+              </h3>
+
+              <p class="text-text-secondary text-sm mb-4 line-clamp-2">
+                {product.description}
+              </p>
+
+              <div class="grid grid-cols-2 gap-2 pt-4 border-t border-border text-xs">
+                {Object.entries(product.specs).map(([key, value]) => (
+                  <div>
+                    <span class="font-mono text-text-muted uppercase">{key}:</span>
+                    <span class="font-medium ml-1">{value}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div class="flex justify-between items-center mt-4 pt-4 border-t border-border">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-accent-green shadow-[0_0_10px_theme('colors.accent.green')]"></span>
+                  <span class="font-mono text-xs text-text-muted">In Stock</span>
+                </div>
+                <span class="font-mono text-xs text-accent-cyan group-hover:translate-x-1 transition-transform">View Details →</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
