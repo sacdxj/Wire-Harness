@@ -7,35 +7,45 @@ const breadcrumbItems = [
   { name: 'Products', href: '/products' }
 ];
 
-// Assembly type categories
-const assemblyTypes = [
+// Product categories with all products
+const productCategories = [
   {
     title: 'Pre-Crimped Leads',
-    description: 'Single or dual-end pre-crimped wires ready for your assembly process. Custom lengths and terminations.',
-    image: '/images/products/ph-series-2pin-housing.jpg',
-    features: ['Custom wire length', 'AWG 32-14', 'Various terminals', 'UL-certified'],
-    href: '/products/jst-ph-2-0mm-pre-crimped-leads'
+    description: 'Single or dual-end pre-crimped wires ready for your assembly process.',
+    products: [
+      { name: 'JST SH 1.0mm', pitch: '1.0mm', current: '1A', href: '/products/jst-sh-1-0mm-pre-crimped-leads' },
+      { name: 'JST GH 1.25mm', pitch: '1.25mm', current: '1.5A', href: '/products/jst-gh-1-25mm-pre-crimped-leads' },
+      { name: 'JST PH 2.0mm', pitch: '2.0mm', current: '2A', href: '/products/jst-ph-2-0mm-pre-crimped-leads' },
+      { name: 'Molex PicoBlade 1.25mm', pitch: '1.25mm', current: '1A', href: '/products/molex-picoblade-1-25mm-pre-crimped-leads' },
+      { name: 'Molex Micro-Fit 3.0mm', pitch: '3.0mm', current: '3A', href: '/products/molex-micro-fit-3-0mm-pre-crimped-leads' },
+      { name: 'Dupont 2.54mm', pitch: '2.54mm', current: '3A', href: '/products/dupont-2-54mm-pre-crimped-leads' }
+    ]
   },
   {
     title: 'Wire-to-Board Assemblies',
-    description: 'Board connectors with crimped wires. PH/XH/EH series for PCB connection applications.',
-    image: '/images/products/xh-series-4pin-header.jpg',
-    features: ['2-15 positions', '0.8-2.5mm pitch', 'Vertical/right-angle', '100% tested'],
-    href: '/contact'
+    description: 'Board connectors with crimped wires for PCB connection applications.',
+    products: [
+      { name: 'JST XH 2.5mm', pitch: '2.5mm', current: '3A', href: '/products/jst-xh-2-5mm-wire-to-board' },
+      { name: 'JST VH 3.96mm', pitch: '3.96mm', current: '7A', href: '/products/jst-vh-3-96mm-wire-to-board' },
+      { name: 'Molex KK 254', pitch: '2.54mm', current: '5A', href: '/products/molex-kk-254-wire-to-board' }
+    ]
   },
   {
     title: 'Wire-to-Wire Assemblies',
-    description: 'Male-to-female cable assemblies. Plug-and-play solutions for modular connections.',
-    image: '/images/products/custom-wire-harness.jpg',
-    features: ['Ready-to-use', 'Custom breaks', 'Shielded options', 'Color-coded'],
-    href: '/contact'
+    description: 'Male-to-female cable assemblies for modular connections.',
+    products: [
+      { name: 'JST PH 2.0mm', pitch: '2.0mm', current: '2A', href: '/products/jst-ph-2-0mm-wire-to-wire' },
+      { name: 'Molex Mini-Fit 4.2mm', pitch: '4.2mm', current: '9A', href: '/products/molex-mini-fit-4-2mm-wire-to-wire' }
+    ]
   },
   {
     title: 'Ribbon Cable Assemblies',
-    description: 'High-density IDC ribbon cables for compact electronics and data transmission.',
-    image: '/images/products/eh-series-8pin-ejector.jpg',
-    features: ['High density', 'IDC termination', 'Pitch 1.27-2.54mm', 'Custom length'],
-    href: '/contact'
+    description: 'High-density IDC ribbon cables for compact electronics.',
+    products: [
+      { name: 'JST VH 3.96mm Ribbon', pitch: '3.96mm', current: '7A', href: '/contact' },
+      { name: 'Molex KK 254 Ribbon', pitch: '2.54mm', current: '5A', href: '/contact' },
+      { name: 'Dupont 2.54mm Ribbon', pitch: '2.54mm', current: '3A', href: '/contact' }
+    ]
   }
 ];
 ---
@@ -56,39 +66,41 @@ const assemblyTypes = [
         </p>
       </div>
 
-      <!-- Assembly Types Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {assemblyTypes.map(type => (
-          <a
-            href={type.href}
-            class="group block bg-bg-secondary border border-border overflow-hidden transition-all duration-300 hover:border-accent-cyan hover:-translate-y-1"
-          >
-            <div class="aspect-video overflow-hidden bg-bg-tertiary">
-              <img
-                src={type.image}
-                alt={type.title}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-3 group-hover:text-accent-cyan transition-colors">
-                {type.title}
-              </h3>
-              <p class="text-text-secondary text-sm mb-4">
-                {type.description}
-              </p>
-              <div class="flex flex-wrap gap-2">
-                {type.features.map(feature => (
-                  <span class="font-mono text-[0.6rem] px-2 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan uppercase">
-                    {feature}
+      <!-- Product Categories -->
+      {productCategories.map(category => (
+        <div class="mb-16">
+          <div class="mb-6">
+            <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-2">{category.title}</p>
+            <h2 class="text-2xl md:text-3xl font-bold tracking-tight">{category.title}</h2>
+            <p class="text-text-secondary">{category.description}</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {category.products.map(product => (
+              <a
+                href={product.href}
+                class="group block bg-bg-secondary border border-border p-6 transition-all duration-300 hover:border-accent-cyan hover:-translate-y-1"
+              >
+                <div class="flex justify-between items-start mb-3">
+                  <h3 class="text-lg font-bold group-hover:text-accent-cyan transition-colors">
+                    {product.name}
+                  </h3>
+                  <span class="font-mono text-xs text-accent-cyan bg-accent-cyan/10 px-2 py-1">
+                    {product.pitch}
                   </span>
-                ))}
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>
+                </div>
+                <p class="text-text-secondary text-sm mb-3">
+                  {product.current} rating
+                </p>
+                <div class="flex items-center text-accent-cyan font-mono text-sm">
+                  <span>View Details</span>
+                  <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
 
       <!-- Custom Assembly CTA -->
       <div class="mt-12 bg-bg-secondary border border-accent-amber/30 p-8 text-center">

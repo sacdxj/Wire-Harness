@@ -1,0 +1,131 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Products', href: '/products' },
+  { name: 'JST SH 1.0mm Pre-Crimped Leads', href: '/products/jst-sh-1-0mm-pre-crimped-leads' }
+];
+
+const specs = [
+  { label: 'Pitch', value: '1.0mm', highlight: true },
+  { label: 'Wire Gauge', value: 'AWG 32-28', highlight: false },
+  { label: 'Current Rating', value: '1A', highlight: true },
+  { label: 'Voltage Rating', value: '100V AC/DC', highlight: false },
+  { label: 'Contact Material', value: 'Tin-plated Copper Alloy', highlight: false },
+  { label: 'Housing Material', value: 'PA9T (UL94V-0)', highlight: false },
+  { label: 'Termination', value: 'Crimp', highlight: false },
+  { label: 'Operating Temp', value: '-40°C to +85°C', highlight: false }
+];
+---
+
+<MainLayout
+  title="JST SH 1.0mm Pre-Crimped Leads | Ultra-Fine Pitch Wire Assemblies"
+  description="Factory-direct JST SH 1.0mm compatible pre-crimped leads. AWG 32-28, 1A rating, ultra-compact for smartphones and wearables. 100% tested, 48h delivery."
+>
+  <Breadcrumb items={breadcrumbItems} />
+
+  <section class="px-4 py-12 bg-bg-secondary border-b border-border">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="aspect-square bg-bg-tertiary border border-border overflow-hidden mb-4">
+            <img
+              src="/images/products/ph-series-crimp-terminal.jpg"
+              alt="JST SH 1.0mm Pre-Crimped Lead Close-up"
+              class="w-full h-full object-cover"
+              loading="eager"
+            />
+          </div>
+        </div>
+
+        <div>
+          <p class="font-mono text-xs text-accent-amber uppercase tracking-widest mb-4">Pre-Crimped Leads</p>
+          <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+            JST SH 1.0mm Pre-Crimped Leads
+          </h1>
+          <p class="text-text-secondary mb-6">
+            Ultra-fine 1.0mm pitch pre-crimped wire assemblies compatible with JST SH series. Designed for compact electronics, smartphones, and wearables requiring minimal space.
+          </p>
+
+          <div class="flex flex-wrap gap-4 mb-8">
+            <div class="px-4 py-2 bg-accent-green/10 border border-accent-green/30">
+              <span class="font-mono text-xs text-accent-green">✓ 100% Tested</span>
+            </div>
+            <div class="px-4 py-2 bg-accent-green/10 border border-accent-green/30">
+              <span class="font-mono text-xs text-accent-green">✓ UL Certified</span>
+            </div>
+            <div class="px-4 py-2 bg-accent-green/10 border border-accent-green/30">
+              <span class="font-mono text-xs text-accent-green">✓ Custom Length</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="/contact" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
+              Request Quote
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-16">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-2xl font-bold mb-8">Technical Specifications</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {specs.map(spec => (
+          <div class={`p-6 border ${spec.highlight ? 'border-accent-cyan bg-accent-cyan/5' : 'border-border bg-bg-secondary'}`}>
+            <div class="font-mono text-xs text-text-muted uppercase tracking-wider mb-2">{spec.label}</div>
+            <div class={`text-2xl font-bold ${spec.highlight ? 'text-accent-cyan' : 'text-text-primary'}`}>{spec.value}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-16 bg-bg-secondary border-y border-border">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-2xl font-bold mb-8">Applications</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="border border-border p-6">
+          <h3 class="font-bold mb-3">Consumer Electronics</h3>
+          <ul class="space-y-2 text-sm text-text-secondary">
+            <li>• Smartphones</li>
+            <li>• Smartwatches</li>
+            <li>• Compact cameras</li>
+          </ul>
+        </div>
+        <div class="border border-border p-6">
+          <h3 class="font-bold mb-3">Wearables</h3>
+          <ul class="space-y-2 text-sm text-text-secondary">
+            <li>• Fitness trackers</li>
+            <li>• Health monitors</li>
+            <li>• AR/VR devices</li>
+          </ul>
+        </div>
+        <div class="border border-border p-6">
+          <h3 class="font-bold mb-3">Portable Devices</h3>
+          <ul class="space-y-2 text-sm text-text-secondary">
+            <li>• Audio devices</li>
+            <li>• Handheld GPS</li>
+            <li>• Compact modules</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-20 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Need Custom Configuration?</h2>
+      <p class="text-text-secondary mb-8">
+        Upload your assembly drawing or specifications. Our engineering team will provide pricing and lead time within 24 hours.
+      </p>
+      <a href="/contact" class="inline-block px-10 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
+        Upload Drawing for Quote
+      </a>
+    </div>
+  </section>
+</MainLayout>
