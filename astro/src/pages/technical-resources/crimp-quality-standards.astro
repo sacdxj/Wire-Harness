@@ -1,0 +1,231 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Technical Resources', href: '/technical-resources' },
+  { name: 'Crimp Quality Standards', href: '/technical-resources/crimp-quality-standards' }
+];
+
+const qualityParameters = [
+  { parameter: 'Crimp Height', description: 'Measured from top to bottom of crimped terminal', tolerance: '±0.02mm for fine pitch', method: 'Micrometer measurement' },
+  { parameter: 'Pull Test Force', description: 'Minimum force required to separate wire from terminal', tolerance: 'Per terminal specification', method: 'Tensile tester' },
+  { parameter: 'Crimp Width', description: 'Width of crimp barrel after crimping', tolerance: '±0.05mm typical', method: 'Caliper measurement' },
+  { parameter: 'Insulation Support', description: 'Insulation grip integrity', tolerance: 'No visible damage', method: 'Visual inspection' }
+];
+
+const pullTestValues = [
+  { awg: '32-28', minForce: '3N', typicalForce: '5-8N' },
+  { awg: '26-24', minForce: '8N', typicalForce: '12-20N' },
+  { awg: '22-20', minForce: '20N', typicalForce: '30-45N' },
+  { awg: '18-16', minForce: '45N', typicalForce: '60-80N' }
+];
+---
+
+<MainLayout
+  title="Crimp Quality Standards | Terminal Crimp Inspection Criteria"
+  description="Industry-standard crimp quality parameters, pull test requirements, and inspection criteria for precision terminal crimping in wire assemblies."
+>
+  <Breadcrumb items={breadcrumbItems} />
+
+  <section class="px-4 py-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12">
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-4">Quality Assurance</p>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Crimp Quality Standards</h1>
+        <p class="text-lg text-text-secondary max-w-3xl">
+          Industry-standard crimp quality parameters, inspection criteria, and testing methods for precision terminal wire assemblies.
+        </p>
+      </div>
+
+      <!-- Quality Overview -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="bg-bg-secondary border border-border p-6">
+          <div class="w-12 h-12 flex items-center justify-center bg-accent-green/10 border border-accent-green/30 mb-4">
+            <span class="text-2xl">✓</span>
+          </div>
+          <h3 class="font-bold mb-2">100% Testing</h3>
+          <p class="text-text-secondary text-sm">Every assembly undergoes continuity testing before shipment</p>
+        </div>
+
+        <div class="bg-bg-secondary border border-border p-6">
+          <div class="w-12 h-12 flex items-center justify-center bg-accent-green/10 border border-accent-green/30 mb-4">
+            <span class="text-2xl">🔬</span>
+          </div>
+          <h3 class="font-bold mb-2">Microscope Inspection</h3>
+          <p class="text-text-secondary text-sm">Fine-pitch crimps inspected at 20x magnification</p>
+        </div>
+
+        <div class="bg-bg-secondary border border-border p-6">
+          <div class="w-12 h-12 flex items-center justify-center bg-accent-green/10 border border-accent-green/30 mb-4">
+            <span class="text-2xl">📊</span>
+          </div>
+          <h3 class="font-bold mb-2">Statistical Control</h3>
+          <p class="text-text-secondary text-sm">SPC monitoring for process consistency and zero defects</p>
+        </div>
+      </div>
+
+      <!-- Crimp Parameters -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">Critical Quality Parameters</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {qualityParameters.map(param => (
+            <div class="bg-bg-secondary border border-border p-6">
+              <h3 class="font-mono text-sm font-bold text-accent-cyan uppercase tracking-wider mb-3">{param.parameter}</h3>
+              <p class="text-text-secondary text-sm mb-3">{param.description}</p>
+              <div class="grid grid-cols-2 gap-3 text-xs">
+                <div>
+                  <span class="text-text-muted">Tolerance:</span>
+                  <span class="font-mono text-accent-amber ml-1">{param.tolerance}</span>
+                </div>
+                <div>
+                  <span class="text-text-muted">Method:</span>
+                  <span class="font-mono text-accent-cyan ml-1">{param.method}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Pull Test Requirements -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">Pull Test Requirements</h2>
+        <p class="text-text-secondary mb-6">
+          Minimum pull test forces ensure secure wire-to-terminal connection. Values per IPC/WHMA-A-620 and terminal manufacturer specifications.
+        </p>
+        <div class="overflow-x-auto">
+          <table class="w-full bg-bg-secondary border border-border">
+            <thead>
+              <tr class="border-b border-border">
+                <th class="px-4 py-3 text-left font-mono text-xs text-accent-cyan uppercase tracking-wider">AWG Range</th>
+                <th class="px-4 py-3 text-left font-mono text-xs text-accent-cyan uppercase tracking-wider">Minimum Force</th>
+                <th class="px-4 py-3 text-left font-mono text-xs text-accent-cyan uppercase tracking-wider">Typical Force</th>
+                <th class="px-4 py-3 text-left font-mono text-xs text-accent-cyan uppercase tracking-wider">Test Method</th>
+              </tr>
+            </thead>
+            <tbody>
+              {pullTestValues.map(test => (
+                <tr class="border-b border-border hover:bg-bg-tertiary">
+                  <td class="px-4 py-3 font-mono font-bold">AWG {test.awg}</td>
+                  <td class="px-4 py-3">
+                    <span class="font-mono text-accent-amber">{test.minForce}</span>
+                    <span class="text-text-muted text-xs ml-1">(min)</span>
+                  </td>
+                  <td class="px-4 py-3">
+                    <span class="font-mono text-accent-green">{test.typicalForce}</span>
+                    <span class="text-text-muted text-xs ml-1">(typical)</span>
+                  </td>
+                  <td class="px-4 py-3 text-sm text-text-secondary">Tensile pull at 25-50mm/min</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Visual Inspection Criteria -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">Visual Inspection Criteria</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-mono text-sm font-bold text-accent-green uppercase tracking-wider mb-4">✓ Acceptable</h3>
+            <ul class="space-y-3 text-sm">
+              <li class="flex items-start gap-2">
+                <span class="text-accent-green">●</span>
+                <span> symmetrical crimp, centered on wire</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent-green">●</span>
+                <span>Brush or cut strands minimal (≤10%)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent-green">●</span>
+                <span>Insulation gripped without damage</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent-green">●</span>
+                <span>No terminal cracks or deformation</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent-green">●</span>
+                <span>Proper wire insertion depth</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent-green">●</span>
+                <span>Crimp bell closed properly</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-mono text-sm font-bold text-accent-amber uppercase tracking-wider mb-4">✗ Defective</h3>
+            <ul class="space-y-3 text-sm">
+              <li class="flex items-start gap-2">
+                <span class="text-accent-amber">●</span>
+                <span>Open crimp barrel</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent-amber">●</span>
+                <span>Excessive brush or cut strands</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent-amber">●</span>
+                <span>Insulation cut or pierced</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent-amber">●</span>
+                <span>Terminal bent or cracked</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent-amber">●</span>
+                <span>Wire not fully inserted</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent-amber">●</span>
+                <span>Wrong terminal size for wire gauge</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Industry Standards -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">Industry Standards Reference</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-2">IPC/WHMA-A-620</h3>
+            <p class="text-text-secondary text-sm">
+              Requirements and Acceptance for Cable and Wire Harness Assemblies
+            </p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-2">UL 486E</h3>
+            <p class="text-text-secondary text-sm">
+              Standard for Safety Wire Connectors
+            </p>
+          </div>
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-bold mb-2">ISO 9001:2015</h3>
+            <p class="text-text-secondary text-sm">
+              Quality management system certification
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-bg-secondary border border-accent-cyan/30 p-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">Quality Assurance Guarantee</h2>
+        <p class="text-text-secondary mb-6 max-w-2xl mx-auto">
+          Every terminal wire assembly is 100% tested for continuity. We provide Certificate of Conformance and full traceability on request.
+        </p>
+        <a href="/contact" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
+          Request Quality Documentation
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

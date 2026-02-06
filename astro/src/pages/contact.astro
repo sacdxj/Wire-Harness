@@ -9,8 +9,8 @@ const breadcrumbItems = [
 ---
 
 <MainLayout
-  title="Contact Us | Request a Wire Harness Quote"
-  description="Get a custom wire harness quote within 24 hours. Share your specifications, connector requirements, and project details with our engineering team."
+  title="Request Terminal Wire Assembly Quote | Upload Drawings"
+  description="Get a custom terminal wire assembly quote within 24 hours. Upload your drawings, specifications, and connector requirements for rapid prototyping and volume production."
 >
   <Breadcrumb items={breadcrumbItems} />
 
@@ -20,17 +20,17 @@ const breadcrumbItems = [
       <div class="mb-12 rounded-lg overflow-hidden border border-border">
         <img
           src="/images/contact/customer-service.jpg"
-          alt="Customer Service Team"
+          alt="Engineering Support Team"
           class="w-full h-64 object-cover"
           loading="lazy"
         />
       </div>
 
       <div class="text-center mb-12">
-        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-4">Get in Touch</p>
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Request a Quote</h1>
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-4">Get a Quote</p>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Upload Your Assembly Drawing</h1>
         <p class="text-lg text-text-secondary">
-          Fill out the form below and our engineering team will respond within 24 hours with a detailed proposal.
+          Share your terminal wire assembly specifications. Our engineering team will respond within 24 hours with pricing and lead time.
         </p>
       </div>
 
@@ -143,18 +143,25 @@ const breadcrumbItems = [
             </div>
 
             <div class="mb-6">
-              <label for="files" class="block font-mono text-xs text-text-muted uppercase tracking-wider mb-2">
-                Attach Drawings or Specifications (Optional)
+              <label for="files" class="block font-mono text-xs text-accent-amber uppercase tracking-wider mb-2">
+                📎 Upload Assembly Drawing (PDF, DXF, STEP)
               </label>
-              <input
-                type="file"
-                id="files"
-                name="files"
-                multiple
-                accept=".pdf,.dxf,.dwg,.step,.stp,.iges,.igs"
-                class="w-full px-4 py-3 bg-bg-tertiary border border-border text-text-muted file:mr-4 file:py-2 file:px-4 file:rounded-none file:border-0 file:text-sm file:font-mono file:bg-bg-secondary file:text-accent-cyan hover:file:bg-accent-cyan/10 cursor-pointer"
-              />
-              <p class="font-mono text-xs text-text-muted mt-2">Accepted formats: PDF, DXF, DWG, STEP, IGES</p>
+              <div class="border-2 border-dashed border-border hover:border-accent-cyan/50 transition-colors p-6 text-center bg-bg-tertiary">
+                <input
+                  type="file"
+                  id="files"
+                  name="files"
+                  multiple
+                  accept=".pdf,.dxf,.dwg,.step,.stp,.iges,.igs,.jpg,.png"
+                  class="w-full text-text-muted file:mr-4 file:py-2 file:px-4 file:rounded-none file:border-0 file:text-sm file:font-mono file:bg-bg-secondary file:text-accent-cyan hover:file:bg-accent-cyan/10 cursor-pointer"
+                />
+                <p class="font-mono text-xs text-text-muted mt-3">
+                  Drag & drop or click to upload
+                </p>
+                <p class="font-mono text-xs text-text-muted mt-1">
+                  Accepted: PDF, DXF, DWG, STEP, IGES, JPG, PNG
+                </p>
+              </div>
             </div>
 
             <button

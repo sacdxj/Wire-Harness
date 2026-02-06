@@ -1,0 +1,106 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Technical Resources', href: '/technical-resources' }
+];
+
+const resources = [
+  {
+    title: 'Wire Gauge Chart',
+    description: 'Complete AWG wire gauge reference with current ratings, cross-sectional area, and application guidelines for terminal wire assemblies.',
+    href: '/technical-resources/wire-gauge-chart',
+    category: 'Reference'
+  },
+  {
+    title: 'Crimp Quality Standards',
+    description: 'Industry-standard crimp quality parameters, pull test requirements, and inspection criteria for precision terminal crimping.',
+    href: '/technical-resources/crimp-quality-standards',
+    category: 'Quality'
+  },
+  {
+    title: 'Connector Compatibility Guide',
+    description: 'Cross-reference guide for JST, Molex, TE connectors. Pin-by-pin compatibility verification and alternative recommendations.',
+    href: '/compatibility',
+    category: 'Compatibility'
+  }
+];
+---
+
+<MainLayout
+  title="Technical Resources | Terminal Wire Assembly Reference Guides"
+  description="Engineering reference guides for terminal wire assemblies. Wire gauge charts, crimp quality standards, connector compatibility guides, and best practices."
+>
+  <Breadcrumb items={breadcrumbItems} />
+
+  <section class="px-4 py-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12">
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-4">Knowledge Base</p>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Technical Resources</h1>
+        <p class="text-lg text-text-secondary max-w-3xl">
+          Engineering reference guides and technical documentation for terminal wire assembly design, manufacturing, and quality assurance.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {resources.map(resource => (
+          <a
+            href={resource.href}
+            class="group block bg-bg-secondary border border-border p-8 transition-all duration-300 hover:border-accent-cyan hover:-translate-y-1"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-xs text-accent-amber uppercase tracking-wider px-2 py-1 bg-accent-amber/10 border border-accent-amber/30">
+                {resource.category}
+              </span>
+              <span class="text-accent-cyan group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 group-hover:text-accent-cyan transition-colors">
+              {resource.title}
+            </h3>
+            <p class="text-text-secondary text-sm">
+              {resource.description}
+            </p>
+          </a>
+        ))}
+      </div>
+
+      <!-- Quick Reference Cards -->
+      <div class="mt-20">
+        <h2 class="text-2xl font-bold mb-8">Quick Reference</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-mono text-sm font-bold text-accent-cyan uppercase tracking-wider mb-3">Pitch Range</h3>
+            <div class="text-3xl font-bold mb-2">0.8mm - 2.54mm</div>
+            <p class="text-text-secondary text-sm">Micro-pitch to standard pitch connector compatibility</p>
+          </div>
+
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-mono text-sm font-bold text-accent-cyan uppercase tracking-wider mb-3">Wire Gauge</h3>
+            <div class="text-3xl font-bold mb-2">AWG 32-14</div>
+            <p class="text-text-secondary text-sm">UL-certified wire range for crimp termination</p>
+          </div>
+
+          <div class="bg-bg-secondary border border-border p-6">
+            <h3 class="font-mono text-sm font-bold text-accent-cyan uppercase tracking-wider mb-3">Test Coverage</h3>
+            <div class="text-3xl font-bold mb-2">100%</div>
+            <p class="text-text-secondary text-sm">Continuity testing on every assembly</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-20 text-center bg-bg-secondary border border-border p-12">
+        <h2 class="text-2xl font-bold mb-4">Need Technical Support?</h2>
+        <p class="text-text-secondary mb-8 max-w-2xl mx-auto">
+          Our engineering team is available to help with design guidance, material selection, and process optimization for your terminal wire assembly project.
+        </p>
+        <a href="/contact" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
+          Contact Engineering Team
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
