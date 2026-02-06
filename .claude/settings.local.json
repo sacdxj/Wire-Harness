@@ -20,7 +20,8 @@
       "Bash(ping:*)",
       "Bash(python:*)",
       "Skill(gemini-image-skill-main)",
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "Bash(tree:*)"
     ]
   }
 }

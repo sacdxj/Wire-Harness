@@ -5,35 +5,51 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 const compatibilities = [
   {
     title: 'JST Compatible Connectors',
-    description: 'Full range of JST-compatible terminal wire assemblies. PH, XH, EH, VH, ZH series equivalents with 30-50% cost savings.',
+    description: 'Full range of JST-compatible terminal wire assemblies. PH, XH, EH, VH, ZH, SH, GH series equivalents with 30-50% cost savings.',
     href: '/compatibility/jst-compatible',
-    series: ['PH', 'XH', 'EH', 'VH', 'ZH'],
-    specs: '2.0mm - 3.96mm Pitch',
+    series: ['PH', 'XH', 'EH', 'VH', 'ZH', 'SH', 'GH'],
+    specs: '1.0mm - 3.96mm Pitch',
     image: '/images/compatibility/jst-series-overview.jpg'
   },
   {
-    title: 'JST PH Cable Assembly',
-    description: '2.0mm pitch ultra-compact wire-to-board connectors for high-density applications in smartphones, tablets, and wearables.',
-    href: '/compatibility/jst-ph-cable-assembly',
-    series: ['PH'],
-    specs: '2.0mm Pitch | 100V 2A',
-    icon: '⚡'
-  },
-  {
-    title: 'JST XH Cable Assembly',
-    description: '2.5mm pitch positive locking connectors for secure power delivery in industrial controls and LED lighting applications.',
-    href: '/compatibility/jst-xh-cable-assembly',
-    series: ['XH'],
-    specs: '2.5mm Pitch | 250V 3A',
-    icon: '🔒'
-  },
-  {
     title: 'Molex Compatible Connectors',
-    description: 'Molex-equivalent connector systems including PicoBlade, Micro-Latch, and other popular series at competitive prices.',
+    description: 'Molex-equivalent connector systems including PicoBlade, Micro-Fit, Micro-Latch, and KK series at competitive prices.',
     href: '/compatibility/molex-compatible',
-    series: ['PicoBlade', 'Micro-Latch', 'KK'],
+    series: ['PicoBlade', 'Micro-Fit', 'Micro-Latch', 'KK'],
     specs: '1.25mm - 4.2mm Pitch',
     image: '/images/compatibility/molex-series.jpg'
+  },
+  {
+    title: 'TE Connectivity Compatible',
+    description: 'TE/AMP compatible connectors including Econoseal, AMP MCP, and other widely used industrial series.',
+    href: '/compatibility/te-compatible',
+    series: ['Econoseal', 'AMP MCP', 'Modular'],
+    specs: '2.54mm - 6.35mm Pitch',
+    image: '/images/compatibility/jst-series-overview.jpg'
+  },
+  {
+    title: 'DuPont 2.54mm Compatible',
+    description: 'Standard 2.54mm (0.100") pitch connectors compatible with DuPont/Kelvin headers. Widely used in prototyping and development.',
+    href: '/compatibility/dupont-compatible',
+    series: ['2.54mm Standard', '1.27mm Mini'],
+    specs: '2.54mm / 1.27mm Pitch',
+    icon: '📌'
+  },
+  {
+    title: 'JAE Compatible Connectors',
+    description: 'JAE-equivalent wire-to-board connectors including MX, SF, and other popular series in consumer electronics.',
+    href: '/compatibility/jae-compatible',
+    series: ['MX', 'SF', 'LE'],
+    specs: '1.25mm - 2.5mm Pitch',
+    icon: '🔧'
+  },
+  {
+    title: 'Hirose Compatible Connectors',
+    description: 'Hirose-compatible DF series and other popular connector families for automotive and industrial applications.',
+    href: '/compatibility/hirose-compatible',
+    series: ['DF', 'FH', 'ZH'],
+    specs: '1.5mm - 2.5mm Pitch',
+    icon: '⚙️'
   }
 ];
 
@@ -44,8 +60,8 @@ const breadcrumbItems = [
 ---
 
 <MainLayout
-  title="Connector Compatibility Guide | JST & Molex Alternatives"
-  description="JST and Molex compatible wire harness assemblies at factory-direct prices. PH, XH, EH, VH series equivalents. Same quality, 30-50% lower cost."
+  title="Connector Compatibility Guide | JST, Molex, TE, DuPont, JAE, Hirose"
+  description="Factory-direct compatible wire assemblies for JST, Molex, TE, DuPont, JAE, Hirose. PH, XH, EH, VH, PicoBlade, Econoseal, 2.54mm series. Same quality, 30-50% lower cost."
 >
   <Breadcrumb items={breadcrumbItems} />
 
@@ -55,7 +71,7 @@ const breadcrumbItems = [
         <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-4">Connector Compatibility</p>
         <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Compatible Connector Systems</h1>
         <p class="text-lg text-text-secondary max-w-3xl mx-auto">
-          Full range of JST and Molex-compatible terminal wire assemblies offering the same quality and reliability at significantly lower cost.
+          Full range of compatible terminal wire assemblies for JST, Molex, TE, DuPont, JAE, and Hirose. Same quality and reliability at significantly lower cost.
         </p>
       </div>
 
@@ -162,7 +178,7 @@ const breadcrumbItems = [
       <section class="bg-bg-secondary border border-accent-cyan p-8 text-center">
         <h2 class="text-2xl font-bold mb-4">Need a Cross-Reference?</h2>
         <p class="text-text-secondary mb-6 max-w-2xl mx-auto">
-          Share your JST or Molex part numbers and we'll provide compatible alternatives with competitive pricing within 24 hours.
+          Share your JST, Molex, TE, DuPont, JAE, or Hirose part numbers and we'll provide compatible alternatives with competitive pricing within 24 hours.
         </p>
         <a href="/contact" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
           Request Cross-Reference Quote
