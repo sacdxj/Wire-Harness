@@ -1,0 +1,93 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Compatibility', href: '/compatibility' },
+  { name: 'DuPont Compatible', href: '/compatibility/dupont-compatible' }
+];
+---
+
+<MainLayout
+  title="DuPont 2.54mm Compatible Connectors"
+  description="Factory-direct DuPont 2.54mm compatible pre-crimped leads and wire assemblies for prototyping and development."
+>
+  <Breadcrumb items={breadcrumbItems} />
+
+  <section class="px-4 py-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-4">Connector Compatibility</p>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">DuPont 2.54mm Compatible Connectors</h1>
+        <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+          Standard 2.54mm pitch connectors compatible with DuPont headers for Arduino, Raspberry Pi and development boards.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-bg-secondary border border-border p-8">
+          <h2 class="text-xl font-bold mb-4">Technical Specifications</h2>
+          <div class="space-y-3">
+            <div class="flex justify-between border-b border-border pb-2">
+              <span class="text-text-muted">Pitch</span>
+              <span class="font-mono font-bold">2.54mm</span>
+            </div>
+            <div class="flex justify-between border-b border-border pb-2">
+              <span class="text-text-muted">Current Rating</span>
+              <span class="font-mono font-bold">1-3A</span>
+            </div>
+            <div class="flex justify-between border-b border-border pb-2">
+              <span class="text-text-muted">Voltage Rating</span>
+              <span class="font-mono font-bold">250V AC/DC</span>
+            </div>
+            <div class="flex justify-between border-b border-border pb-2">
+              <span class="text-text-muted">Wire Gauge</span>
+              <span class="font-mono font-bold">AWG 28-22</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-text-muted">Contact Material</span>
+              <span class="font-mono font-bold">Tin-plated Brass</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-bg-secondary border border-border p-8">
+          <h2 class="text-xl font-bold mb-4">Applications</h2>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="text-accent-cyan">▸</span>
+              <span>Arduino and microcontroller projects</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-accent-cyan">▸</span>
+              <span>Raspberry Pi header connections</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-accent-cyan">▸</span>
+              <span>Development board interfacing</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-accent-cyan">▸</span>
+              <span>Breadboard connections</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-accent-cyan">▸</span>
+              <span>DIY electronics projects</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <section class="text-center">
+        <h2 class="text-2xl font-bold mb-4">Need Custom DuPont Assembly?</h2>
+        <p class="text-text-secondary mb-6 max-w-2xl mx-auto">
+          Specify your pin count and wire length for competitive pricing within 24 hours.
+        </p>
+        <a href="/contact" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
+          Request Quote
+        </a>
+      </section>
+    </div>
+  </section>
+</MainLayout>

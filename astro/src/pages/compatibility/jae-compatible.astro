@@ -1,0 +1,112 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Compatibility', href: '/compatibility' },
+  { name: 'JAE Compatible', href: '/compatibility/jae-compatible' }
+];
+---
+
+<MainLayout
+  title="JAE Compatible Connectors | MX, SF, LE Wire Assemblies"
+  description="Factory-direct JAE compatible wire assemblies. MX, SF, LE series equivalents for consumer electronics and automotive applications. 30-50% cost savings."
+>
+  <Breadcrumb items={breadcrumbItems} />
+
+  <section class="px-4 py-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-4">Connector Compatibility</p>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">JAE Compatible Connectors</h1>
+        <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+          JAE-equivalent wire-to-board connectors including MX, SF, and other popular series. High-quality alternatives for consumer electronics and automotive applications.
+        </p>
+      </div>
+
+      <!-- Series Overview -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-bg-secondary border border-border p-8">
+          <h2 class="text-xl font-bold mb-4">MX Series Compatible</h2>
+          <p class="text-text-secondary mb-4">1.25mm pitch wire-to-board connectors for compact consumer electronics.</p>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between">
+              <span class="text-text-muted">Pitch</span>
+              <span class="font-mono">1.25mm</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-text-muted">Current</span>
+              <span class="font-mono">1A</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-text-muted">Voltage</span>
+              <span class="font-mono">100V AC/DC</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-bg-secondary border border-border p-8">
+          <h2 class="text-xl font-bold mb-4">SF/LE Series Compatible</h2>
+          <p class="text-text-secondary mb-4">2.5mm pitch connectors for power and signal applications.</p>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between">
+              <span class="text-text-muted">Pitch</span>
+              <span class="font-mono">2.5mm</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-text-muted">Current</span>
+              <span class="font-mono">3A</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-text-muted">Voltage</span>
+              <span class="font-mono">250V AC/DC</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Applications -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">Applications</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="border border-border p-6">
+            <h3 class="font-bold mb-3">Consumer Electronics</h3>
+            <ul class="space-y-2 text-sm text-text-secondary">
+              <li>• Digital cameras</li>
+              <li>• Portable audio</li>
+              <li>• Gaming devices</li>
+            </ul>
+          </div>
+          <div class="border border-border p-6">
+            <h3 class="font-bold mb-3">Automotive</h3>
+            <ul class="space-y-2 text-sm text-text-secondary">
+              <li>• Dashboard modules</li>
+              <li>• Sensor connections</li>
+              <li>• Interior lighting</li>
+            </ul>
+          </div>
+          <div class="border border-border p-6">
+            <h3 class="font-bold mb-3">Industrial</h3>
+            <ul class="space-y-2 text-sm text-text-secondary">
+              <li>• Control panels</li>
+              <li>• Compact equipment</li>
+              <li>• Sensor interfaces</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <section class="text-center">
+        <h2 class="text-2xl font-bold mb-4">Need JAE Compatible Assemblies?</h2>
+        <p class="text-text-secondary mb-6 max-w-2xl mx-auto">
+          Share your JAE part numbers and we'll provide compatible alternatives with competitive pricing.
+        </p>
+        <a href="/contact" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
+          Request Quote
+        </a>
+      </section>
+    </div>
+  </section>
+</MainLayout>
