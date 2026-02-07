@@ -5,7 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Products', href: '/products' },
-  { name: 'DuPont Terminal Wire Assembly', href: '/products/dupont-terminal-wire-assembly' }
+  { name: 'DuPont Compatible Cable Assembly', href: '/products/dupont-terminal-wire-assembly' }
 ];
 
 // DuPont Technical Data
@@ -77,8 +77,8 @@ const customSpecs = [
 ---
 
 <MainLayout
-  title="DuPont Wire Assembly | 2.54mm Pre-Crimped Leads & Custom Cable Assembly"
-  description="Factory-direct DuPont 2.54mm compatible wire assemblies. Pre-crimped leads, male-to-female cables, custom pin configurations. AWG 28-22, UL certified, 100% tested. Arduino/Raspberry Pi compatible."
+  title="DuPont Compatible Cable Assembly | 2.54mm Pre-Crimped Wire Harness"
+  description="Factory-direct DuPont 2.54mm compatible cable assemblies. Pre-crimped leads, custom wire harness configurations. AWG 28-22, UL certified, 100% tested. Arduino, Raspberry Pi compatible."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -139,6 +139,15 @@ const customSpecs = [
             Pre-crimped leads, male-to-female cables, and custom pin configurations for prototyping,
             development boards, and production applications. UL-certified wire, 100% electrical testing.
           </p>
+
+          <!-- Disclaimer -->
+          <div class="mb-8 p-4 bg-accent-amber/10 border border-accent-amber/30">
+            <p class="font-mono text-xs text-accent-amber">
+              <strong>Disclaimer:</strong> These are DuPont-compatible connector cable assemblies manufactured by Trycay.
+              We are not affiliated with DuPont. All assemblies are produced to meet 2.54mm standard specifications
+              and are fully compatible with DuPont connectors.
+            </p>
+          </div>
 
           <div class="flex flex-wrap gap-3 mb-8">
             <div class="px-4 py-2 bg-accent-green/10 border border-accent-green/30">

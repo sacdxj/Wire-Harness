@@ -5,7 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Products', href: '/products' },
-  { name: 'Molex Wire-to-Board Assembly', href: '/products/molex-wire-to-board-assembly' }
+  { name: 'Molex Compatible Cable Assembly', href: '/products/molex-wire-to-board-assembly' }
 ];
 
 // Molex Series Technical Data
@@ -94,8 +94,8 @@ const customSpecs = [
 ---
 
 <MainLayout
-  title="Molex Wire-to-Board Assembly | KK Micro-Fit Mini-Fit PicoBlade Custom Cable Assembly"
-  description="Factory-direct Molex compatible wire-to-board assemblies. KK 254 (2.54mm), Micro-Fit 3.0, Mini-Fit Jr. (4.2mm), PicoBlade (1.25mm). Custom wire gauge, length, pin count. UL certified, 100% tested."
+  title="Molex Compatible Cable Assembly | KK Micro-Fit Mini-Fit PicoBlade Wire Harness"
+  description="Factory-direct Molex compatible cable assemblies. KK 254 (2.54mm), Micro-Fit 3.0, Mini-Fit Jr. (4.2mm), PicoBlade (1.25mm). Custom wire gauge, length, pin count. UL certified, 100% tested."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -156,6 +156,15 @@ const customSpecs = [
             Support for KK 254, Micro-Fit 3.0, Mini-Fit Jr., PicoBlade, and other series with pitch range 1.25mm to 4.45mm.
             UL-certified wire, 100% electrical testing, and ISO-compliant quality control.
           </p>
+
+          <!-- Disclaimer -->
+          <div class="mb-8 p-4 bg-accent-amber/10 border border-accent-amber/30">
+            <p class="font-mono text-xs text-accent-amber">
+              <strong>Disclaimer:</strong> These are Molex-compatible connector cable assemblies manufactured by Trycay.
+              We are not affiliated with Molex LLC. All assemblies are produced to meet Molex series specifications
+              and are fully compatible with Molex connectors.
+            </p>
+          </div>
 
           <div class="flex flex-wrap gap-3 mb-8">
             <div class="px-4 py-2 bg-accent-green/10 border border-accent-green/30">

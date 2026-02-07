@@ -5,7 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Products', href: '/products' },
-  { name: 'JST Terminal Wire Assembly', href: '/products/jst-terminal-wire-assembly' }
+  { name: 'JST Compatible Cable Assembly', href: '/products/jst-terminal-wire-assembly' }
 ];
 
 // JST Series Technical Data
@@ -94,8 +94,8 @@ const customSpecs = [
 ---
 
 <MainLayout
-  title="JST Terminal Wire Assembly | PH XH SH GH VH Series Custom Cable Assembly"
-  description="Factory-direct JST compatible terminal wire assemblies. PH (2.0mm), XH (2.5mm), SH (1.0mm), GH (1.25mm), VH (3.96mm), EH series. Custom wire gauge, length, pin count. UL certified wire, 100% tested."
+  title="JST Compatible Cable Assembly | PH XH SH GH VH Series Wire Harness Manufacturer"
+  description="Factory-direct JST compatible cable assemblies. PH (2.0mm), XH (2.5mm), SH (1.0mm), GH (1.25mm), VH (3.96mm), EH series connector cable assemblies. Custom wire gauge, length, pin count. UL certified, 100% tested."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -156,6 +156,15 @@ const customSpecs = [
             Support for PH, XH, SH, GH, VH, and EH series connectors with pitch range 1.0mm to 3.96mm.
             UL-certified wire, 100% electrical testing, and ISO-compliant quality control.
           </p>
+
+          <!-- Disclaimer -->
+          <div class="mb-8 p-4 bg-accent-amber/10 border border-accent-amber/30">
+            <p class="font-mono text-xs text-accent-amber">
+              <strong>Disclaimer:</strong> These are JST-compatible connector cable assemblies manufactured by Trycay.
+              We are not affiliated with JST (Japan Solderless Terminals). All assemblies are produced to meet
+              JST series specifications and are fully compatible with JST connectors.
+            </p>
+          </div>
 
           <div class="flex flex-wrap gap-3 mb-8">
             <div class="px-4 py-2 bg-accent-green/10 border border-accent-green/30">
