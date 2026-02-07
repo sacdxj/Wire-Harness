@@ -1,0 +1,182 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Wire to Board Cable Assembly', href: '/wire-to-board-cable-assembly' }
+];
+
+const connectorSeries = [
+  { brand: 'JST Compatible', series: 'PH, XH, VH, EH', pitch: '2.0-3.96mm', current: '2-7A' },
+  { brand: 'Molex Compatible', series: 'KK 254, Micro-Fit 3.0, Mini-Fit', pitch: '2.54-4.2mm', current: '3-9A' },
+  { brand: 'DuPont Compatible', series: '2.54mm standard', pitch: '2.54mm', current: '3A' },
+  { brand: 'Custom Headers', series: 'Pin headers, Box headers', pitch: 'Custom', current: 'Spec' }
+];
+
+const wireOptions = [
+  { type: 'UL1007', awg: '28-20', temp: '80°C', voltage: '300V' },
+  { type: 'UL1015', awg: '26-16', temp: '105°C', voltage: '600V' },
+  { type: 'Silicone', awg: '26-14', temp: '150°C', voltage: '600V' },
+  { type: 'XLPE', awg: '22-14', temp: '105°C', voltage: '600V' }
+];
+
+const applications = [
+  'PCB power supply connections',
+  'LED driver to LED strip wiring',
+  'Battery to board interconnects',
+  'Industrial control panel wiring',
+  'Sensor to controller connections',
+  'Power distribution units'
+];
+---
+
+<MainLayout
+  title="Wire to Board Cable Assembly | Custom Wire-to-Board Connector Manufacturer"
+  description="Factory-direct wire-to-board cable assemblies. Custom JST, Molex, DuPont compatible wire-to-board connectors. PCB mounting, header-to-wire assemblies. UL certified, 100% tested."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Wire to Board Cable Assembly",
+    "description": "Custom wire-to-board cable assemblies for PCB connections",
+    "brand": { "@type": "Brand", "name": "Trycay" },
+    "manufacturer": { "@type": "Organization", "name": "Trycay" }
+  })} />
+
+  <Breadcrumb items={breadcrumbItems} />
+
+  <!-- Hero Section -->
+  <section class="px-4 py-16 bg-bg-secondary border-b border-border">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-4">Wire-to-Board Assembly</p>
+          <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+            Wire to Board Cable Assembly
+          </h1>
+          <p class="text-lg text-text-secondary mb-8">
+            Custom wire-to-board cable assemblies manufactured to your specifications.
+            PCB connectors with pre-crimped wires for board mounting applications.
+            Support for JST, Molex, DuPont compatible series and custom headers.
+            UL-certified wire, 100% electrical testing.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="/contact" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
+              Upload Drawing for Quote
+            </a>
+            <a href="/oem-wire-cable-assembly-manufacturer" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-accent-cyan border border-accent-cyan hover:bg-accent-cyan/10 transition-all duration-300">
+              OEM Services
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-bg-tertiary border border-border p-8">
+          <h2 class="font-mono text-lg font-bold text-accent-cyan mb-6">Connector Series</h2>
+          <div class="space-y-3">
+            {connectorSeries.map(conn => (
+              <div class="border border-border p-3">
+                <div class="font-bold text-accent-cyan text-sm">{conn.brand}</div>
+                <div class="text-xs text-text-secondary">{conn.series}</div>
+                <div class="font-mono text-xs text-text-muted mt-1">{conn.pitch} | {conn.current}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Applications -->
+  <section class="px-4 py-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12">
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-3">Applications</p>
+        <h2 class="text-3xl font-bold tracking-tight">Typical Use Cases</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {applications.map(app => (
+          <div class="border border-border p-6">
+            <div class="flex items-start gap-3">
+              <span class="text-accent-cyan">▸</span>
+              <span class="text-text-secondary">{app}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Wire Options -->
+  <section class="px-4 py-16 bg-bg-secondary border-y border-border">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold tracking-tight">Wire Specifications</h2>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="border-b-2 border-border">
+              <th class="px-4 py-4 text-left font-mono text-sm text-accent-cyan uppercase">Wire Type</th>
+              <th class="px-4 py-4 text-left font-mono text-sm text-accent-cyan uppercase">AWG Range</th>
+              <th class="px-4 py-4 text-left font-mono text-sm text-accent-cyan uppercase">Temp Rating</th>
+              <th class="px-4 py-4 text-left font-mono text-sm text-accent-cyan uppercase">Voltage</th>
+            </tr>
+          </thead>
+          <tbody>
+            {wireOptions.map(wire => (
+              <tr class="border-b border-border hover:bg-bg-tertiary">
+                <td class="px-4 py-4 font-mono font-bold">{wire.type}</td>
+                <td class="px-4 py-4 font-mono">AWG {wire.awg}</td>
+                <td class="px-4 py-4 font-mono text-accent-cyan">{wire.temp}</td>
+                <td class="px-4 py-4 font-mono">{wire.voltage}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-4 py-20 bg-bg-secondary border-y border-accent-cyan text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Request Wire-to-Board Assembly Quote</h2>
+      <p class="text-lg text-text-secondary mb-8">
+        Upload your PCB assembly drawing or specifications.
+      </p>
+      <a href="/contact" class="inline-block px-10 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
+        Upload Drawing for Quote
+      </a>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="px-4 py-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold tracking-tight">Related Assembly Types</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="/pre-crimped-wire-assembly" class="group block bg-bg-secondary border border-border p-6 hover:border-accent-cyan transition-all">
+          <h3 class="font-bold mb-2 group-hover:text-accent-cyan">Pre-Crimped Wire Assembly</h3>
+          <p class="text-text-secondary text-sm">Wire leads with crimped terminals</p>
+        </a>
+
+        <a href="/wire-to-wire-cable-assembly" class="group block bg-bg-secondary border border-border p-6 hover:border-accent-cyan transition-all">
+          <h3 class="font-bold mb-2 group-hover:text-accent-cyan">Wire-to-Wire Cable Assembly</h3>
+          <p class="text-text-secondary text-sm">Male-to-female cable assemblies</p>
+        </a>
+
+        <a href="/oem-wire-cable-assembly-manufacturer" class="group block bg-bg-secondary border border-border p-6 hover:border-accent-cyan transition-all">
+          <h3 class="font-bold mb-2 group-hover:text-accent-cyan">OEM Manufacturing</h3>
+          <p class="text-text-secondary text-sm">B2B OEM services</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
