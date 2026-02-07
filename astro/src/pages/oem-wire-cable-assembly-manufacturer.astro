@@ -1,0 +1,432 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', href: '/' },
+  { name: 'OEM Wire Cable Assembly Manufacturer', href: '/oem-wire-cable-assembly-manufacturer' }
+];
+
+const capabilities = [
+  {
+    icon: '🏭',
+    title: 'OEM Manufacturing',
+    description: 'Direct factory production for B2B clients. No middlemen, factory-direct pricing.'
+  },
+  {
+    icon: '⚙️',
+    title: 'Custom Engineering',
+    description: 'Full custom specifications: wire gauge, length, connectors, shielding, and assembly configuration.'
+  },
+  {
+    icon: '📋',
+    title: 'Quality Control',
+    description: 'ISO 9001:2015 compliant. 100% electrical testing, visual inspection, and dimensional verification.'
+  },
+  {
+    icon: '📦',
+    title: 'Flexible Production',
+    description: 'Prototype quantities (100 pcs) to mass production (100K+ units). Scalable to your needs.'
+  }
+];
+
+const industries = [
+  'Consumer Electronics',
+  'Industrial Automation',
+  'LED Lighting',
+  'Automotive Components',
+  'Medical Devices',
+  'Telecommunications',
+  'Power Systems',
+  'IoT & Smart Devices'
+];
+
+const certifications = [
+  { name: 'ISO 9001:2015', desc: 'Quality Management System' },
+  { name: 'UL Certified', desc: 'Wire and Component Safety' },
+  { name: 'RoHS Compliant', desc: 'Environmental Standards' },
+  { name: 'REACH Compliant', desc: 'EU Chemical Regulations' }
+];
+
+const qualitySteps = [
+  { step: '01', title: 'Drawing Review', desc: 'Engineering team reviews your specifications and confirms feasibility.' },
+  { step: '02', title: 'Sample Production', desc: 'Prototype samples produced for your testing and validation.' },
+  { step: '03', title: 'Quality Approval', desc: 'Samples approved against your quality standards and requirements.' },
+  { step: '04', title: 'Mass Production', desc: 'Full production run with ongoing quality control and inspection.' },
+  { step: '05', title: 'Final Testing', desc: '100% electrical and visual testing before packaging.' },
+  { step: '06', title: 'Delivery', desc: 'Packaged and shipped per your requirements with full documentation.' }
+];
+
+const connectorCapabilities = [
+  { brand: 'JST Compatible', series: 'PH, XH, SH, GH, VH, EH', pitch: '1.0mm - 3.96mm' },
+  { brand: 'Molex Compatible', series: 'KK, Micro-Fit, Mini-Fit, PicoBlade', pitch: '1.25mm - 4.45mm' },
+  { brand: 'DuPont Compatible', series: '2.54mm Standard', pitch: '2.54mm' },
+  { brand: 'Custom Connectors', series: 'Per Your Specifications', pitch: 'Any' }
+];
+---
+
+<MainLayout
+  title="OEM Wire Cable Assembly Manufacturer | Custom Wire Harness Factory"
+  description="Direct OEM wire cable assembly manufacturer. Custom wire harnesses, connector cable assemblies, terminal wire assemblies. ISO 9001:2015 certified, UL compliant. Factory-direct pricing for B2B clients."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Trycay - OEM Wire Cable Assembly Manufacturer",
+    "description": "Custom wire cable assembly manufacturing for OEM clients worldwide",
+    "url": Astro.url,
+    "logo": new URL('/logo.png', Astro.url).href,
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "CN"
+    },
+    "sameAs": [],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "ISO 9001:2015",
+        "credentialCategory": "Quality Management"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "UL Certified",
+        "credentialCategory": "Product Safety"
+      }
+    ]
+  })} />
+
+  <Breadcrumb items={breadcrumbItems} />
+
+  <!-- Hero Section -->
+  <section class="px-4 py-20 bg-bg-secondary border-b border-border">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-4">OEM Manufacturing</p>
+          <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+            Wire Cable Assembly Manufacturer
+          </h1>
+          <p class="text-lg text-text-secondary mb-8">
+            Direct factory OEM manufacturing for wire cable assemblies, custom wire harnesses,
+            and connector sub-assemblies. ISO 9001:2015 certified quality control.
+            Factory-direct pricing for B2B clients worldwide.
+          </p>
+
+          <div class="flex flex-wrap gap-4 mb-8">
+            <div class="flex items-center gap-2">
+              <span class="text-accent-green">✓</span>
+              <span class="text-sm">ISO 9001:2015</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-accent-green">✓</span>
+              <span class="text-sm">UL Certified</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-accent-green">✓</span>
+              <span class="text-sm">RoHS Compliant</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-accent-green">✓</span>
+              <span class="text-sm">100% Tested</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="/contact" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
+              Request OEM Quote
+            </a>
+            <a href="/products" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-accent-cyan border border-accent-cyan hover:bg-accent-cyan/10 transition-all duration-300">
+              View Product Catalog
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-bg-tertiary border border-border p-8">
+          <h2 class="font-mono text-lg font-bold text-accent-cyan mb-6">OEM Capabilities</h2>
+          <div class="space-y-4">
+            {capabilities.map(cap => (
+              <div class="flex gap-4">
+                <div class="text-3xl">{cap.icon}</div>
+                <div>
+                  <h3 class="font-bold mb-1">{cap.title}</h3>
+                  <p class="text-text-secondary text-sm">{cap.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries Served -->
+  <section class="px-4 py-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12">
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-3">Industries</p>
+        <h2 class="text-3xl font-bold tracking-tight">Industries We Serve</h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {industries.map(industry => (
+          <div class="bg-bg-secondary border border-border p-6 text-center hover:border-accent-cyan transition-colors">
+            <div class="font-bold">{industry}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="px-4 py-16 bg-bg-secondary border-y border-border">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12 text-center">
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-3">Quality Assurance</p>
+        <h2 class="text-3xl font-bold tracking-tight">Certifications & Compliance</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {certifications.map(cert => (
+          <div class="bg-bg-tertiary border border-border p-6 text-center">
+            <div class="text-4xl mb-3">📜</div>
+            <h3 class="font-bold text-lg mb-2">{cert.name}</h3>
+            <p class="text-text-secondary text-sm">{cert.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Production Process -->
+  <section class="px-4 py-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12">
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-3">Process</p>
+        <h2 class="text-3xl font-bold tracking-tight">OEM Production Workflow</h2>
+        <p class="text-text-secondary mt-4 max-w-3xl">
+          From drawing review to final delivery, our OEM production process ensures quality
+          and on-time delivery for every project.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {qualitySteps.map((item, index) => (
+          <div class="relative bg-bg-secondary border border-border p-6">
+            <div class="font-mono text-4xl font-bold text-accent-cyan/20 absolute top-4 right-4">
+              {item.step}
+            </div>
+            <h3 class="font-bold text-lg mb-2 pr-16">{item.title}</h3>
+            <p class="text-text-secondary text-sm">{item.desc}</p>
+            {index < qualitySteps.length - 1 && (
+              <div class="absolute -right-3 top-1/2 hidden lg:block">
+                <span class="text-accent-cyan text-2xl">→</span>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Connector Capabilities -->
+  <section class="px-4 py-16 bg-bg-secondary border-y border-border">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12">
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-3">Connector Support</p>
+        <h2 class="text-3xl font-bold tracking-tight">Compatible Connector Series</h2>
+        <p class="text-text-secondary mt-4 max-w-3xl">
+          We manufacture cable assemblies compatible with major connector brands.
+          All assemblies are produced to meet original manufacturer specifications.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="border-b-2 border-border">
+              <th class="px-4 py-4 text-left font-mono text-sm text-accent-cyan uppercase tracking-wider">Brand</th>
+              <th class="px-4 py-4 text-left font-mono text-sm text-accent-cyan uppercase tracking-wider">Series</th>
+              <th class="px-4 py-4 text-left font-mono text-sm text-accent-cyan uppercase tracking-wider">Pitch Range</th>
+              <th class="px-4 py-4 text-left font-mono text-sm text-accent-cyan uppercase tracking-wider">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {connectorCapabilities.map(conn => (
+              <tr class="border-b border-border hover:bg-bg-tertiary">
+                <td class="px-4 py-4 font-bold">{conn.brand}</td>
+                <td class="px-4 py-4 text-text-secondary">{conn.series}</td>
+                <td class="px-4 py-4 font-mono text-accent-cyan">{conn.pitch}</td>
+                <td class="px-4 py-4">
+                  {conn.brand.includes('JST') && (
+                    <a href="/products/jst-terminal-wire-assembly" class="text-accent-cyan font-mono text-sm hover:underline">
+                      View Products →
+                    </a>
+                  )}
+                  {conn.brand.includes('Molex') && (
+                    <a href="/products/molex-wire-to-board-assembly" class="text-accent-cyan font-mono text-sm hover:underline">
+                      View Products →
+                    </a>
+                  )}
+                  {conn.brand.includes('DuPont') && (
+                    <a href="/products/dupont-terminal-wire-assembly" class="text-accent-cyan font-mono text-sm hover:underline">
+                      View Products →
+                    </a>
+                  )}
+                  {conn.brand.includes('Custom') && (
+                    <a href="/contact" class="text-accent-cyan font-mono text-sm hover:underline">
+                      Contact Us →
+                    </a>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- OEM Advantages -->
+  <section class="px-4 py-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12">
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-3">Why Choose Us</p>
+        <h2 class="text-3xl font-bold tracking-tight">OEM Manufacturing Advantages</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="border border-border p-6">
+          <div class="text-3xl mb-4">💰</div>
+          <h3 class="font-bold text-xl mb-3">Factory-Direct Pricing</h3>
+          <p class="text-text-secondary">
+            No middlemen, no distributors. Direct from our factory to your facility.
+            Competitive pricing for prototype and production quantities.
+          </p>
+        </div>
+
+        <div class="border border-border p-6">
+          <div class="text-3xl mb-4">⏱️</div>
+          <h3 class="font-bold text-xl mb-3">Rapid Turnaround</h3>
+          <p class="text-text-secondary">
+            Prototype samples in 7-10 days. Production runs typically 14-21 days
+            depending on quantity and complexity.
+          </p>
+        </div>
+
+        <div class="border border-border p-6">
+          <div class="text-3xl mb-4">🔧</div>
+          <h3 class="font-bold text-xl mb-3">Engineering Support</h3>
+          <p class="text-text-secondary">
+            Our engineering reviews your drawings for manufacturability and provides
+            recommendations for cost optimization.
+          </p>
+        </div>
+
+        <div class="border border-border p-6">
+          <div class="text-3xl mb-4">📊</div>
+          <h3 class="font-bold text-xl mb-3">Quality Documentation</h3>
+          <p class="text-text-secondary">
+            Full documentation package including test reports, certificates of conformity,
+            and traceability records.
+          </p>
+        </div>
+
+        <div class="border border-border p-6">
+          <div class="text-3xl mb-4">📦</div>
+          <h3 class="font-bold text-xl mb-3">Flexible Volume</h3>
+          <p class="text-text-secondary">
+            From 100 piece prototypes to 100K+ unit production runs. Scalable
+            manufacturing to match your growth.
+          </p>
+        </div>
+
+        <div class="border border-border p-6">
+          <div class="text-3xl mb-4">🌍</div>
+          <h3 class="font-bold text-xl mb-3">Global Shipping</h3>
+          <p class="text-text-secondary">
+            Experience exporting to North America, Europe, and Asia. Complete
+            documentation for international customs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="px-4 py-20 bg-bg-secondary border-y border-accent-cyan">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your OEM Project?</h2>
+      <p class="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
+        Upload your drawings and specifications. Our engineering team will review your requirements
+        and provide pricing and lead time within 24 hours.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <div class="flex items-center gap-2">
+          <span class="text-accent-green">✓</span>
+          <span class="text-sm">Free drawing review</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-accent-green">✓</span>
+          <span class="text-sm">24-hour quote response</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-accent-green">✓</span>
+          <span class="text-sm">Prototype samples available</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-accent-green">✓</span>
+          <span class="text-sm">Volume discounts</span>
+        </div>
+      </div>
+
+      <a href="/contact" class="inline-block px-10 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent-green/30">
+        Upload Drawing for OEM Quote
+      </a>
+
+      <div class="mt-8 text-text-secondary text-sm">
+        <p>Minimum order quantity: 100 pieces</p>
+        <p class="mt-1">Lead time: 7-21 days depending on specifications</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Links -->
+  <section class="px-4 py-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12">
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-3">Resources</p>
+        <h2 class="text-3xl font-bold tracking-tight">Learn More</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="/products" class="group block bg-bg-secondary border border-border p-6 transition-all duration-300 hover:border-accent-cyan">
+          <h3 class="font-bold mb-2 group-hover:text-accent-cyan">Product Catalog</h3>
+          <p class="text-text-secondary text-sm">Browse our complete catalog of connector cable assemblies.</p>
+          <div class="mt-4 flex items-center text-accent-cyan font-mono text-sm">
+            <span>View Products</span>
+            <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+          </div>
+        </a>
+
+        <a href="/factory" class="group block bg-bg-secondary border border-border p-6 transition-all duration-300 hover:border-accent-cyan">
+          <h3 class="font-bold mb-2 group-hover:text-accent-cyan">Factory Tour</h3>
+          <p class="text-text-secondary text-sm">Learn about our manufacturing capabilities and quality control processes.</p>
+          <div class="mt-4 flex items-center text-accent-cyan font-mono text-sm">
+            <span>Visit Factory</span>
+            <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+          </div>
+        </a>
+
+        <a href="/blog" class="group block bg-bg-secondary border border-border p-6 transition-all duration-300 hover:border-accent-cyan">
+          <h3 class="font-bold mb-2 group-hover:text-accent-cyan">Technical Resources</h3>
+          <p class="text-text-secondary text-sm">Articles, guides, and best practices for wire cable assembly design.</p>
+          <div class="mt-4 flex items-center text-accent-cyan font-mono text-sm">
+            <span>Read Blog</span>
+            <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
