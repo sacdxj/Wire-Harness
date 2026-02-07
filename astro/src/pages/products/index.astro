@@ -7,155 +7,146 @@ const breadcrumbItems = [
   { name: 'Products', href: '/products' }
 ];
 
-// Pillar Product Pages (SEO-optimized capability pages)
-const pillarProducts = [
+// Capability-based Assemblies (3个Pillar)
+const capabilityAssemblies = [
   {
-    title: 'JST Terminal Wire Assemblies',
-    description: 'Complete JST series support: PH, XH, SH, GH, VH, EH. Pitch 1.0-3.96mm, current 1-7A. Custom wire gauge, length, pin count.',
-    specs: ['PH/XH/SH/GH/VH/EH', '1.0-3.96mm pitch', '1-7A rating', 'AWG 32-14'],
-    href: '/products/jst-terminal-wire-assembly',
-    featured: true
+    title: 'Pre-Crimped Wire Assemblies',
+    description: 'Ready-to-use wire leads with pre-attached connectors',
+    href: '/products/pre-crimped-wire-assembly'
   },
   {
-    title: 'Molex Wire-to-Board Assemblies',
-    description: 'Molex KK, Micro-Fit 3.0, Mini-Fit Jr., PicoBlade series. Pitch 1.25-4.45mm, current 1-9A. Industrial grade.',
-    specs: ['KK/Micro-Fit/Mini-Fit', '1.25-4.45mm pitch', '1-9A rating', 'AWG 32-14'],
-    href: '/products/molex-wire-to-board-assembly',
-    featured: true
+    title: 'Wire-to-Board Cable Assemblies',
+    description: 'PCB connectors with wire harnesses for device connections',
+    href: '/products/wire-to-board-cable-assembly'
   },
   {
-    title: 'DuPont Wire Assemblies',
-    description: 'DuPont 2.54mm compatible assemblies. Pre-crimped leads, custom configurations. For Arduino, Raspberry Pi, prototyping.',
-    specs: ['2.54mm standard', '1-5A rating', 'AWG 30-18', 'Custom pins'],
-    href: '/products/dupont-terminal-wire-assembly',
-    featured: true
+    title: 'Wire-to-Wire Cable Assemblies',
+    description: 'Interconnecting harnesses for equipment and system integration',
+    href: '/products/wire-to-wire-cable-assembly'
+  }
+];
+
+// Brand Compatible Assemblies (5个Pillar)
+const brandAssemblies = [
+  {
+    title: 'JST Compatible',
+    description: 'PH, XH, EH, VH, ZH series equivalents',
+    href: '/products/jst-compatible-wire-assembly'
+  },
+  {
+    title: 'Molex Compatible',
+    description: 'Micro-Fit, PicoBlade, Mini-Fit, KK series equivalents',
+    href: '/products/molex-compatible-wire-assembly'
+  },
+  {
+    title: 'TE Compatible',
+    description: 'Econoseal, AMP MCP, AMPSEAL series equivalents',
+    href: '/products/te-compatible-wire-assembly'
+  },
+  {
+    title: 'DuPont Compatible',
+    description: '2.54mm standard pitch compatible assemblies',
+    href: '/products/dupont-compatible-wire-assembly'
+  },
+  {
+    title: 'Hirose Compatible',
+    description: 'DF, FH, ZH series and other popular equivalents',
+    href: '/products/hirose-compatible-wire-assembly'
   }
 ];
 ---
 
 <MainLayout
-  title="Terminal Wire Assembly Products | Pre-Crimped Leads & Cable Assemblies"
-  description="Complete catalog of terminal wire assemblies by type: pre-crimped leads, wire-to-board, wire-to-wire, and ribbon cable assemblies. JST/Molex compatible."
+  title="Our Cable Assembly Solutions | Product Catalog"
+  description="Browse our complete cable assembly solutions. Capability-based and brand-compatible wire harnesses manufactured to your specifications."
 >
   <Breadcrumb items={breadcrumbItems} />
 
-  <section class="px-4 py-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-12">
-        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-3">Terminal Wire Assembly Products</p>
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Custom Wire Assemblies</h1>
-        <p class="text-lg text-text-secondary max-w-3xl">
-          Factory-direct terminal wire assemblies manufactured to your specifications. JST, Molex, and DuPont compatible connectors with custom wire gauge, length, and pin count configurations.
+  <section class="px-4 py-16">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          Our Cable Assembly Solutions
+        </h1>
+        <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+          Browse our complete wire harness solutions by assembly type or connector compatibility.
         </p>
       </div>
 
-      <!-- Pillar Product Pages -->
-      <div class="mb-16">
-        <div class="mb-6">
-          <h2 class="text-2xl md:text-3xl font-bold tracking-tight">By Brand Series</h2>
-          <p class="text-text-secondary mt-2">Complete connector series support with custom manufacturing capabilities</p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {pillarProducts.map(product => (
+      <!-- Capability-based Assemblies (3个) -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <span class="w-8 h-8 bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-sm font-mono">01</span>
+          Capability-based Assemblies
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {capabilityAssemblies.map((item, index) => (
             <a
-              href={product.href}
-              class="group block bg-bg-secondary border-2 border-border hover:border-accent-cyan transition-all duration-300 hover:-translate-y-1"
+              href={item.href}
+              class="group block bg-bg-secondary border border-border hover:border-accent-cyan transition-all duration-300 hover:-translate-y-1"
             >
-              <div class="p-8">
-                <h3 class="text-xl font-bold group-hover:text-accent-cyan transition-colors mb-4">
-                  {product.title}
-                </h3>
-                <p class="text-text-secondary text-sm mb-6 leading-relaxed">
-                  {product.description}
-                </p>
-
-                <div class="space-y-2 mb-6">
-                  {product.specs.map(spec => (
-                    <div class="flex items-center text-sm">
-                      <span class="w-1.5 h-1.5 bg-accent-cyan rounded-full mr-2"></span>
-                      <span class="font-mono text-text-secondary">{spec}</span>
-                    </div>
-                  ))}
+              <div class="p-6 h-full flex flex-col">
+                <div class="w-12 h-12 bg-accent-cyan/10 border border-accent-cyan/30 flex items-center justify-center mb-4">
+                  <svg class="w-6 h-6 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
                 </div>
-
-                <div class="flex items-center text-accent-cyan font-mono text-sm font-bold">
-                  <span>View Products</span>
+                <h3 class="text-xl font-bold group-hover:text-accent-cyan transition-colors mb-2">
+                  {item.title}
+                </h3>
+                <p class="text-text-secondary text-sm mb-4 flex-grow">
+                  {item.description}
+                </p>
+                <div class="flex items-center text-accent-cyan font-mono text-xs font-bold">
+                  <span>View Details</span>
                   <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                 </div>
               </div>
             </a>
           ))}
         </div>
-      </div>
+      </section>
 
-      <!-- Custom Assembly CTA -->
-      <div class="mt-12 bg-bg-secondary border border-accent-amber/30 p-8 text-center">
-        <h2 class="text-2xl font-bold mb-4">Need Custom Assembly?</h2>
+      <!-- Brand Compatible Assemblies (5个) -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <span class="w-8 h-8 bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-sm font-mono">02</span>
+          Brand Compatible Assemblies
+        </h2>
+        <p class="text-text-secondary mb-6">Cost-effective alternatives to major connector brands</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {brandAssemblies.map((item, index) => (
+            <a
+              href={item.href}
+              class="group block bg-bg-secondary border border-border hover:border-accent-cyan transition-all duration-300"
+            >
+              <div class="p-5">
+                <h3 class="text-lg font-bold group-hover:text-accent-cyan transition-colors mb-1">
+                  {item.title}
+                </h3>
+                <p class="text-text-secondary text-xs mb-0">
+                  {item.description}
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Link to OEM Page -->
+      <section class="bg-bg-secondary border border-accent-green/30 p-8 text-center">
+        <h2 class="text-2xl font-bold mb-3">Need OEM Manufacturing Services?</h2>
         <p class="text-text-secondary mb-6 max-w-2xl mx-auto">
-          Don't see what you need? We can custom-build any terminal wire assembly to your exact specifications. Upload your drawing for a quote.
+          Looking for a manufacturing partner for volume production or custom development?
         </p>
-        <a href="/contact" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
-          Upload Drawing for Quote
+        <a href="/oem-wire-cable-assembly-manufacturer" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
+          Learn About OEM Services
         </a>
-      </div>
+      </section>
 
-      <!-- Quick Specs Reference -->
-      <div class="mt-12">
-        <h2 class="text-2xl font-bold mb-6">Quick Specifications Reference</h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div class="bg-bg-secondary border border-border p-6">
-            <div class="font-mono text-xs text-accent-amber uppercase tracking-wider mb-2">Pitch Range</div>
-            <div class="text-2xl font-bold">0.8-2.54mm</div>
-            <div class="text-text-secondary text-sm mt-1">Micro to standard</div>
-          </div>
-          <div class="bg-bg-secondary border border-border p-6">
-            <div class="font-mono text-xs text-accent-amber uppercase tracking-wider mb-2">Wire Gauge</div>
-            <div class="text-2xl font-bold">AWG 32-14</div>
-            <div class="text-text-secondary text-sm mt-1">UL-certified</div>
-          </div>
-          <div class="bg-bg-secondary border border-border p-6">
-            <div class="font-mono text-xs text-accent-amber uppercase tracking-wider mb-2">Positions</div>
-            <div class="text-2xl font-bold">2-24 pins</div>
-            <div class="text-text-secondary text-sm mt-1">Custom available</div>
-          </div>
-          <div class="bg-bg-secondary border border-border p-6">
-            <div class="font-mono text-xs text-accent-amber uppercase tracking-wider mb-2">MOQ</div>
-            <div class="text-2xl font-bold">100 pcs</div>
-            <div class="text-text-secondary text-sm mt-1">Prototypes welcome</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Brand Compatibility -->
-      <div class="mt-12">
-        <h2 class="text-2xl font-bold mb-6">Compatible Connector Brands</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-bg-secondary border border-border p-6 text-center">
-            <h3 class="font-mono text-lg font-bold text-accent-cyan mb-2">JST Series</h3>
-            <p class="text-text-secondary text-sm">
-              SH, GH, PH, XH, EH, VH, ZH equivalents
-            </p>
-          </div>
-          <div class="bg-bg-secondary border border-border p-6 text-center">
-            <h3 class="font-mono text-lg font-bold text-accent-cyan mb-2">Molex</h3>
-            <p class="text-text-secondary text-sm">
-              Micro-Fit, PicoBlade, KK, Mini-Fit equivalents
-            </p>
-          </div>
-          <div class="bg-bg-secondary border border-border p-6 text-center">
-            <h3 class="font-mono text-lg font-bold text-accent-cyan mb-2">TE Connectivity</h3>
-            <p class="text-text-secondary text-sm">
-              AMP, Econoseal, and other series equivalents
-            </p>
-          </div>
-        </div>
-        <div class="mt-6 text-center">
-          <a href="/compatibility" class="inline-block px-6 py-3 font-mono text-sm font-bold uppercase tracking-widest text-accent-cyan border border-accent-cyan hover:bg-accent-cyan/10 transition-all duration-300">
-            View Full Compatibility Guide
-          </a>
-        </div>
-      </div>
     </div>
   </section>
 </MainLayout>
