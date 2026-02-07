@@ -21,7 +21,8 @@
       "Bash(python:*)",
       "Skill(gemini-image-skill-main)",
       "Bash(git init:*)",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "Bash(ls:*)"
     ]
   }
 }
