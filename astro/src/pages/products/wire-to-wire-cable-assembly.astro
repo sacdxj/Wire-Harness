@@ -1,0 +1,180 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Products', href: '/products' },
+  { name: 'Wire to Wire Cable Assembly', href: '/products/wire-to-wire-cable-assembly' }
+];
+
+const connectorSeries = [
+  { brand: 'JST Compatible', series: 'PH (2.0mm), XH (2.5mm)', pitch: '2.0-2.5mm', current: '2-3A' },
+  { brand: 'Molex Compatible', series: 'Mini-Fit Jr., Sabre', pitch: '4.2-4.45mm', current: '9A' },
+  { brand: 'Custom Connectors', series: 'Any specification', pitch: 'Custom', current: 'Per spec' }
+];
+
+const applications = [
+  'LED strip to strip connections',
+  'Battery pack interconnects',
+  'Motor to ESC wiring',
+  'Power supply extension cables',
+  'Sensor cable extensions',
+  'Modular device connections'
+];
+---
+
+<MainLayout
+  title="Wire to Wire Cable Assembly | Custom Wire-to-Wire Connector Manufacturer"
+  description="Factory-direct wire-to-wire cable assemblies. Custom male-to-female connector cables. Modular wiring solutions. JST, Molex compatible. UL certified, 100% tested."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Wire to Wire Cable Assembly",
+    "description": "Custom wire-to-wire cable assemblies for modular connections",
+    "brand": { "@type": "Brand", "name": "Trycay" },
+    "manufacturer": { "@type": "Organization", "name": "Trycay" }
+  })} />
+
+  <Breadcrumb items={breadcrumbItems} />
+
+  <!-- Hero Section -->
+  <section class="px-4 py-16 bg-bg-secondary border-b border-border">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-4">Wire-to-Wire Assembly</p>
+          <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+            Wire to Wire Cable Assembly
+          </h1>
+          <p class="text-lg text-text-secondary mb-8">
+            Custom wire-to-wire cable assemblies for modular connections.
+            Male-to-female and extension cables with connectors on both ends.
+            Ideal for LED lighting, battery systems, motor controls, and power distribution.
+            100% electrically tested and ready to install.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="/contact" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
+              Upload Drawing for Quote
+            </a>
+            <a href="/oem-wire-cable-assembly-manufacturer" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-accent-cyan border border-accent-cyan hover:bg-accent-cyan/10 transition-all duration-300">
+              OEM Services
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-bg-tertiary border border-border p-8">
+          <h2 class="font-mono text-lg font-bold text-accent-cyan mb-6">Connector Options</h2>
+          <div class="space-y-3">
+            {connectorSeries.map(conn => (
+              <div class="border border-border p-3">
+                <div class="font-bold text-accent-cyan text-sm">{conn.brand}</div>
+                <div class="text-xs text-text-secondary">{conn.series}</div>
+                <div class="font-mono text-xs text-text-muted mt-1">{conn.pitch} | {conn.current}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Applications -->
+  <section class="px-4 py-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12">
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-3">Applications</p>
+        <h2 class="text-3xl font-bold tracking-tight">Typical Use Cases</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {applications.map(app => (
+          <div class="border border-border p-6">
+            <div class="flex items-start gap-3">
+              <span class="text-accent-cyan">▸</span>
+              <span class="text-text-secondary">{app}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Configuration Types -->
+  <section class="px-4 py-16 bg-bg-secondary border-y border-border">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold tracking-tight">Configuration Types</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="border-2 border-accent-cyan p-8">
+          <h3 class="font-bold text-2xl mb-4 text-accent-cyan">Male-to-Female</h3>
+          <p class="text-text-secondary mb-4">
+            Extension cables with different connectors on each end. Enables modular connections and easy replacement.
+          </p>
+          <ul class="space-y-2 text-text-secondary text-sm">
+            <li>• LED strip extensions</li>
+            <li>• Power supply extensions</li>
+            <li>• Sensor cable extensions</li>
+            <li>• Battery interconnects</li>
+          </ul>
+        </div>
+
+        <div class="border-2 border-accent-green p-8">
+          <h3 class="font-bold text-2xl mb-4 text-accent-green">Same-Type Both Ends</h3>
+          <p class="text-text-secondary mb-4">
+            Identical connectors on both ends for daisy-chaining or signal passing applications.
+          </p>
+          <ul class="space-y-2 text-text-secondary text-sm">
+            <li>• LED strip to strip</li>
+            <li>• Battery pack connections</li>
+            <li>• Signal distribution</li>
+            <li>• Modular wiring systems</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-4 py-20 bg-bg-secondary border-y border-accent-cyan text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Request Wire-to-Wire Assembly Quote</h2>
+      <p class="text-lg text-text-secondary mb-8">
+        Upload your cable assembly drawing or specifications.
+      </p>
+      <a href="/contact" class="inline-block px-10 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
+        Upload Drawing for Quote
+      </a>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="px-4 py-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold tracking-tight">Related Assembly Types</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="/products/pre-crimped-wire-assembly" class="group block bg-bg-secondary border border-border p-6 hover:border-accent-cyan transition-all">
+          <h3 class="font-bold mb-2 group-hover:text-accent-cyan">Pre-Crimped Wire Assembly</h3>
+          <p class="text-text-secondary text-sm">Wire leads with crimped terminals</p>
+        </a>
+
+        <a href="/products/wire-to-board-cable-assembly" class="group block bg-bg-secondary border border-border p-6 hover:border-accent-cyan transition-all">
+          <h3 class="font-bold mb-2 group-hover:text-accent-cyan">Wire-to-Board Cable Assembly</h3>
+          <p class="text-text-secondary text-sm">PCB mounting cable assemblies</p>
+        </a>
+
+        <a href="/oem-wire-cable-assembly-manufacturer" class="group block bg-bg-secondary border border-border p-6 hover:border-accent-cyan transition-all">
+          <h3 class="font-bold mb-2 group-hover:text-accent-cyan">OEM Manufacturing</h3>
+          <p class="text-text-secondary text-sm">B2B OEM services</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
