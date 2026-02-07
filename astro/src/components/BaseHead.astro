@@ -5,6 +5,7 @@ interface Props {
   image?: string;
   canonical?: string;
   type?: string;
+  noindex?: boolean;
 }
 
 const {
@@ -12,7 +13,8 @@ const {
   description,
   image = '/og-default.jpg',
   canonical = new URL(Astro.url.pathname, Astro.site).href,
-  type = 'website'
+  type = 'website',
+  noindex = false
 } = Astro.props;
 
 const fullTitle = `${title} | Trycay`;
@@ -31,6 +33,8 @@ const fullTitle = `${title} | Trycay`;
 <meta name="title" content={fullTitle} />
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
+
+{noindex && <meta name="robots" content="noindex, nofollow" />}
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={type} />

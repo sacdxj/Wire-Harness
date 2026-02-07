@@ -7,45 +7,28 @@ const breadcrumbItems = [
   { name: 'Products', href: '/products' }
 ];
 
-// Product categories with all products
-const productCategories = [
+// Pillar Product Pages (SEO-optimized capability pages)
+const pillarProducts = [
   {
-    title: 'Pre-Crimped Leads',
-    description: 'Single or dual-end pre-crimped wires ready for your assembly process.',
-    products: [
-      { name: 'JST SH 1.0mm', pitch: '1.0mm', current: '1A', href: '/products/jst-sh-1-0mm-pre-crimped-leads' },
-      { name: 'JST GH 1.25mm', pitch: '1.25mm', current: '1.5A', href: '/products/jst-gh-1-25mm-pre-crimped-leads' },
-      { name: 'JST PH 2.0mm', pitch: '2.0mm', current: '2A', href: '/products/jst-ph-2-0mm-pre-crimped-leads' },
-      { name: 'Molex PicoBlade 1.25mm', pitch: '1.25mm', current: '1A', href: '/products/molex-picoblade-1-25mm-pre-crimped-leads' },
-      { name: 'Molex Micro-Fit 3.0mm', pitch: '3.0mm', current: '3A', href: '/products/molex-micro-fit-3-0mm-pre-crimped-leads' },
-      { name: 'Dupont 2.54mm', pitch: '2.54mm', current: '3A', href: '/products/dupont-2-54mm-pre-crimped-leads' }
-    ]
+    title: 'JST Terminal Wire Assemblies',
+    description: 'Complete JST series support: PH, XH, SH, GH, VH, EH. Pitch 1.0-3.96mm, current 1-7A. Custom wire gauge, length, pin count.',
+    specs: ['PH/XH/SH/GH/VH/EH', '1.0-3.96mm pitch', '1-7A rating', 'AWG 32-14'],
+    href: '/products/jst-terminal-wire-assembly',
+    featured: true
   },
   {
-    title: 'Wire-to-Board Assemblies',
-    description: 'Board connectors with crimped wires for PCB connection applications.',
-    products: [
-      { name: 'JST XH 2.5mm', pitch: '2.5mm', current: '3A', href: '/products/jst-xh-2-5mm-wire-to-board' },
-      { name: 'JST VH 3.96mm', pitch: '3.96mm', current: '7A', href: '/products/jst-vh-3-96mm-wire-to-board' },
-      { name: 'Molex KK 254', pitch: '2.54mm', current: '5A', href: '/products/molex-kk-254-wire-to-board' }
-    ]
+    title: 'Molex Wire-to-Board Assemblies',
+    description: 'Molex KK, Micro-Fit 3.0, Mini-Fit Jr., PicoBlade series. Pitch 1.25-4.45mm, current 1-9A. Industrial grade.',
+    specs: ['KK/Micro-Fit/Mini-Fit', '1.25-4.45mm pitch', '1-9A rating', 'AWG 32-14'],
+    href: '/products/molex-wire-to-board-assembly',
+    featured: true
   },
   {
-    title: 'Wire-to-Wire Assemblies',
-    description: 'Male-to-female cable assemblies for modular connections.',
-    products: [
-      { name: 'JST PH 2.0mm', pitch: '2.0mm', current: '2A', href: '/products/jst-ph-2-0mm-wire-to-wire' },
-      { name: 'Molex Mini-Fit 4.2mm', pitch: '4.2mm', current: '9A', href: '/products/molex-mini-fit-4-2mm-wire-to-wire' }
-    ]
-  },
-  {
-    title: 'Ribbon Cable Assemblies',
-    description: 'High-density IDC ribbon cables for compact electronics.',
-    products: [
-      { name: 'JST VH 3.96mm Ribbon', pitch: '3.96mm', current: '7A', href: '/contact' },
-      { name: 'Molex KK 254 Ribbon', pitch: '2.54mm', current: '5A', href: '/contact' },
-      { name: 'Dupont 2.54mm Ribbon', pitch: '2.54mm', current: '3A', href: '/contact' }
-    ]
+    title: 'DuPont Wire Assemblies',
+    description: 'DuPont 2.54mm compatible assemblies. Pre-crimped leads, custom configurations. For Arduino, Raspberry Pi, prototyping.',
+    specs: ['2.54mm standard', '1-5A rating', 'AWG 30-18', 'Custom pins'],
+    href: '/products/dupont-terminal-wire-assembly',
+    featured: true
   }
 ];
 ---
@@ -59,48 +42,52 @@ const productCategories = [
   <section class="px-4 py-8">
     <div class="max-w-7xl mx-auto">
       <div class="mb-12">
-        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-3">Assembly Types</p>
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Terminal Wire Assemblies</h1>
+        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-3">Terminal Wire Assembly Products</p>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Custom Wire Assemblies</h1>
         <p class="text-lg text-text-secondary max-w-3xl">
-          Browse our terminal wire assembly catalog by component type. All assemblies are 100% tested and available with JST, Molex, or TE compatible terminals.
+          Factory-direct terminal wire assemblies manufactured to your specifications. JST, Molex, and DuPont compatible connectors with custom wire gauge, length, and pin count configurations.
         </p>
       </div>
 
-      <!-- Product Categories -->
-      {productCategories.map(category => (
-        <div class="mb-16">
-          <div class="mb-6">
-            <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-2">{category.title}</p>
-            <h2 class="text-2xl md:text-3xl font-bold tracking-tight">{category.title}</h2>
-            <p class="text-text-secondary">{category.description}</p>
-          </div>
+      <!-- Pillar Product Pages -->
+      <div class="mb-16">
+        <div class="mb-6">
+          <h2 class="text-2xl md:text-3xl font-bold tracking-tight">By Brand Series</h2>
+          <p class="text-text-secondary mt-2">Complete connector series support with custom manufacturing capabilities</p>
+        </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {category.products.map(product => (
-              <a
-                href={product.href}
-                class="group block bg-bg-secondary border border-border p-6 transition-all duration-300 hover:border-accent-cyan hover:-translate-y-1"
-              >
-                <div class="flex justify-between items-start mb-3">
-                  <h3 class="text-lg font-bold group-hover:text-accent-cyan transition-colors">
-                    {product.name}
-                  </h3>
-                  <span class="font-mono text-xs text-accent-cyan bg-accent-cyan/10 px-2 py-1">
-                    {product.pitch}
-                  </span>
-                </div>
-                <p class="text-text-secondary text-sm mb-3">
-                  {product.current} rating
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {pillarProducts.map(product => (
+            <a
+              href={product.href}
+              class="group block bg-bg-secondary border-2 border-border hover:border-accent-cyan transition-all duration-300 hover:-translate-y-1"
+            >
+              <div class="p-8">
+                <h3 class="text-xl font-bold group-hover:text-accent-cyan transition-colors mb-4">
+                  {product.title}
+                </h3>
+                <p class="text-text-secondary text-sm mb-6 leading-relaxed">
+                  {product.description}
                 </p>
-                <div class="flex items-center text-accent-cyan font-mono text-sm">
-                  <span>View Details</span>
+
+                <div class="space-y-2 mb-6">
+                  {product.specs.map(spec => (
+                    <div class="flex items-center text-sm">
+                      <span class="w-1.5 h-1.5 bg-accent-cyan rounded-full mr-2"></span>
+                      <span class="font-mono text-text-secondary">{spec}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div class="flex items-center text-accent-cyan font-mono text-sm font-bold">
+                  <span>View Products</span>
                   <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                 </div>
-              </a>
-            ))}
-          </div>
+              </div>
+            </a>
+          ))}
         </div>
-      ))}
+      </div>
 
       <!-- Custom Assembly CTA -->
       <div class="mt-12 bg-bg-secondary border border-accent-amber/30 p-8 text-center">

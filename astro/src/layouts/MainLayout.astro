@@ -9,9 +9,10 @@ interface Props {
   image?: string;
   canonical?: string;
   type?: string;
+  noindex?: boolean;
 }
 
-const { title, description, image, canonical, type, ...rest } = Astro.props;
+const { title, description, image, canonical, type, noindex = false, ...rest } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,6 +24,7 @@ const { title, description, image, canonical, type, ...rest } = Astro.props;
       image={image}
       canonical={canonical}
       type={type}
+      noindex={noindex}
     />
   </head>
   <body class="bg-bg-primary text-text-primary font-sans antialiased">
