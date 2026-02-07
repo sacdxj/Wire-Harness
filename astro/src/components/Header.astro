@@ -2,9 +2,11 @@
 const currentPath = Astro.url.pathname;
 
 const productSubmenu = [
-  { href: '/products/pre-crimped-wire-assembly', label: 'Pre-Crimped Wires' },
-  { href: '/products/wire-to-board-cable-assembly', label: 'Wire-to-Board' },
-  { href: '/products/wire-to-wire-cable-assembly', label: 'Wire-to-Wire' }
+  { href: '/products/jst-compatible-wire-assembly', label: 'JST Compatible' },
+  { href: '/products/molex-compatible-wire-assembly', label: 'Molex Compatible' },
+  { href: '/products/dupont-compatible-wire-assembly', label: 'DuPont Compatible' },
+  { href: '/products/hirose-compatible-wire-assembly', label: 'Hirose Compatible' },
+  { href: '/products/te-compatible-wire-assembly', label: 'TE Compatible' }
 ];
 
 const navItems = [
@@ -44,7 +46,7 @@ const navItems = [
             </a>
             <!-- Submenu -->
             <div class="absolute left-0 top-full mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              <div class="bg-bg-secondary border border-border rounded-lg shadow-lg py-2 min-w-[200px]">
+              <div class="bg-bg-secondary border border-border rounded-lg shadow-lg py-2 min-w-[220px]">
                 {productSubmenu.map(sub => (
                   <a
                     href={sub.href}
