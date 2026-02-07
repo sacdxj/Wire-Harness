@@ -51,12 +51,11 @@ const navItems = [
             <!-- Submenu -->
             <div class="absolute left-0 top-full mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
               <div class="bg-bg-secondary border border-border rounded-lg shadow-lg py-2 min-w-[280px]">
-                {productSubmenu.map((sub, index) => (
+                {productSubmenu.map((sub) => (
                   sub.type === 'divider' ? (
-                    <div key={index} class="border-t border-border my-2 mx-2"></div>
+                    <div class="border-t border-border my-2 mx-2"></div>
                   ) : (
                     <a
-                      key={index}
                       href={sub.href}
                       class:list={[
                         "block px-4 py-2 font-mono text-sm text-text-secondary hover:text-accent-cyan hover:bg-bg-tertiary transition-colors",
@@ -108,12 +107,11 @@ const navItems = [
               </svg>
             </div>
             <div class="ml-4 mt-1 space-y-1">
-              {productSubmenu.map((sub, index) => (
+              {productSubmenu.map((sub) => (
                 sub.type === 'divider' ? (
-                  <div key={index} class="border-t border-border my-2"></div>
+                  <div class="border-t border-border my-2"></div>
                 ) : (
                   <a
-                    key={index}
                     href={sub.href}
                     class:list={[
                       "block px-3 py-2 font-mono text-xs text-text-secondary hover:text-accent-cyan hover:bg-bg-tertiary rounded transition-colors",
