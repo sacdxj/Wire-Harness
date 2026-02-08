@@ -12,6 +12,75 @@ const breadcrumbItems = [
   title="Services & Capabilities | Custom Wire Harness Solutions"
   description="Complete wire harness manufacturing services - custom design, rapid prototyping, volume production, and assembly. JST/Molex/TE compatible specialists."
 >
+  <!-- Services Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemPage",
+    "name": "Wire Harness Manufacturing Services",
+    "description": "Complete wire harness manufacturing services - custom design, rapid prototyping, volume production, and assembly",
+    "provider": {
+      "@type": "Organization",
+      "name": "Trycay",
+      "url": "https://trycay.com"
+    },
+    "mainEntity": {
+      "@type": "Service",
+      "name": "Wire Harness Manufacturing Services",
+      "description": "Comprehensive wire harness manufacturing services from design to production",
+      "provider": {
+        "@type": "Organization",
+        "name": "Trycay",
+        "url": "https://trycay.com"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Wire Harness Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Wire Harness Design",
+              "description": "Engineering-led design services from schematic to production documentation including connector selection, custom cable assembly design, DFM analysis, and CAD documentation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Rapid Prototyping",
+              "description": "Fast-turn prototyping with 48-hour turnaround, manual assembly for complex configurations, quick design iterations, and full testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Volume Production",
+              "description": "Scalable manufacturing with automated assembly, 100% continuity testing, statistical process control, and flexible scheduling"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Quality Assurance",
+              "description": "Comprehensive testing including 100% electrical continuity, hi-pot testing, pull test verification, and visual inspection"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "JST/Molex/TE Compatible Solutions",
+              "description": "Cost-effective compatible solutions including JST PH/XH/EH series, Molex Micro-Fit/PicoBlade, and TE Connectivity alternatives"
+            }
+          }
+        ]
+      }
+    }
+  })} />
+
   <Breadcrumb items={breadcrumbItems} />
 
   <section class="px-4 py-16">

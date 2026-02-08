@@ -13,6 +13,39 @@ const breadcrumbItems = [
   title="Hirose Compatible Connectors | DF, FH, ZH Wire Assemblies"
   description="Factory-direct Hirose compatible wire assemblies. DF, FH, ZH series equivalents for automotive and industrial applications. 30-50% cost savings."
 >
+  <!-- Hirose Compatible Product Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Hirose Compatible Wire Assemblies",
+    "description": "Factory-direct Hirose compatible wire assemblies including DF, FH, and ZH series for automotive and industrial applications",
+    "brand": {
+      "@type": "Brand",
+      "name": "Trycay"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Trycay"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "USD"
+    },
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "Series",
+        "value": "DF, FH, ZH"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Applications",
+        "value": "Automotive, Industrial, Computer"
+      }
+    ]
+  })} />
+
   <Breadcrumb items={breadcrumbItems} />
 
   <section class="px-4 py-16">

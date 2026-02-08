@@ -22,7 +22,14 @@
       "Skill(gemini-image-skill-main)",
       "Bash(git init:*)",
       "Bash(tree:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(npm update:*)",
+      "Bash(npx update-latest:*)",
+      "Bash(npm view:*)",
+      "Bash(npm astro build:*)",
+      "Bash(node:*)",
+      "Bash(openssl:*)",
+      "Bash(npm run dev:*)"
     ]
   }
 }

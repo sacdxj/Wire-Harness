@@ -1,4 +1,6 @@
 ---
+import { getCSP } from '../utils/csp';
+
 interface Props {
   title: string;
   description: string;
@@ -18,6 +20,7 @@ const {
 } = Astro.props;
 
 const fullTitle = `${title} | Trycay`;
+const csp = getCSP();
 ---
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,6 +41,13 @@ const fullTitle = `${title} | Trycay`;
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={type} />
+
+<!-- Content Security Policy -->
+<meta http-equiv="Content-Security-Policy" content={csp} />
+
+<!-- Additional Security Headers -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
 <meta property="og:url" content={canonical} />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />

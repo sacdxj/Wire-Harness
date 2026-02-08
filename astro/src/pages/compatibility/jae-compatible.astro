@@ -13,6 +13,39 @@ const breadcrumbItems = [
   title="JAE Compatible Connectors | MX, SF, LE Wire Assemblies"
   description="Factory-direct JAE compatible wire assemblies. MX, SF, LE series equivalents for consumer electronics and automotive applications. 30-50% cost savings."
 >
+  <!-- JAE Compatible Product Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "JAE Compatible Wire Assemblies",
+    "description": "Factory-direct JAE compatible wire assemblies including MX, SF, and LE series for consumer electronics and automotive applications",
+    "brand": {
+      "@type": "Brand",
+      "name": "Trycay"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Trycay"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "USD"
+    },
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "Series",
+        "value": "MX, SF, LE"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Applications",
+        "value": "Consumer Electronics, Automotive"
+      }
+    ]
+  })} />
+
   <Breadcrumb items={breadcrumbItems} />
 
   <section class="px-4 py-16">

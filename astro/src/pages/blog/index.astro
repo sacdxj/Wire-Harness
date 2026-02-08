@@ -16,6 +16,20 @@ const breadcrumbItems = [
   title="Technical Blog | Wire Harness & Connector Insights"
   description="Expert articles on wire harness design, connector selection, manufacturing best practices, and industry insights from Trycay engineers."
 >
+  <!-- Blog Collection Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Technical Blog - Wire Harness & Connector Insights",
+    "description": "Expert articles on wire harness design, connector selection, manufacturing best practices, and industry insights",
+    "url": "https://trycay.com/blog",
+    "provider": {
+      "@type": "Organization",
+      "name": "Trycay",
+      "url": "https://trycay.com"
+    }
+  })} />
+
   <Breadcrumb items={breadcrumbItems} />
 
   <section class="px-4 py-16">

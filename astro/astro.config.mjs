@@ -4,9 +4,17 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://trycay.com',
-  integrations: [tailwind()],
+  integrations: [tailwind(), sitemap()],
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp'
+    },
+    // Remote images for CDN
+    remotePatterns: []
+  },
   build: {
-    format: 'directory'
+    format: 'directory',
+    assets: '_assets'
   },
   vite: {
     build: {

@@ -33,6 +33,55 @@ const breadcrumbItems = [
   title="Wire Harness Applications | Industry Solutions & Use Cases"
   description="Discover how our custom wire harnesses and connectors serve diverse industries. Consumer electronics, industrial control, LED lighting, and more."
 >
+  <!-- Applications Collection Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Wire Harness Applications by Industry",
+    "description": "Discover how custom wire harnesses and connectors serve diverse industries",
+    "url": "https://trycay.com/applications",
+    "provider": {
+      "@type": "Organization",
+      "name": "Trycay",
+      "url": "https://trycay.com"
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "ItemPage",
+            "name": "Consumer Electronics Wire Harness Solutions",
+            "url": "https://trycay.com/applications/consumer-electronics",
+            "description": "Precision wire assemblies for smartphones, wearables, portable devices, and IoT products with ultra-compact connectors"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "ItemPage",
+            "name": "Industrial Control Wire Harness Solutions",
+            "url": "https://trycay.com/applications/industrial-control",
+            "description": "Reliable wire harness solutions for industrial automation, PLC systems, motor controls, and sensor networks"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "ItemPage",
+            "name": "LED & Lighting Wire Harness Solutions",
+            "url": "https://trycay.com/applications/led-lighting",
+            "description": "Efficient power delivery assemblies for LED strips, luminaires, signage, and architectural lighting systems"
+          }
+        }
+      ]
+    }
+  })} />
+
   <Breadcrumb items={breadcrumbItems} />
 
   <section class="px-4 py-16">

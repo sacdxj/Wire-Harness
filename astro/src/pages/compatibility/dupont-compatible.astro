@@ -13,6 +13,39 @@ const breadcrumbItems = [
   title="DuPont 2.54mm Compatible Connectors"
   description="Factory-direct DuPont 2.54mm compatible pre-crimped leads and wire assemblies for prototyping and development."
 >
+  <!-- DuPont Compatible Product Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "DuPont 2.54mm Compatible Wire Assemblies",
+    "description": "Factory-direct DuPont 2.54mm compatible pre-crimped leads and wire assemblies for Arduino, Raspberry Pi and development boards",
+    "brand": {
+      "@type": "Brand",
+      "name": "Trycay"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Trycay"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "USD"
+    },
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "Pitch",
+        "value": "2.54mm standard, 1.27mm mini"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Applications",
+        "value": "Arduino, Raspberry Pi, Development Boards"
+      }
+    ]
+  })} />
+
   <Breadcrumb items={breadcrumbItems} />
 
   <section class="px-4 py-16">

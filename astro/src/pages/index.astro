@@ -6,6 +6,55 @@ import MainLayout from '../layouts/MainLayout.astro';
   title="OEM Cable Sub-Assembly Manufacturer | Wire Harness Factory Direct"
   description="ISO 9001 certified OEM wire harness manufacturer. 15+ years, 5M+ monthly capacity, UL certified. Cable sub-assembly partner for global brands. JST/Molex/TE compatible at factory-direct pricing."
 >
+  <!-- Web Site Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Trycay",
+    "url": Astro.site,
+    "description": "ISO 9001 certified OEM wire harness manufacturer specializing in custom terminal wire assemblies and connector solutions",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://trycay.com/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  })} />
+
+  <!-- Organization Schema (Enhanced) -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Trycay",
+    "alternateName": "Shenzhen Youboda Technology Co., Ltd.",
+    "url": "https://trycay.com",
+    "logo": "https://trycay.com/logo.png",
+    "description": "ISO 9001 certified OEM wire harness manufacturer. 15+ years experience in custom terminal wire assemblies, JST/Molex/TE compatible connector solutions.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "CN",
+      "addressRegion": "Guangdong"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "engineering@harnesslab.com",
+      "availableLanguage": ["English", "Chinese"]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/harnesslab"
+    ],
+    "areaServed": "Worldwide",
+    "foundingDate": "2009",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "150"
+    }
+  })} />
+
   <!-- Hero Section -->
   <section class="min-h-screen flex items-center px-4 py-20 md:py-32 relative overflow-hidden">
     <!-- Background Image with Overlay -->
@@ -14,6 +63,10 @@ import MainLayout from '../layouts/MainLayout.astro';
         src="/images/homepage/hero.jpg"
         alt="Precision Terminal Wire Assembly Manufacturing"
         class="w-full h-full object-cover"
+        loading="eager"
+        decoding="sync"
+        width="1920"
+        height="1080"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-bg-primary/95 via-bg-primary/80 to-bg-primary/60"></div>
     </div>

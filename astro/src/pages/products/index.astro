@@ -60,6 +60,20 @@ const brandAssemblies = [
   title="Our Cable Assembly Solutions | Product Catalog"
   description="Browse our complete cable assembly solutions. Capability-based and brand-compatible wire harnesses manufactured to your specifications."
 >
+  <!-- Products Collection Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Cable Assembly Solutions - Product Catalog",
+    "description": "Complete wire harness solutions including capability-based assemblies and brand-compatible wire harnesses",
+    "url": "https://trycay.com/products",
+    "provider": {
+      "@type": "Organization",
+      "name": "Trycay",
+      "url": "https://trycay.com"
+    }
+  })} />
+
   <Breadcrumb items={breadcrumbItems} />
 
   <section class="px-4 py-16">

@@ -12,6 +12,61 @@ const breadcrumbItems = [
   title="About Us | Wire Harness Manufacturing Excellence"
   description="Learn about Trycay by Shenzhen Youboda Technology Co., Ltd. - ISO 9001 certified wire harness manufacturer. 15+ years experience in JST, Molex, TE compatible connector solutions."
 >
+  <!-- About Page Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Trycay - Wire Harness Manufacturer",
+    "description": "Learn about Trycay by Shenzhen Youboda Technology Co., Ltd. - ISO 9001 certified wire harness manufacturer",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Trycay",
+      "alternateName": "Shenzhen Youboda Technology Co., Ltd.",
+      "url": "https://trycay.com",
+      "logo": "https://trycay.com/logo.png",
+      "description": "Leading manufacturer of custom wire harnesses and connector systems, specializing in JST, Molex, and TE Connectivity compatible solutions",
+      "foundingDate": "2009",
+      "founders": [
+        {
+          "@type": "Person",
+          "name": "Shenzhen Youboda Technology"
+        }
+      ],
+      "areaServed": "Worldwide",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": "150"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CN",
+        "addressRegion": "Guangdong"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "Gben@trycay.com",
+        "telephone": "+86-189-2843-5743",
+        "availableLanguage": ["English", "Chinese"]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/harnesslab"
+      ],
+      "award": ["ISO 9001:2015 Certified", "UL Certified", "REACH Compliant"],
+      "knowsAbout": [
+        "Custom wire harness manufacturing",
+        "JST compatible connectors",
+        "Molex compatible connectors",
+        "TE Connectivity compatible connectors",
+        "Terminal wire assembly",
+        "Crimp termination",
+        "Rapid prototyping",
+        "Volume production"
+      ],
+      "slogan": "Precision Wire Harness Manufacturing Excellence"
+    }
+  })} />
+
   <Breadcrumb items={breadcrumbItems} />
 
   <section class="px-4 py-16">

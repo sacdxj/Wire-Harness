@@ -1,11 +1,20 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import CMScript from '../components/CMScript.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Admin', href: '/admin' }
+];
 ---
 
 <MainLayout
   title="Admin Login | Content Management"
   description="Login to manage website content through Decap CMS"
 >
+  <Breadcrumb items={breadcrumbItems} />
+
   <section class="px-4 py-20">
     <div class="max-w-md mx-auto">
       <div class="bg-bg-secondary border border-border p-8">
@@ -26,12 +35,10 @@ import MainLayout from '../layouts/MainLayout.astro';
       </div>
     </div>
   </section>
-</MainLayout>
 
-<script>
-  // Decap CMS (formerly Netlify CMS) will be loaded here
-  // When hosted on Netlify or similar platforms, the CMS will automatically initialize
-</script>
+  <!-- Load Decap CMS -->
+  <CMScript />
+</MainLayout>
 
 <style>
   #decap-cms {

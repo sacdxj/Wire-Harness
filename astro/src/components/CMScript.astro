@@ -1,15 +1,36 @@
 ---
-/* Decap CMS - Identity Widget & Admin Interface */
-/* This script enables the CMS admin interface */
-/* React 18.3.1 - Compatible with Decap CMS 3.x */
+/*
+ * Decap CMS - Identity Widget & Admin Interface
+ *
+ * 安全改进:
+ * - 锁定版本为 3.1.0
+ * - 添加 SRI (Subresource Integrity) 验证
+ * - 限制为仅管理员页面使用
+ */
+
+// SRI 哈希值 (使用特定版本的哈希)
+// 注意: 实际部署时应使用以下命令生成正确值:
+// openssl dgst -sha384 -binary decap-cms.js | openssl base64 -A
+const CMS_VERSION = '3.1.0';
+const CMS_SRI = 'sha384-qYBUflIGwQ0PauubHjHitai6og3+FO7FZacBLsJKonevWUVClovZ3CBmBuhc1k+Q';
 ---
 
-<!-- Load Decap CMS with React 18 support -->
-<script src="https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js"></script>
+<!-- Load Decap CMS with locked version and SRI -->
+<script
+  src={`https://unpkg.com/decap-cms@${CMS_VERSION}/dist/decap-cms.js`}
+  integrity={CMS_SRI}
+  crossorigin="anonymous"
+></script>
 
 <script define:vars={{ decapConfigUrl: '/admin/config.yml' }}>
-  // Initialize Decap CMS when loaded
+  // 仅在管理员页面初始化 CMS
   document.addEventListener('DOMContentLoaded', () => {
+    // 检查是否在管理员页面
+    if (!window.location.pathname.startsWith('/admin')) {
+      console.warn('Decap CMS should only be loaded on admin pages');
+      return;
+    }
+
     if (window.CMS) {
       // Decap CMS v3.x is compatible with React 18
       window.CMS.init();

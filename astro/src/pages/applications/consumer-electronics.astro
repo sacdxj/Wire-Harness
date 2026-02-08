@@ -13,6 +13,35 @@ const breadcrumbItems = [
   title="Consumer Electronics Wire Harness Solutions | Custom Cable Assemblies"
   description="Custom wire assemblies for consumer electronics applications. Smartphones, wearables, IoT devices, audio equipment. Industry-specific compliance and testing standards."
 >
+  <!-- Consumer Electronics Application Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemPage",
+    "name": "Consumer Electronics Wire Harness Solutions",
+    "description": "Custom wire assemblies for consumer electronics applications including smartphones, wearables, IoT devices, and audio equipment",
+    "url": "https://trycay.com/applications/consumer-electronics",
+    "provider": {
+      "@type": "Organization",
+      "name": "Trycay",
+      "url": "https://trycay.com"
+    },
+    "mainEntity": {
+      "@type": "Service",
+      "name": "Consumer Electronics Wire Harness Solutions",
+      "description": "Precision wire assemblies for consumer electronics with ultra-compact connectors and industry-specific compliance",
+      "provider": {
+        "@type": "Organization",
+        "name": "Trycay",
+        "url": "https://trycay.com"
+      },
+      "industry": "Consumer Electronics",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Consumer Electronics Manufacturers"
+      }
+    }
+  })} />
+
   <Breadcrumb items={breadcrumbItems} />
 
   <section class="px-4 py-16">

@@ -13,6 +13,58 @@ const breadcrumbItems = [
   title="LED Lighting Wire Harness Solutions | Custom Cable Assemblies"
   description="Custom wire assemblies for LED lighting applications. LED strips, drivers, fixtures, signage. UL certified solutions for lighting industry requirements."
 >
+  <!-- LED Lighting Application Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemPage",
+    "name": "LED Lighting Wire Harness Solutions",
+    "description": "Custom wire assemblies for LED lighting applications. LED strips, drivers, fixtures, signage. UL certified solutions for lighting industry requirements.",
+    "url": "https://trycay.com/applications/led-lighting",
+    "provider": {
+      "@type": "Organization",
+      "name": "Trycay",
+      "url": "https://trycay.com"
+    },
+    "mainEntity": {
+      "@type": "Service",
+      "name": "LED Lighting Wire Harness Solutions",
+      "description": "Custom wire assemblies for LED lighting applications including LED strips, drivers, fixtures, and signage with UL certification",
+      "provider": {
+        "@type": "Organization",
+        "name": "Trycay",
+        "url": "https://trycay.com"
+      },
+      "industry": "LED Lighting",
+      "offers": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "LED Strip Wire Assemblies"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "LED Driver Cable Assemblies"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "LED Display Wire Harnesses"
+          }
+        }
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "LED Lighting Manufacturers"
+      }
+    }
+  })} />
+
   <Breadcrumb items={breadcrumbItems} />
 
   <section class="px-4 py-16">

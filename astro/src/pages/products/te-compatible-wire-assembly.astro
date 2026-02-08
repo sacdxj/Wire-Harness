@@ -5,103 +5,103 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Products', href: '/products' },
-  { name: 'JST Compatible Cable Assembly', href: '/products/jst-terminal-wire-assembly' }
+  { name: 'TE Compatible Cable Assembly', href: '/products/te-compatible-wire-assembly' }
 ];
 
-// JST Series Technical Data
-const jstSeries = [
+// TE Series Technical Data
+const teSeries = [
   {
-    series: 'PH',
-    pitch: '2.0mm',
-    current: '2A',
-    voltage: '100V AC/DC',
-    awg: '28-24',
-    temp: '-25°C to +85°C',
-    applications: 'Consumer electronics, LED lighting, sensors'
-  },
-  {
-    series: 'XH',
-    pitch: '2.5mm',
-    current: '3A',
-    voltage: '100V AC/DC',
-    awg: '26-22',
-    temp: '-25°C to +85°C',
-    applications: 'Power delivery, battery connections, industrial control'
-  },
-  {
-    series: 'SH',
-    pitch: '1.0mm',
-    current: '1A',
-    voltage: '100V AC/DC',
-    awg: '32-28',
-    temp: '-25°C to +85°C',
-    applications: 'Wearable devices, compact electronics, IoT sensors'
-  },
-  {
-    series: 'GH',
-    pitch: '1.25mm',
-    current: '1.5A',
-    voltage: '100V AC/DC',
-    awg: '32-28',
-    temp: '-25°C to +85°C',
-    applications: 'Medical devices, portable equipment, drones'
-  },
-  {
-    series: 'VH',
-    pitch: '3.96mm',
-    current: '7A',
+    series: 'Econoseal',
+    pitch: '2.8mm',
+    current: '8A',
     voltage: '250V AC/DC',
-    awg: '22-16',
-    temp: '-25°C to +85°C',
-    applications: 'Power supplies, industrial equipment, automotive'
+    awg: '22-14',
+    temp: '-40°C to +125°C',
+    applications: 'Automotive, marine, industrial equipment'
   },
   {
-    series: 'EH',
+    series: 'AMP MCP',
+    pitch: '3.81mm',
+    current: '11A',
+    voltage: '600V AC/DC',
+    awg: '20-12',
+    temp: '-40°C to +105°C',
+    applications: 'Power distribution, industrial control, heavy equipment'
+  },
+  {
+    series: 'AMPSEAL 16',
+    pitch: '2.8mm',
+    current: '14A',
+    voltage: '500V AC/DC',
+    awg: '20-14',
+    temp: '-40°C to +125°C',
+    applications: 'Off-highway, agricultural, construction equipment'
+  },
+  {
+    series: 'Superseal 1.5',
+    pitch: '1.5mm',
+    current: '8A',
+    voltage: '250V AC/DC',
+    awg: '22-18',
+    temp: '-40°C to +105°C',
+    applications: 'Automotive sensors, lighting, small engines'
+  },
+  {
+    series: 'MATE-N-LOK',
+    pitch: '4.14mm',
+    current: '9A',
+    voltage: '250V AC/DC',
+    awg: '18-14',
+    temp: '-40°C to +105°C',
+    applications: 'Power delivery, HVAC, industrial automation'
+  },
+  {
+    series: 'PLS',
     pitch: '2.5mm',
     current: '3A',
-    voltage: '100V AC/DC',
-    awg: '26-22',
-    temp: '-25°C to +85°C',
-    applications: 'Board-to-board connections, LED drivers, controllers'
+    voltage: '250V AC/DC',
+    awg: '26-20',
+    temp: '-40°C to +105°C',
+    applications: 'PCB connections, power supplies, LED drivers'
   }
 ];
 
 const wireOptions = [
   { type: 'UL1007', awg: '28-20', temp: '80°C', voltage: '300V', description: 'Standard internal wiring' },
-  { type: 'UL1015', awg: '26-16', temp: '105°C', voltage: '600V', description: 'High-temperature applications' },
-  { type: 'UL1061', awg: '30-22', temp: '80°C', voltage: '300V', description: 'Compact electronic connections' },
-  { type: 'Silicone', awg: '26-14', temp: '150°C', voltage: '600V', description: 'High-flex, medical/industrial' },
-  { type: 'Teflon', awg: '28-20', temp: '200°C', voltage: '600V', description: 'Extreme temperature environments' }
+  { type: 'UL1015', awg: '26-16', temp: '105°C', voltage: '600V', description: 'High-current applications' },
+  { type: 'UL1061', awg: '30-22', temp: '80°C', voltage: '300V', description: 'Compact signal wiring' },
+  { type: 'XLPE', awg: '22-14', temp: '105°C', voltage: '600V', description: 'Automotive/industrial grade' },
+  { type: 'Silicone', awg: '26-14', temp: '150°C', voltage: '600V', description: 'High-temperature engine compartment' }
 ];
 
 const qualityTests = [
   { name: 'Continuity Test', desc: '100% electrical continuity verification on every assembly', icon: '⚡' },
-  { name: 'Pull Test', desc: 'Crimp pull-off force: 5-8N minimum per terminal', icon: '💪' },
+  { name: 'Pull Test', desc: 'Crimp pull-off force: 8-15N minimum per terminal', icon: '💪' },
   { name: 'Dimensional Check', desc: 'Crimp height tolerance: ±0.02mm for consistent contact', icon: '📏' },
   { name: 'Visual Inspection', desc: '20x microscope inspection for crimp quality and alignment', icon: '🔬' },
   { name: 'Insulation Resistance', desc: '1000 MΩ minimum at 500V DC', icon: '🔒' },
-  { name: 'Withstand Voltage', desc: '500V AC for 1 minute without breakdown', icon: '⚡' }
+  { name: 'Withstand Voltage', desc: '1000V AC for 1 minute without breakdown', icon: '⚡' }
 ];
 
 const customSpecs = [
   { label: 'Wire Length', range: '10mm - 5 meters', unit: 'Custom lengths per drawing' },
   { label: 'Pin Count', range: '2 - 24 pins', unit: 'Single-end or dual-end crimped' },
-  { label: 'Wire Gauge', range: 'AWG 32 - 14', unit: 'Matched to current rating' },
-  { label: 'Color Options', range: 'Standard + Custom', unit: 'Black/Red/White/Yellow/Blue or custom' },
-  { label: 'Termination', range: 'Crimp', unit: 'Compatible with JST tooling' },
+  { label: 'Wire Gauge', range: 'AWG 32 - 12', unit: 'Matched to current rating' },
+  { label: 'Color Options', range: 'Standard + Custom', unit: 'Black/Red/Yellow/Blue or custom' },
+  { label: 'Termination', range: 'Crimp', unit: 'Compatible with TE tooling' },
   { label: 'MOQ', range: '100 pcs', unit: 'Prototype quantities accepted' }
 ];
 ---
 
 <MainLayout
-  title="JST Compatible Cable Assembly | PH XH SH GH VH Series Wire Harness Manufacturer"
-  description="Factory-direct JST compatible cable assemblies. PH (2.0mm), XH (2.5mm), SH (1.0mm), GH (1.25mm), VH (3.96mm), EH series connector cable assemblies. Custom wire gauge, length, pin count. UL certified, 100% tested."
+  title="TE Compatible Cable Assembly | Econoseal AMP MCP AMPSEAL Wire Harness Manufacturer"
+  description="Factory-direct TE compatible cable assemblies. Econoseal, AMP MCP, AMPSEAL, Superseal series connector cable assemblies. Custom wire gauge, length, pin count. UL certified, 100% tested."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "JST Terminal Wire Assembly",
-    "description": "Custom JST compatible terminal wire assemblies including PH, XH, SH, GH, VH, and EH series connectors",
+    "name": "TE Compatible Wire Assembly",
+    "description": "Custom TE compatible wire assemblies including Econoseal, AMP MCP, AMPSEAL, Superseal, and MATE-N-LOK series connectors",
     "brand": {
       "@type": "Brand",
       "name": "Trycay"
@@ -120,22 +120,22 @@ const customSpecs = [
       {
         "@type": "PropertyValue",
         "name": "Supported Series",
-        "value": "PH, XH, SH, GH, VH, EH"
+        "value": "Econoseal, AMP MCP, AMPSEAL, Superseal, MATE-N-LOK, PLS"
       },
       {
         "@type": "PropertyValue",
         "name": "Pitch Range",
-        "value": "1.0mm - 3.96mm"
+        "value": "1.5mm - 4.14mm"
       },
       {
         "@type": "PropertyValue",
         "name": "Current Rating",
-        "value": "1A - 7A"
+        "value": "3A - 14A"
       },
       {
         "@type": "PropertyValue",
         "name": "Wire Gauge",
-        "value": "AWG 32-14"
+        "value": "AWG 32-12"
       }
     ]
   })} />
@@ -147,22 +147,22 @@ const customSpecs = [
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <p class="font-mono text-xs text-accent-amber uppercase tracking-widest mb-4">JST Compatible Assembly</p>
+          <p class="font-mono text-xs text-accent-amber uppercase tracking-widest mb-4">TE Compatible Assembly</p>
           <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            JST Terminal Wire Assembly
+            TE Compatible Wire Assembly
           </h1>
           <p class="text-lg text-text-secondary mb-8">
-            Custom JST-compatible terminal wire assemblies manufactured to your specifications.
-            Support for PH, XH, SH, GH, VH, and EH series connectors with pitch range 1.0mm to 3.96mm.
+            Custom TE-compatible wire assemblies manufactured to your specifications.
+            Support for Econoseal, AMP MCP, AMPSEAL, Superseal, and MATE-N-LOK series with pitch range 1.5mm to 4.14mm.
             UL-certified wire, 100% electrical testing, and ISO-compliant quality control.
           </p>
 
           <!-- Disclaimer -->
           <div class="mb-8 p-4 bg-accent-amber/10 border border-accent-amber/30">
             <p class="font-mono text-xs text-accent-amber">
-              <strong>Disclaimer:</strong> These are JST-compatible connector cable assemblies manufactured by Trycay.
-              We are not affiliated with JST (Japan Solderless Terminals). All assemblies are produced to meet
-              JST series specifications and are fully compatible with JST connectors.
+              <strong>Disclaimer:</strong> These are TE-compatible connector cable assemblies manufactured by Trycay.
+              We are not affiliated with TE Connectivity. All assemblies are produced to meet
+              TE series specifications and are fully compatible with TE connectors.
             </p>
           </div>
 
@@ -185,19 +185,19 @@ const customSpecs = [
             <a href="/contact" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
               Upload Drawing for Quote
             </a>
-            <a href="/compatibility/jst-compatible" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-accent-cyan border border-accent-cyan hover:bg-accent-cyan/10 transition-all duration-300">
-              JST Compatibility Guide
+            <a href="/compatibility/te-compatible" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-accent-cyan border border-accent-cyan hover:bg-accent-cyan/10 transition-all duration-300">
+              TE Compatibility Guide
             </a>
           </div>
         </div>
 
         <div class="bg-bg-tertiary border border-border p-8">
-          <h2 class="font-mono text-lg font-bold text-accent-cyan mb-6">Supported JST Series</h2>
+          <h2 class="font-mono text-lg font-bold text-accent-cyan mb-6">Supported TE Series</h2>
           <div class="grid grid-cols-2 gap-4">
-            {jstSeries.map(item => (
+            {teSeries.map(item => (
               <div class="border border-border p-4 hover:border-accent-cyan transition-colors">
-                <div class="font-mono text-xl font-bold text-accent-cyan mb-1">{item.series}</div>
-                <div class="font-mono text-sm text-text-secondary">{item.pitch} pitch</div>
+                <div class="font-mono text-sm font-bold text-accent-cyan mb-1">{item.series}</div>
+                <div class="font-mono text-xs text-text-secondary">{item.pitch} pitch</div>
                 <div class="text-xs text-text-muted mt-1">{item.current} rating</div>
               </div>
             ))}
@@ -207,7 +207,7 @@ const customSpecs = [
     </div>
   </section>
 
-  <!-- JST Series Specifications -->
+  <!-- TE Series Specifications -->
   <section class="px-4 py-16">
     <div class="max-w-7xl mx-auto">
       <div class="mb-12">
@@ -229,7 +229,7 @@ const customSpecs = [
             </tr>
           </thead>
           <tbody>
-            {jstSeries.map(item => (
+            {teSeries.map(item => (
               <tr class="border-b border-border hover:bg-bg-secondary">
                 <td class="px-4 py-4 font-mono font-bold text-accent-cyan">{item.series}</td>
                 <td class="px-4 py-4 font-mono">{item.pitch}</td>
@@ -432,9 +432,9 @@ const customSpecs = [
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <a href="/compatibility/jst-compatible" class="group block bg-bg-secondary border border-border p-6 transition-all duration-300 hover:border-accent-cyan">
-          <h3 class="font-bold mb-2 group-hover:text-accent-cyan">JST Compatibility Guide</h3>
-          <p class="text-text-secondary text-sm">Complete cross-reference for JST series connectors and equivalents.</p>
+        <a href="/compatibility/te-compatible" class="group block bg-bg-secondary border border-border p-6 transition-all duration-300 hover:border-accent-cyan">
+          <h3 class="font-bold mb-2 group-hover:text-accent-cyan">TE Compatibility Guide</h3>
+          <p class="text-text-secondary text-sm">Complete cross-reference for TE series connectors and equivalents.</p>
           <div class="mt-4 flex items-center text-accent-cyan font-mono text-sm">
             <span>View Guide</span>
             <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
@@ -450,11 +450,11 @@ const customSpecs = [
           </div>
         </a>
 
-        <a href="/blog/jst-ph-series-guide" class="group block bg-bg-secondary border border-border p-6 transition-all duration-300 hover:border-accent-cyan">
-          <h3 class="font-bold mb-2 group-hover:text-accent-cyan">JST PH Series Guide</h3>
-          <p class="text-text-secondary text-sm">Technical overview of JST PH series connectors and assembly best practices.</p>
+        <a href="/products/molex-compatible-wire-assembly" class="group block bg-bg-secondary border border-border p-6 transition-all duration-300 hover:border-accent-cyan">
+          <h3 class="font-bold mb-2 group-hover:text-accent-cyan">Molex Wire Assemblies</h3>
+          <p class="text-text-secondary text-sm">Alternative connector options with similar specifications.</p>
           <div class="mt-4 flex items-center text-accent-cyan font-mono text-sm">
-            <span>Read Article</span>
+            <span>View Products</span>
             <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
           </div>
         </a>

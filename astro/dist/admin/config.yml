@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
-display_url: https://your-wire-harness-factory.com
+display_url: https://trycay.com
 logo_url: /images/logo.png
 show_preview_links: true
 
@@ -97,7 +97,7 @@ collections:
         fields:
           - {label: "Site Name", name: "siteName", widget: "string", default: "HARNESS+LAB"}
           - {label: "Site Description", name: "siteDescription", widget: "text"}
-          - {label: "Site URL", name: "siteUrl", widget: "string", default: "https://your-wire-harness-factory.com"}
+          - {label: "Site URL", name: "siteUrl", widget: "string", default: "https://trycay.com"}
           - {label: "Contact Email", name: "contactEmail", widget: "string", default: "engineering@harnesslab.com"}
           - {label: "Contact Phone", name: "contactPhone", widget: "string", default: "+1 (555) 234-5678"}
           - {label: "Social Media Links", name: "socialLinks", widget: "object", fields: [

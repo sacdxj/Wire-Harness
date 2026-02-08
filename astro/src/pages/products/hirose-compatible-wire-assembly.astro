@@ -5,37 +5,37 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Products', href: '/products' },
-  { name: 'JST Compatible Cable Assembly', href: '/products/jst-terminal-wire-assembly' }
+  { name: 'Hirose Compatible Cable Assembly', href: '/products/hirose-compatible-wire-assembly' }
 ];
 
-// JST Series Technical Data
-const jstSeries = [
+// Hirose Series Technical Data
+const hiroseSeries = [
   {
-    series: 'PH',
+    series: 'DF13',
     pitch: '2.0mm',
     current: '2A',
-    voltage: '100V AC/DC',
+    voltage: '250V AC/DC',
     awg: '28-24',
     temp: '-25°C to +85°C',
-    applications: 'Consumer electronics, LED lighting, sensors'
+    applications: 'Consumer electronics, automotive, industrial control'
   },
   {
-    series: 'XH',
-    pitch: '2.5mm',
+    series: 'DF11',
+    pitch: '2.0mm',
     current: '3A',
-    voltage: '100V AC/DC',
+    voltage: '250V AC/DC',
     awg: '26-22',
     temp: '-25°C to +85°C',
-    applications: 'Power delivery, battery connections, industrial control'
+    applications: 'Power delivery, automotive systems, LED lighting'
   },
   {
-    series: 'SH',
+    series: 'FH',
     pitch: '1.0mm',
     current: '1A',
     voltage: '100V AC/DC',
     awg: '32-28',
     temp: '-25°C to +85°C',
-    applications: 'Wearable devices, compact electronics, IoT sensors'
+    applications: 'Compact electronics, mobile devices, IoT modules'
   },
   {
     series: 'GH',
@@ -44,34 +44,34 @@ const jstSeries = [
     voltage: '100V AC/DC',
     awg: '32-28',
     temp: '-25°C to +85°C',
-    applications: 'Medical devices, portable equipment, drones'
+    applications: 'Medical devices, portable equipment, cameras'
   },
   {
-    series: 'VH',
-    pitch: '3.96mm',
-    current: '7A',
+    series: 'XE',
+    pitch: '2.5mm',
+    current: '3A',
     voltage: '250V AC/DC',
-    awg: '22-16',
+    awg: '26-22',
     temp: '-25°C to +85°C',
     applications: 'Power supplies, industrial equipment, automotive'
   },
   {
-    series: 'EH',
+    series: 'ST4',
     pitch: '2.5mm',
     current: '3A',
-    voltage: '100V AC/DC',
+    voltage: '250V AC/DC',
     awg: '26-22',
     temp: '-25°C to +85°C',
-    applications: 'Board-to-board connections, LED drivers, controllers'
+    applications: 'Wire-to-board connections, LED drivers, sensors'
   }
 ];
 
 const wireOptions = [
   { type: 'UL1007', awg: '28-20', temp: '80°C', voltage: '300V', description: 'Standard internal wiring' },
-  { type: 'UL1015', awg: '26-16', temp: '105°C', voltage: '600V', description: 'High-temperature applications' },
-  { type: 'UL1061', awg: '30-22', temp: '80°C', voltage: '300V', description: 'Compact electronic connections' },
-  { type: 'Silicone', awg: '26-14', temp: '150°C', voltage: '600V', description: 'High-flex, medical/industrial' },
-  { type: 'Teflon', awg: '28-20', temp: '200°C', voltage: '600V', description: 'Extreme temperature environments' }
+  { type: 'UL1015', awg: '26-16', temp: '105°C', voltage: '600V', description: 'High-current applications' },
+  { type: 'UL1061', awg: '30-22', temp: '80°C', voltage: '300V', description: 'Compact signal wiring' },
+  { type: 'Silicone', awg: '26-14', temp: '150°C', voltage: '600V', description: 'High-flex applications' },
+  { type: 'XLPE', awg: '22-14', temp: '105°C', voltage: '600V', description: 'Automotive/industrial grade' }
 ];
 
 const qualityTests = [
@@ -88,20 +88,20 @@ const customSpecs = [
   { label: 'Pin Count', range: '2 - 24 pins', unit: 'Single-end or dual-end crimped' },
   { label: 'Wire Gauge', range: 'AWG 32 - 14', unit: 'Matched to current rating' },
   { label: 'Color Options', range: 'Standard + Custom', unit: 'Black/Red/White/Yellow/Blue or custom' },
-  { label: 'Termination', range: 'Crimp', unit: 'Compatible with JST tooling' },
+  { label: 'Termination', range: 'Crimp', unit: 'Compatible with Hirose tooling' },
   { label: 'MOQ', range: '100 pcs', unit: 'Prototype quantities accepted' }
 ];
 ---
 
 <MainLayout
-  title="JST Compatible Cable Assembly | PH XH SH GH VH Series Wire Harness Manufacturer"
-  description="Factory-direct JST compatible cable assemblies. PH (2.0mm), XH (2.5mm), SH (1.0mm), GH (1.25mm), VH (3.96mm), EH series connector cable assemblies. Custom wire gauge, length, pin count. UL certified, 100% tested."
+  title="Hirose Compatible Cable Assembly | DF13 DF11 FH GH XE ST4 Wire Harness Manufacturer"
+  description="Factory-direct Hirose compatible cable assemblies. DF13, DF11, FH, GH, XE, ST4 series connector cable assemblies. Custom wire gauge, length, pin count. UL certified, 100% tested."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "JST Terminal Wire Assembly",
-    "description": "Custom JST compatible terminal wire assemblies including PH, XH, SH, GH, VH, and EH series connectors",
+    "name": "Hirose Compatible Wire Assembly",
+    "description": "Custom Hirose compatible wire assemblies including DF13, DF11, FH, GH, XE, and ST4 series connectors",
     "brand": {
       "@type": "Brand",
       "name": "Trycay"
@@ -120,17 +120,17 @@ const customSpecs = [
       {
         "@type": "PropertyValue",
         "name": "Supported Series",
-        "value": "PH, XH, SH, GH, VH, EH"
+        "value": "DF13, DF11, FH, GH, XE, ST4"
       },
       {
         "@type": "PropertyValue",
         "name": "Pitch Range",
-        "value": "1.0mm - 3.96mm"
+        "value": "1.0mm - 2.5mm"
       },
       {
         "@type": "PropertyValue",
         "name": "Current Rating",
-        "value": "1A - 7A"
+        "value": "1A - 3A"
       },
       {
         "@type": "PropertyValue",
@@ -147,22 +147,22 @@ const customSpecs = [
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <p class="font-mono text-xs text-accent-amber uppercase tracking-widest mb-4">JST Compatible Assembly</p>
+          <p class="font-mono text-xs text-accent-amber uppercase tracking-widest mb-4">Hirose Compatible Assembly</p>
           <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            JST Terminal Wire Assembly
+            Hirose Compatible Wire Assembly
           </h1>
           <p class="text-lg text-text-secondary mb-8">
-            Custom JST-compatible terminal wire assemblies manufactured to your specifications.
-            Support for PH, XH, SH, GH, VH, and EH series connectors with pitch range 1.0mm to 3.96mm.
+            Custom Hirose-compatible wire assemblies manufactured to your specifications.
+            Support for DF13, DF11, FH, GH, XE, and ST4 series connectors with pitch range 1.0mm to 2.5mm.
             UL-certified wire, 100% electrical testing, and ISO-compliant quality control.
           </p>
 
           <!-- Disclaimer -->
           <div class="mb-8 p-4 bg-accent-amber/10 border border-accent-amber/30">
             <p class="font-mono text-xs text-accent-amber">
-              <strong>Disclaimer:</strong> These are JST-compatible connector cable assemblies manufactured by Trycay.
-              We are not affiliated with JST (Japan Solderless Terminals). All assemblies are produced to meet
-              JST series specifications and are fully compatible with JST connectors.
+              <strong>Disclaimer:</strong> These are Hirose-compatible connector cable assemblies manufactured by Trycay.
+              We are not affiliated with Hirose Electric Company. All assemblies are produced to meet
+              Hirose series specifications and are fully compatible with Hirose connectors.
             </p>
           </div>
 
@@ -185,19 +185,19 @@ const customSpecs = [
             <a href="/contact" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-bg-primary bg-accent-cyan hover:bg-accent-green transition-all duration-300">
               Upload Drawing for Quote
             </a>
-            <a href="/compatibility/jst-compatible" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-accent-cyan border border-accent-cyan hover:bg-accent-cyan/10 transition-all duration-300">
-              JST Compatibility Guide
+            <a href="/compatibility/hirose-compatible" class="inline-block px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-accent-cyan border border-accent-cyan hover:bg-accent-cyan/10 transition-all duration-300">
+              Hirose Compatibility Guide
             </a>
           </div>
         </div>
 
         <div class="bg-bg-tertiary border border-border p-8">
-          <h2 class="font-mono text-lg font-bold text-accent-cyan mb-6">Supported JST Series</h2>
+          <h2 class="font-mono text-lg font-bold text-accent-cyan mb-6">Supported Hirose Series</h2>
           <div class="grid grid-cols-2 gap-4">
-            {jstSeries.map(item => (
+            {hiroseSeries.map(item => (
               <div class="border border-border p-4 hover:border-accent-cyan transition-colors">
-                <div class="font-mono text-xl font-bold text-accent-cyan mb-1">{item.series}</div>
-                <div class="font-mono text-sm text-text-secondary">{item.pitch} pitch</div>
+                <div class="font-mono text-sm font-bold text-accent-cyan mb-1">{item.series}</div>
+                <div class="font-mono text-xs text-text-secondary">{item.pitch} pitch</div>
                 <div class="text-xs text-text-muted mt-1">{item.current} rating</div>
               </div>
             ))}
@@ -207,7 +207,7 @@ const customSpecs = [
     </div>
   </section>
 
-  <!-- JST Series Specifications -->
+  <!-- Hirose Series Specifications -->
   <section class="px-4 py-16">
     <div class="max-w-7xl mx-auto">
       <div class="mb-12">
@@ -229,7 +229,7 @@ const customSpecs = [
             </tr>
           </thead>
           <tbody>
-            {jstSeries.map(item => (
+            {hiroseSeries.map(item => (
               <tr class="border-b border-border hover:bg-bg-secondary">
                 <td class="px-4 py-4 font-mono font-bold text-accent-cyan">{item.series}</td>
                 <td class="px-4 py-4 font-mono">{item.pitch}</td>
@@ -432,9 +432,9 @@ const customSpecs = [
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <a href="/compatibility/jst-compatible" class="group block bg-bg-secondary border border-border p-6 transition-all duration-300 hover:border-accent-cyan">
-          <h3 class="font-bold mb-2 group-hover:text-accent-cyan">JST Compatibility Guide</h3>
-          <p class="text-text-secondary text-sm">Complete cross-reference for JST series connectors and equivalents.</p>
+        <a href="/compatibility/hirose-compatible" class="group block bg-bg-secondary border border-border p-6 transition-all duration-300 hover:border-accent-cyan">
+          <h3 class="font-bold mb-2 group-hover:text-accent-cyan">Hirose Compatibility Guide</h3>
+          <p class="text-text-secondary text-sm">Complete cross-reference for Hirose series connectors and equivalents.</p>
           <div class="mt-4 flex items-center text-accent-cyan font-mono text-sm">
             <span>View Guide</span>
             <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
@@ -450,11 +450,11 @@ const customSpecs = [
           </div>
         </a>
 
-        <a href="/blog/jst-ph-series-guide" class="group block bg-bg-secondary border border-border p-6 transition-all duration-300 hover:border-accent-cyan">
-          <h3 class="font-bold mb-2 group-hover:text-accent-cyan">JST PH Series Guide</h3>
-          <p class="text-text-secondary text-sm">Technical overview of JST PH series connectors and assembly best practices.</p>
+        <a href="/products/jst-compatible-wire-assembly" class="group block bg-bg-secondary border border-border p-6 transition-all duration-300 hover:border-accent-cyan">
+          <h3 class="font-bold mb-2 group-hover:text-accent-cyan">JST Wire Assemblies</h3>
+          <p class="text-text-secondary text-sm">Alternative connector options with similar specifications.</p>
           <div class="mt-4 flex items-center text-accent-cyan font-mono text-sm">
-            <span>Read Article</span>
+            <span>View Products</span>
             <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
           </div>
         </a>

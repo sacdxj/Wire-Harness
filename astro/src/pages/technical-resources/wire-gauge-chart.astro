@@ -26,6 +26,32 @@ const wireData = [
   title="Wire Gauge Chart | AWG Reference for Terminal Wire Assemblies"
   description="Complete AWG wire gauge reference chart with metric equivalents, current ratings, and recommended applications for terminal wire assemblies."
 >
+  <!-- Wire Gauge Chart Article Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Wire Gauge Chart - AWG Reference for Terminal Wire Assemblies",
+    "description": "Complete AWG wire gauge reference chart with metric equivalents, current ratings, and recommended applications",
+    "url": "https://trycay.com/technical-resources/wire-gauge-chart",
+    "author": {
+      "@type": "Organization",
+      "name": "Trycay"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Trycay",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://trycay.com/logo.png"
+      }
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "AWG Wire Gauge Chart",
+      "description": "American Wire Gauge (AWG) reference chart with metric equivalents, current ratings, and applications for terminal wire assemblies"
+    }
+  })} />
+
   <Breadcrumb items={breadcrumbItems} />
 
   <section class="px-4 py-16">

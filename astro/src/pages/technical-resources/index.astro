@@ -33,6 +33,45 @@ const resources = [
   title="Technical Resources | Terminal Wire Assembly Reference Guides"
   description="Engineering reference guides for terminal wire assemblies. Wire gauge charts, crimp quality standards, connector compatibility guides, and best practices."
 >
+  <!-- Technical Resources Collection Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Technical Resources - Wire Harness Engineering Reference",
+    "description": "Engineering reference guides for terminal wire assemblies including wire gauge charts, crimp quality standards, and connector compatibility guides",
+    "url": "https://trycay.com/technical-resources",
+    "provider": {
+      "@type": "Organization",
+      "name": "Trycay",
+      "url": "https://trycay.com"
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Article",
+            "name": "Wire Gauge Chart",
+            "url": "https://trycay.com/technical-resources/wire-gauge-chart",
+            "description": "Complete AWG wire gauge reference with current ratings, cross-sectional area, and application guidelines"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Article",
+            "name": "Crimp Quality Standards",
+            "url": "https://trycay.com/technical-resources/crimp-quality-standards",
+            "description": "Industry-standard crimp quality parameters, pull test requirements, and inspection criteria"
+          }
+        }
+      ]
+    }
+  })} />
+
   <Breadcrumb items={breadcrumbItems} />
 
   <section class="px-4 py-16">

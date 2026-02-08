@@ -63,6 +63,20 @@ const breadcrumbItems = [
   title="Connector Compatibility Guide | JST, Molex, TE, DuPont, JAE, Hirose"
   description="Factory-direct compatible wire assemblies for JST, Molex, TE, DuPont, JAE, Hirose. PH, XH, EH, VH, PicoBlade, Econoseal, 2.54mm series. Same quality, 30-50% lower cost."
 >
+  <!-- Compatibility Collection Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Connector Compatibility Guide",
+    "description": "Factory-direct compatible wire assemblies for JST, Molex, TE, DuPont, JAE, and Hirose connectors",
+    "url": "https://trycay.com/compatibility",
+    "provider": {
+      "@type": "Organization",
+      "name": "Trycay",
+      "url": "https://trycay.com"
+    }
+  })} />
+
   <Breadcrumb items={breadcrumbItems} />
 
   <section class="px-4 py-16">

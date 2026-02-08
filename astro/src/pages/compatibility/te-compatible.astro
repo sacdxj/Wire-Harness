@@ -13,6 +13,39 @@ const breadcrumbItems = [
   title="TE Connectivity Compatible Connectors | AMP, Econoseal Wire Assemblies"
   description="Factory-direct TE/AMP compatible wire assemblies. Econoseal, AMP MCP, modular connectors for industrial and automotive. 30-50% cost savings."
 >
+  <!-- TE Compatible Product Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "TE Connectivity Compatible Wire Assemblies",
+    "description": "Factory-direct TE/AMP compatible wire assemblies including Econoseal, AMP MCP, and modular connectors for industrial and automotive applications",
+    "brand": {
+      "@type": "Brand",
+      "name": "Trycay"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Trycay"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "USD"
+    },
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "Series",
+        "value": "Econoseal, AMP MCP, Modular"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Applications",
+        "value": "Industrial, Automotive"
+      }
+    ]
+  })} />
+
   <Breadcrumb items={breadcrumbItems} />
 
   <section class="px-4 py-16">

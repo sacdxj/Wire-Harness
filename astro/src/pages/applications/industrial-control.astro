@@ -13,6 +13,35 @@ const breadcrumbItems = [
   title="Industrial Control Wire Harness Solutions | Automation Cable Assemblies"
   description="Custom wire assemblies for industrial control and automation. PLC systems, sensor connections, motor controls. High-reliability solutions for harsh environments."
 >
+  <!-- Industrial Control Application Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemPage",
+    "name": "Industrial Control Wire Harness Solutions",
+    "description": "Custom wire assemblies for industrial control and automation including PLC systems, sensor connections, and motor controls",
+    "url": "https://trycay.com/applications/industrial-control",
+    "provider": {
+      "@type": "Organization",
+      "name": "Trycay",
+      "url": "https://trycay.com"
+    },
+    "mainEntity": {
+      "@type": "Service",
+      "name": "Industrial Control Wire Harness Solutions",
+      "description": "High-reliability wire harness solutions for industrial automation, PLC systems, sensor networks, and motor controls",
+      "provider": {
+        "@type": "Organization",
+        "name": "Trycay",
+        "url": "https://trycay.com"
+      },
+      "industry": "Industrial Automation",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Industrial Equipment Manufacturers"
+      }
+    }
+  })} />
+
   <Breadcrumb items={breadcrumbItems} />
 
   <section class="px-4 py-16">
