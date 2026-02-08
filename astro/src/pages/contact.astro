@@ -373,74 +373,115 @@ const enableTurnstile = true;
       </form>
       </div>
 
-      <!-- Contact Info Cards (Horizontal Layout) -->
-      <div class="bg-bg-secondary/80 backdrop-blur border border-border p-8 shadow-lg shadow-accent-cyan/5">
+      <!-- Contact Info Cards -->
+      <div class="max-w-4xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Direct Contact -->
-        <div>
-          <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan mb-4">Direct Contact</h3>
-          <div class="space-y-4">
-            <div>
-              <p class="font-mono text-xs text-text-muted uppercase tracking-wider mb-1">Email</p>
-              <a href={`mailto:${contactEmail}`} class="text-text-primary hover:text-accent-cyan transition">
-                {contactEmail}
-              </a>
+          <!-- Direct Contact -->
+          <div class="bg-bg-secondary/60 backdrop-blur border border-border p-6 hover:border-accent-cyan/30 transition-all duration-300 hover:-translate-y-1">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-accent-cyan/10 border border-accent-cyan/30 flex items-center justify-center">
+                <svg class="w-5 h-5 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan">Contact</h3>
             </div>
-            <div>
-              <p class="font-mono text-xs text-text-muted uppercase tracking-wider mb-1">Phone</p>
-              <a href="tel:+8618928435743" class="text-text-primary hover:text-accent-cyan transition">
-                +86 189-2843-5743
+            <div class="space-y-3">
+              <a href={`mailto:${contactEmail}`} class="block text-sm text-text-primary hover:text-accent-cyan transition group">
+                <div class="font-mono text-xs text-text-muted mb-0.5">Email</div>
+                <div class="flex items-center gap-2">
+                  <span>{contactEmail}</span>
+                  <span class="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                </div>
               </a>
-            </div>
-            <div>
-              <p class="font-mono text-xs text-text-muted uppercase tracking-wider mb-1">WhatsApp</p>
-              <a href="https://wa.me/8618928435743" class="text-text-primary hover:text-accent-cyan transition">
-                +86 189-2843-5743
+              <a href="tel:+8618928435743" class="block text-sm text-text-primary hover:text-accent-cyan transition group">
+                <div class="font-mono text-xs text-text-muted mb-0.5">Phone</div>
+                <div class="flex items-center gap-2">
+                  <span>+86 189-2843-5743</span>
+                  <span class="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                </div>
+              </a>
+              <a href="https://wa.me/8618928435743" class="block text-sm text-text-primary hover:text-accent-cyan transition group">
+                <div class="font-mono text-xs text-text-muted mb-0.5">WhatsApp</div>
+                <div class="flex items-center gap-2">
+                  <span>+86 189-2843-5743</span>
+                  <span class="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                </div>
               </a>
             </div>
           </div>
-        </div>
 
-        <!-- Business Hours -->
-        <div>
-          <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan mb-4">Business Hours</h3>
-          <div class="space-y-2 text-sm">
-            <div class="flex justify-between">
-              <span class="text-text-secondary">Monday - Friday</span>
-              <span class="font-mono">9:00 AM - 6:00 PM CST</span>
+          <!-- Business Hours -->
+          <div class="bg-bg-secondary/60 backdrop-blur border border-border p-6 hover:border-accent-cyan/30 transition-all duration-300 hover:-translate-y-1">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-accent-cyan/10 border border-accent-cyan/30 flex items-center justify-center">
+                <svg class="w-5 h-5 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan">Hours</h3>
             </div>
-            <div class="flex justify-between">
-              <span class="text-text-secondary">Saturday</span>
-              <span class="font-mono">10:00 AM - 4:00 PM CST</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-text-secondary">Sunday</span>
-              <span class="font-mono">Closed</span>
+            <div class="space-y-2.5 text-sm">
+              <div>
+                <div class="text-text-secondary mb-1">Monday - Friday</div>
+                <div class="font-mono text-accent-cyan">9:00 AM - 6:00 PM</div>
+              </div>
+              <div>
+                <div class="text-text-secondary mb-1">Saturday</div>
+                <div class="font-mono text-accent-cyan">10:00 AM - 4:00 PM</div>
+              </div>
+              <div>
+                <div class="text-text-secondary mb-1">Sunday</div>
+                <div class="font-mono text-text-muted">Closed</div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Quick Response -->
-        <div>
-          <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan mb-4">Quick Response</h3>
-          <ul class="space-y-2 text-sm text-text-secondary">
-            <li class="flex items-start gap-2">
-              <span class="text-accent-green">✓</span>
-              <span>Quote within 24 hours</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-accent-green">✓</span>
-              <span>Engineering support</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-accent-green">✓</span>
-              <span>Free design review</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-accent-green">✓</span>
-              <span>48-hour prototypes</span>
-            </li>
-          </ul>
+          <!-- Quick Response -->
+          <div class="bg-bg-secondary/60 backdrop-blur border border-border p-6 hover:border-accent-cyan/30 transition-all duration-300 hover:-translate-y-1">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-accent-green/10 border border-accent-green/30 flex items-center justify-center">
+                <svg class="w-5 h-5 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-green">Why Us</h3>
+            </div>
+            <ul class="space-y-2 text-sm text-text-secondary">
+              <li class="flex items-start gap-2">
+                <span class="text-accent-green flex-shrink-0 mt-0.5">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </span>
+                <span>24-Hour Quote Response</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent-green flex-shrink-0 mt-0.5">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </span>
+                <span>Engineering Support</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent-green flex-shrink-0 mt-0.5">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </span>
+                <span>Free Design Review</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent-green flex-shrink-0 mt-0.5">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </span>
+                <span>48-Hour Prototypes</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
