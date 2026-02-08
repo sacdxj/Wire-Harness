@@ -11,8 +11,10 @@ const breadcrumbItems = [
 const formspreeId = import.meta.env.PUBLIC_FORMSPREE_ID || 'mpqjalap';
 const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'Gben@trycay.com';
 const contactPhone = import.meta.env.PUBLIC_CONTACT_PHONE || '+8618928435743';
-const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
-const enableTurnstile = !!turnstileSiteKey;
+
+// Turnstile Site Key - 硬编码以避免 Vercel 环境变量问题
+const turnstileSiteKey = '0x4AAAAAACZHu4EQr9mekXHj';
+const enableTurnstile = true;
 ---
 
 <MainLayout
