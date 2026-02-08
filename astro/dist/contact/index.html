@@ -50,23 +50,23 @@ const ALLOWED_TYPES = [".pdf",".dxf",".dwg",".step",".stp",".iges",".igs",".jpg"
           }
 
           function validateFile(file) {
-            // 检查文件大小
+            // Check file size
             if (file.size > MAX_SIZE) {
               const sizeMB = (file.size / (1024 * 1024)).toFixed(2);
               return {
                 valid: false,
-                message: `文件 "${file.name}" (${sizeMB}MB) 超过 10MB 限制。请压缩文件或联系我们的技术团队。`
+                message: `File "${file.name}" (${sizeMB}MB) exceeds 10MB limit. Please compress the file or contact our technical team.`
               };
             }
 
-            // 检查文件扩展名
+            // Check file extension
             const fileName = file.name.toLowerCase();
             const hasValidExtension = ALLOWED_TYPES.some(ext => fileName.endsWith(ext));
 
             if (!hasValidExtension) {
               return {
                 valid: false,
-                message: `文件 "${file.name}" 格式不支持。请使用: PDF, DXF, DWG, STEP, IGES, JPG, PNG`
+                message: `File "${file.name}" format not supported. Please use: PDF, DXF, DWG, STEP, IGES, JPG, PNG`
               };
             }
 
@@ -81,7 +81,7 @@ const ALLOWED_TYPES = [".pdf",".dxf",".dwg",".step",".stp",".iges",".igs",".jpg"
               return;
             }
 
-            // 验证所有文件
+            // Validate all files
             for (const file of files) {
               const result = validateFile(file);
               if (!result.valid) {
@@ -92,17 +92,17 @@ const ALLOWED_TYPES = [".pdf",".dxf",".dwg",".step",".stp",".iges",".igs",".jpg"
               }
             }
 
-            // 所有文件有效
+            // All files valid
             if (files.length > 0) {
-              showStatus(`✓ 已选择 ${files.length} 个文件，总计 ${(files.reduce((sum, f) => sum + f.size, 0) / (1024 * 1024)).toFixed(2)}MB`, false);
+              showStatus(`✓ ${files.length} file(s) selected, total ${(files.reduce((sum, f) => sum + f.size, 0) / (1024 * 1024)).toFixed(2)}MB`, false);
               submitBtn.disabled = false;
             }
           });
 
-          // 表单提交前再次验证
+          // Validate again before form submission
           const form = document.querySelector('form');
           form.addEventListener('submit', (e) => {
-            // 验证文件
+            // Validate files
             const files = Array.from(fileInput.files);
 
             for (const file of files) {
@@ -114,11 +114,11 @@ const ALLOWED_TYPES = [".pdf",".dxf",".dwg",".step",".stp",".iges",".igs",".jpg"
               }
             }
 
-            // 验证 Turnstile（如果启用）
+            // Validate Turnstile (if enabled)
             const turnstileResponse = document.querySelector('input[name="cf-turnstile-response"]');
             if (turnstileResponse && (!turnstileResponse.value || turnstileResponse.value === '')) {
               e.preventDefault();
-              showStatus('请完成人机验证后再提交表单。Please complete the verification before submitting.', true);
+              showStatus('Please complete the verification before submitting.', true);
               return false;
             }
           });
