@@ -343,11 +343,6 @@ const enableTurnstile = !!turnstileSiteKey;
             }
           });
         </script>
-
-        <!-- Load Cloudflare Turnstile Script (if enabled) -->
-        {enableTurnstile && (
-          <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-        )}
         </div>
 
         <!-- Contact Info -->
@@ -419,4 +414,9 @@ const enableTurnstile = !!turnstileSiteKey;
       </div>
     </div>
   </section>
+
+  <!-- Load Cloudflare Turnstile Script (if enabled) - must load after DOM is ready -->
+  {enableTurnstile && (
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+  )}
 </MainLayout>
