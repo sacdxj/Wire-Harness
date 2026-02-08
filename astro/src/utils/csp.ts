@@ -12,6 +12,7 @@ interface CSPConfig {
   'connect-src'?: string;
   'media-src'?: string;
   'object-src'?: string;
+  'frame-src'?: string;
   'base-uri'?: string;
   'form-action'?: string;
   'frame-ancestors'?: string;
@@ -74,6 +75,7 @@ export const prodCSP = generateCSP({
   'connect-src': "'self' https://formspree.io https://challenges.cloudflare.com",
   'img-src': "'self' data: https: blob:",
   'font-src': "'self' https://fonts.gstatic.com",
+  'frame-src': "'self' https://challenges.cloudflare.com", // 允许 Turnstile iframe
   'object-src': "'none'",
   'base-uri': "'self'",
   'form-action': "'self' https://formspree.io",
