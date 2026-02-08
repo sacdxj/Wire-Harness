@@ -2,9 +2,9 @@
 const today = new Date();
 const currentYear = today.getFullYear();
 
-// 从环境变量获取联系信息
-const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || 'Gben@trycay.com';
-const contactPhone = import.meta.env.VITE_CONTACT_PHONE || '+8618928435743';
+// Get contact info from environment variables
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'Gben@trycay.com';
+const contactPhone = import.meta.env.PUBLIC_CONTACT_PHONE || '+8618928435743';
 ---
 
 <footer class="border-t border-border bg-bg-secondary relative z-10 mt-20">
