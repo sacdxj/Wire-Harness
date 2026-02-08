@@ -1,15 +1,13 @@
 # robots.txt for Trycay
-# https://trycay.com
+# ⚠️ 开发模式 - 禁止所有搜索引擎收录
 
 User-agent: *
-Allow: /
+Disallow: /
 
-# Disallow admin areas
-Disallow: /admin/
-Disallow: /admin
+# 禁止收录所有页面
+# 网站正式上线前，保持此配置以防止草稿内容被索引
 
-# Sitemap location
-Sitemap: https://trycay.com/sitemap-index.xml
-
-# Crawl delay (optional, prevents server overload)
-Crawl-delay: 0
+# 解除禁止收录的步骤：
+# 1. 将下面两行改为: Allow: /
+# 2. 删除或注释掉 Disallow: / 行
+# 3. 重新部署网站
