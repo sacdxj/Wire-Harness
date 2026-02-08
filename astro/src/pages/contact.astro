@@ -8,10 +8,10 @@ const breadcrumbItems = [
 ];
 
 // 从环境变量获取配置
-const formspreeId = import.meta.env.VITE_FORMSPREE_ID || 'mpqjalap';
-const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || 'Gben@trycay.com';
-const contactPhone = import.meta.env.VITE_CONTACT_PHONE || '+8618928435743';
-const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY || '';
+const formspreeId = import.meta.env.PUBLIC_FORMSPREE_ID || 'mpqjalap';
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'Gben@trycay.com';
+const contactPhone = import.meta.env.PUBLIC_CONTACT_PHONE || '+8618928435743';
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
 const enableTurnstile = !!turnstileSiteKey;
 ---
 
