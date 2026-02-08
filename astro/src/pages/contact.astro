@@ -73,10 +73,14 @@ const enableTurnstile = true;
 
   <Breadcrumb items={breadcrumbItems} />
 
-  <section class="px-4 py-16">
-    <div class="max-w-7xl mx-auto">
+  <section class="px-4 py-20 relative overflow-hidden">
+    <!-- Subtle background pattern -->
+    <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(circle at 1px 1px, theme('colors.accent-cyan') 1px, transparent 0); background-size: 40px 40px;"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
       <!-- Hero Image -->
-      <div class="mb-12 rounded-lg overflow-hidden border border-border">
+      <div class="mb-12 rounded-lg overflow-hidden border border-border shadow-2xl shadow-accent-cyan/10 group">
+        <div class="absolute inset-0 bg-gradient-to-r from-accent-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         <img
           src="/images/contact/customer-service.jpg"
           alt="Engineering Support Team"
@@ -86,11 +90,33 @@ const enableTurnstile = true;
       </div>
 
       <div class="text-center mb-12">
-        <p class="font-mono text-xs text-accent-cyan uppercase tracking-widest mb-4">Get a Quote</p>
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Upload Your Assembly Drawing</h1>
-        <p class="text-lg text-text-secondary">
+        <div class="inline-flex items-center gap-3 mb-6">
+          <div class="h-px w-12 bg-gradient-to-r from-transparent via-accent-cyan to-transparent"></div>
+          <span class="font-mono text-xs text-accent-cyan uppercase tracking-[0.2em] font-semibold">Get a Quote</span>
+          <div class="h-px w-12 bg-gradient-to-r from-transparent via-accent-cyan to-transparent"></div>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-gradient-to-r from-text-primary via-text-secondary to-text-secondary bg-clip-text text-transparent">
+          Upload Your Assembly Drawing
+        </h1>
+        <p class="text-lg text-text-secondary max-w-2xl mx-auto">
           Share your terminal wire assembly specifications. Our engineering team will respond within 24 hours with pricing and lead time.
         </p>
+
+        <!-- Trust badges -->
+        <div class="flex flex-wrap justify-center gap-6 mt-8">
+          <div class="flex items-center gap-2 text-sm text-text-secondary">
+            <span class="w-2 h-2 rounded-full bg-accent-green animate-pulse"></span>
+            <span>24-Hour Response</span>
+          </div>
+          <div class="flex items-center gap-2 text-sm text-text-secondary">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span>ISO 9001:2015</span>
+          </div>
+          <div class="flex items-center gap-2 text-sm text-text-secondary">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span>UL Certified</span>
+          </div>
+        </div>
       </div>
 
       <!-- Contact Form (Full Width) -->
@@ -98,7 +124,7 @@ const enableTurnstile = true;
           <form
             action={`https://formspree.io/f/${formspreeId}`}
             method="POST"
-            class="bg-bg-secondary border border-border p-8"
+            class="bg-bg-secondary/80 backdrop-blur border border-border p-8 shadow-lg shadow-accent-cyan/5 hover:shadow-accent-cyan/10 transition-shadow duration-500"
           >
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
@@ -348,7 +374,7 @@ const enableTurnstile = true;
       </div>
 
       <!-- Contact Info Cards (Horizontal Layout) -->
-      <div class="bg-bg-secondary border border-border p-8">
+      <div class="bg-bg-secondary/80 backdrop-blur border border-border p-8 shadow-lg shadow-accent-cyan/5">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Direct Contact -->
         <div>
