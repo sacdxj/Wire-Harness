@@ -16,7 +16,7 @@ const {
   image = '/og-default.jpg',
   canonical = new URL(Astro.url.pathname, Astro.site).href,
   type = 'website',
-  noindex = false
+  noindex = true  // 开发模式：默认禁止搜索引擎收录
 } = Astro.props;
 
 const fullTitle = `${title} | Trycay`;
