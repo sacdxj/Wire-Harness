@@ -322,6 +322,7 @@ const enableTurnstile = !!turnstileSiteKey;
           // 表单提交前再次验证
           const form = document.querySelector('form');
           form.addEventListener('submit', (e) => {
+            // 验证文件
             const files = Array.from(fileInput.files);
 
             for (const file of files) {
@@ -331,6 +332,14 @@ const enableTurnstile = !!turnstileSiteKey;
                 showStatus(result.message, true);
                 return false;
               }
+            }
+
+            // 验证 Turnstile（如果启用）
+            const turnstileResponse = document.querySelector('input[name="cf-turnstile-response"]');
+            if (turnstileResponse && (!turnstileResponse.value || turnstileResponse.value === '')) {
+              e.preventDefault();
+              showStatus('请完成人机验证后再提交表单。Please complete the verification before submitting.', true);
+              return false;
             }
           });
         </script>

@@ -102,6 +102,7 @@ const ALLOWED_TYPES = [".pdf",".dxf",".dwg",".step",".stp",".iges",".igs",".jpg"
           // 表单提交前再次验证
           const form = document.querySelector('form');
           form.addEventListener('submit', (e) => {
+            // 验证文件
             const files = Array.from(fileInput.files);
 
             for (const file of files) {
@@ -111,6 +112,14 @@ const ALLOWED_TYPES = [".pdf",".dxf",".dwg",".step",".stp",".iges",".igs",".jpg"
                 showStatus(result.message, true);
                 return false;
               }
+            }
+
+            // 验证 Turnstile（如果启用）
+            const turnstileResponse = document.querySelector('input[name="cf-turnstile-response"]');
+            if (turnstileResponse && (!turnstileResponse.value || turnstileResponse.value === '')) {
+              e.preventDefault();
+              showStatus('请完成人机验证后再提交表单。Please complete the verification before submitting.', true);
+              return false;
             }
           });
         })();</script> <!-- Load Cloudflare Turnstile Script (if enabled) --> <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script> </div> <!-- Contact Info --> <div class="space-y-6"> <div class="bg-bg-secondary border border-border p-6"> <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan mb-4">Direct Contact</h3> <div class="space-y-4"> <div> <p class="font-mono text-xs text-text-muted uppercase tracking-wider mb-1">Email</p> <a href="mailto:Gben@trycay.com" class="text-text-primary hover:text-accent-cyan transition"> Gben@trycay.com </a> </div> <div> <p class="font-mono text-xs text-text-muted uppercase tracking-wider mb-1">Phone</p> <a href="tel:+8618928435743" class="text-text-primary hover:text-accent-cyan transition">
