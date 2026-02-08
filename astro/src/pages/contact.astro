@@ -7,7 +7,7 @@ const breadcrumbItems = [
   { name: 'Contact', href: '/contact' }
 ];
 
-// 从环境变量获取配置
+// Get configuration from environment variables
 const formspreeId = import.meta.env.PUBLIC_FORMSPREE_ID || 'mpqjalap';
 const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'Gben@trycay.com';
 const contactPhone = import.meta.env.PUBLIC_CONTACT_PHONE || '+8618928435743';
@@ -20,6 +20,7 @@ const enableTurnstile = true;
 <MainLayout
   title="Request Terminal Wire Assembly Quote | Upload Drawings"
   description="Get a custom terminal wire assembly quote within 24 hours. Upload your drawings, specifications, and connector requirements for rapid prototyping and volume production."
+  image="/images/contact/customer-service.jpg"
 >
   <!-- Contact Page Schema -->
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -31,6 +32,7 @@ const enableTurnstile = true;
       "@type": "Organization",
       "name": "Trycay",
       "url": "https://trycay.com",
+      "logo": "https://trycay.com/logo.png",
       "contactPoint": [
         {
           "@type": "ContactPoint",
@@ -42,7 +44,7 @@ const enableTurnstile = true;
         {
           "@type": "ContactPoint",
           "contactType": "customer service",
-          "telephone": "+86-189-2843-5743",
+          "telephone": contactPhone,
           "availableLanguage": ["English", "Chinese"],
           "contactOption": "TollFree"
         },
@@ -275,10 +277,12 @@ const enableTurnstile = true;
               Send Inquiry
             </button>
           </form>
-        </div>
 
-        <!-- File Validation Script -->
-        <script define:vars={{ MAX_SIZE: 10 * 1024 * 1024, ALLOWED_TYPES: ['.pdf', '.dxf', '.dwg', '.step', '.stp', '.iges', '.igs', '.jpg', '.png'] }}>
+          <!-- File Validation Script (Client-side only for better UX)
+               Note: Actual file validation happens server-side by Formspree
+               This script provides immediate user feedback but can be bypassed
+          -->
+          <script define:vars={{ MAX_SIZE: 10 * 1024 * 1024, ALLOWED_TYPES: ['.pdf', '.dxf', '.dwg', '.step', '.stp', '.iges', '.igs', '.jpg', '.png'] }}>
           const fileInput = document.getElementById('files');
           const submitBtn = document.getElementById('submit-btn');
           const statusDiv = document.getElementById('file-validation-status');
@@ -394,17 +398,17 @@ const enableTurnstile = true;
                   <span class="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                 </div>
               </a>
-              <a href="tel:+8618928435743" class="block text-sm text-text-primary hover:text-accent-cyan transition group">
+              <a href={`tel:${contactPhone.replace(/\+/g, '').replace(/-/g, '')}`} class="block text-sm text-text-primary hover:text-accent-cyan transition group">
                 <div class="font-mono text-xs text-text-muted mb-0.5">Phone</div>
                 <div class="flex items-center gap-2">
-                  <span>+86 189-2843-5743</span>
+                  <span>{contactPhone}</span>
                   <span class="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                 </div>
               </a>
-              <a href="https://wa.me/8618928435743" class="block text-sm text-text-primary hover:text-accent-cyan transition group">
+              <a href={`https://wa.me/${contactPhone.replace(/\+/g, '').replace(/-/g, '')}`} class="block text-sm text-text-primary hover:text-accent-cyan transition group">
                 <div class="font-mono text-xs text-text-muted mb-0.5">WhatsApp</div>
                 <div class="flex items-center gap-2">
-                  <span>+86 189-2843-5743</span>
+                  <span>{contactPhone}</span>
                   <span class="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                 </div>
               </a>
