@@ -2,14 +2,14 @@
 /*
  * Decap CMS - Identity Widget & Admin Interface
  *
- * 安全改进:
- * - 锁定版本为 3.1.0
- * - 添加 SRI (Subresource Integrity) 验证
- * - 限制为仅管理员页面使用
+ * Security improvements:
+ * - Locked version to 3.1.0
+ * - Added SRI (Subresource Integrity) verification
+ * - Restricted to admin pages only
  */
 
-// SRI 哈希值 (使用特定版本的哈希)
-// 注意: 实际部署时应使用以下命令生成正确值:
+// SRI hash value (using version-specific hash)
+// Note: Generate correct value on deployment using:
 // openssl dgst -sha384 -binary decap-cms.js | openssl base64 -A
 const CMS_VERSION = '3.1.0';
 const CMS_SRI = 'sha384-qYBUflIGwQ0PauubHjHitai6og3+FO7FZacBLsJKonevWUVClovZ3CBmBuhc1k+Q';
@@ -23,9 +23,9 @@ const CMS_SRI = 'sha384-qYBUflIGwQ0PauubHjHitai6og3+FO7FZacBLsJKonevWUVClovZ3CBm
 ></script>
 
 <script define:vars={{ decapConfigUrl: '/admin/config.yml' }}>
-  // 仅在管理员页面初始化 CMS
+  // Initialize CMS only on admin pages
   document.addEventListener('DOMContentLoaded', () => {
-    // 检查是否在管理员页面
+    // Check if on admin page
     if (!window.location.pathname.startsWith('/admin')) {
       console.warn('Decap CMS should only be loaded on admin pages');
       return;

@@ -7,9 +7,9 @@ Trycay
 Access the content management system to update blog posts, pages, and site settings.
 </p> <div id="decap-cms" data-astro-cid-2zp6q64z></div> </div> <div class="mt-6 p-6 bg-bg-secondary/50 border border-border" data-astro-cid-2zp6q64z> <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan mb-3" data-astro-cid-2zp6q64z>Quick Links</h3> <ul class="space-y-2 text-sm" data-astro-cid-2zp6q64z> <li data-astro-cid-2zp6q64z><a href="/" class="text-text-secondary hover:text-accent-cyan transition" data-astro-cid-2zp6q64z>← Back to Home</a></li> <li data-astro-cid-2zp6q64z><a href="/blog" class="text-text-secondary hover:text-accent-cyan transition" data-astro-cid-2zp6q64z>View Blog</a></li> </ul> </div> </div> </section>  <!-- Load Decap CMS with locked version and SRI --><script src="https://unpkg.com/decap-cms@3.1.0/dist/decap-cms.js" integrity="sha384-qYBUflIGwQ0PauubHjHitai6og3+FO7FZacBLsJKonevWUVClovZ3CBmBuhc1k+Q" crossorigin="anonymous"></script> <script>(function(){const decapConfigUrl = "/admin/config.yml";
 
-  // 仅在管理员页面初始化 CMS
+  // Initialize CMS only on admin pages
   document.addEventListener('DOMContentLoaded', () => {
-    // 检查是否在管理员页面
+    // Check if on admin page
     if (!window.location.pathname.startsWith('/admin')) {
       console.warn('Decap CMS should only be loaded on admin pages');
       return;

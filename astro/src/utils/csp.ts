@@ -25,7 +25,7 @@ interface CSPConfig {
 export function generateCSP(config: CSPConfig): string {
   const directives: string[] = [];
 
-  // 默认策略
+  // Default policies
   const defaults = {
     'default-src': "'self'",
     'script-src': "'self' 'unsafe-inline' https://unpkg.com",
@@ -75,7 +75,7 @@ export const prodCSP = generateCSP({
   'connect-src': "'self' https://formspree.io https://challenges.cloudflare.com",
   'img-src': "'self' data: https: blob:",
   'font-src': "'self' https://fonts.gstatic.com",
-  'frame-src': "'self' https://challenges.cloudflare.com", // 允许 Turnstile iframe
+  'frame-src': "'self' https://challenges.cloudflare.com", // Allow Turnstile iframe
   'object-src': "'none'",
   'base-uri': "'self'",
   'form-action': "'self' https://formspree.io",
