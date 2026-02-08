@@ -93,9 +93,8 @@ const enableTurnstile = true;
         </p>
       </div>
 
-      <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
-        <!-- Contact Form -->
-        <div class="xl:col-span-2">
+      <!-- Contact Form (Full Width) -->
+      <div class="mb-12">
           <form
             action={`https://formspree.io/f/${formspreeId}`}
             method="POST"
@@ -345,73 +344,76 @@ const enableTurnstile = true;
             }
           });
         </script>
+      </form>
+      </div>
+
+      <!-- Contact Info Cards (Horizontal Layout) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Direct Contact -->
+        <div class="bg-bg-secondary border border-border p-6">
+          <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan mb-4">Direct Contact</h3>
+          <div class="space-y-4">
+            <div>
+              <p class="font-mono text-xs text-text-muted uppercase tracking-wider mb-1">Email</p>
+              <a href={`mailto:${contactEmail}`} class="text-text-primary hover:text-accent-cyan transition">
+                {contactEmail}
+              </a>
+            </div>
+            <div>
+              <p class="font-mono text-xs text-text-muted uppercase tracking-wider mb-1">Phone</p>
+              <a href="tel:+8618928435743" class="text-text-primary hover:text-accent-cyan transition">
+                +86 189-2843-5743
+              </a>
+            </div>
+            <div>
+              <p class="font-mono text-xs text-text-muted uppercase tracking-wider mb-1">WhatsApp</p>
+              <a href="https://wa.me/8618928435743" class="text-text-primary hover:text-accent-cyan transition">
+                +86 189-2843-5743
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- Contact Info -->
-        <div class="space-y-6">
-          <div class="bg-bg-secondary border border-border p-6">
-            <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan mb-4">Direct Contact</h3>
-            <div class="space-y-4">
-              <div>
-                <p class="font-mono text-xs text-text-muted uppercase tracking-wider mb-1">Email</p>
-                <a href={`mailto:${contactEmail}`} class="text-text-primary hover:text-accent-cyan transition">
-                  {contactEmail}
-                </a>
-              </div>
-              <div>
-                <p class="font-mono text-xs text-text-muted uppercase tracking-wider mb-1">Phone</p>
-                <a href="tel:+8618928435743" class="text-text-primary hover:text-accent-cyan transition">
-                  +86 189-2843-5743
-                </a>
-              </div>
-              <div>
-                <p class="font-mono text-xs text-text-muted uppercase tracking-wider mb-1">WhatsApp</p>
-                <a href="https://wa.me/8618928435743" class="text-text-primary hover:text-accent-cyan transition">
-                  +86 189-2843-5743
-                </a>
-              </div>
+        <!-- Business Hours -->
+        <div class="bg-bg-secondary border border-border p-6">
+          <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan mb-4">Business Hours</h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between">
+              <span class="text-text-secondary">Monday - Friday</span>
+              <span class="font-mono">9:00 AM - 6:00 PM CST</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-text-secondary">Saturday</span>
+              <span class="font-mono">10:00 AM - 4:00 PM CST</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-text-secondary">Sunday</span>
+              <span class="font-mono">Closed</span>
             </div>
           </div>
+        </div>
 
-          <div class="bg-bg-secondary border border-border p-6">
-            <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan mb-4">Business Hours</h3>
-            <div class="space-y-2 text-sm">
-              <div class="flex justify-between">
-                <span class="text-text-secondary">Monday - Friday</span>
-                <span class="font-mono">9:00 AM - 6:00 PM CST</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-text-secondary">Saturday</span>
-                <span class="font-mono">10:00 AM - 4:00 PM CST</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-text-secondary">Sunday</span>
-                <span class="font-mono">Closed</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-bg-secondary border border-border p-6">
-            <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan mb-4">Quick Response</h3>
-            <ul class="space-y-2 text-sm text-text-secondary">
-              <li class="flex items-start gap-2">
-                <span class="text-accent-green">✓</span>
-                <span>Quote within 24 hours</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-accent-green">✓</span>
-                <span>Engineering support</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-accent-green">✓</span>
-                <span>Free design review</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-accent-green">✓</span>
-                <span>48-hour prototypes</span>
-              </li>
-            </ul>
-          </div>
+        <!-- Quick Response -->
+        <div class="bg-bg-secondary border border-border p-6">
+          <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-accent-cyan mb-4">Quick Response</h3>
+          <ul class="space-y-2 text-sm text-text-secondary">
+            <li class="flex items-start gap-2">
+              <span class="text-accent-green">✓</span>
+              <span>Quote within 24 hours</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-accent-green">✓</span>
+              <span>Engineering support</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-accent-green">✓</span>
+              <span>Free design review</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-accent-green">✓</span>
+              <span>48-hour prototypes</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
