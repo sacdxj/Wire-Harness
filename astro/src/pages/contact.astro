@@ -211,9 +211,14 @@ const enableTurnstile = true;
                   name="files"
                   multiple
                   accept=".pdf,.dxf,.dwg,.step,.stp,.iges,.igs,.jpg,.png"
-                  class="w-full text-text-muted file:mr-4 file:py-2 file:px-4 file:rounded-none file:border-0 file:text-sm file:font-mono file:bg-bg-secondary file:text-accent-cyan hover:file:bg-accent-cyan/10 cursor-pointer"
+                  class="hidden"
                   required
                 />
+                <label for="files" class="cursor-pointer inline-block">
+                  <div class="px-6 py-3 bg-accent-cyan/10 border border-accent-cyan text-accent-cyan font-mono text-sm uppercase tracking-wider hover:bg-accent-cyan/20 transition-all inline-block">
+                    Choose Files
+                  </div>
+                </label>
                 <p class="font-mono text-xs text-text-muted mt-3">
                   Drag & drop or click to upload
                 </p>
