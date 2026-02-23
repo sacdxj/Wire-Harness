@@ -71,9 +71,8 @@ export const devCSP = generateCSP({
  */
 export const prodCSP = generateCSP({
   'script-src': "'self' 'unsafe-inline' https://unpkg.com/decap-cms@3.1.0/ https://challenges.cloudflare.com",
-  'script-src-elem': "'self' 'unsafe-inline' https://unpkg.com/decap-cms@3.1.0/ https://challenges.cloudflare.com https://static.cloudflareinsights.com",
   'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
-  'connect-src': "'self' https://formspree.io https://challenges.cloudflare.com https://static.cloudflareinsights.com",
+  'connect-src': "'self' https://formspree.io https://challenges.cloudflare.com",
   'img-src': "'self' data: https: blob:",
   'font-src': "'self' https://fonts.gstatic.com",
   'frame-src': "'self' https://challenges.cloudflare.com", // Allow Turnstile iframe
