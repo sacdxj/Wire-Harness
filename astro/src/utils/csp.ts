@@ -29,10 +29,10 @@ export function generateCSP(config: CSPConfig): string {
   const defaults = {
     'default-src': "'self'",
     'script-src': "'self' 'unsafe-inline' https://unpkg.com",
-    'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
-    'font-src': "'self' https://fonts.gstatic.com",
+    'style-src': "'self' 'unsafe-inline'",
+    'font-src': "'self'",
     'img-src': "'self' data: https: blob:",
-    'connect-src': "'self' https://formspree.io https://unpkg.com https://fonts.googleapis.com https://fonts.gstatic.com",
+    'connect-src': "'self' https://formspree.io https://unpkg.com",
     'media-src': "'self'",
     'object-src': "'none'",
     'base-uri': "'self'",
@@ -71,10 +71,10 @@ export const devCSP = generateCSP({
  */
 export const prodCSP = generateCSP({
   'script-src': "'self' 'unsafe-inline' https://unpkg.com/decap-cms@3.1.0/ https://challenges.cloudflare.com",
-  'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
+  'style-src': "'self' 'unsafe-inline'",
   'connect-src': "'self' https://formspree.io https://challenges.cloudflare.com",
   'img-src': "'self' data: https: blob:",
-  'font-src': "'self' https://fonts.gstatic.com",
+  'font-src': "'self'",
   'frame-src': "'self' https://challenges.cloudflare.com", // Allow Turnstile iframe
   'object-src': "'none'",
   'base-uri': "'self'",
