@@ -14,7 +14,7 @@ export default defineConfig({
   build: {
     format: 'directory',
     assets: '_assets',
-    inlineStylesheets: 'auto'
+    inlineStylesheets: 'always'
   },
   vite: {
     build: {
