@@ -139,7 +139,7 @@ const navItems = [
 
 </header>
 
-<script define:vars={{ headerInitialBg: 'rgba(10, 14, 23, 0.9)' }}>
+<script define:vars={{ headerInitialBg: 'rgba(10, 14, 23, 0.9)', headerScrolledBg: 'rgba(10, 14, 23, 0.98)' }}>
   const header = document.getElementById('main-header');
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -149,24 +149,24 @@ const navItems = [
     mobileMenu?.classList.toggle('hidden');
   });
 
-  // Header scroll effect - optimized with requestAnimationFrame to prevent forced reflows
+  // Header scroll effect - optimized to prevent forced reflows
   if (header) {
     let ticking = false;
-    let lastScrolledState = false;
+    let isScrolled = false;
+
     // Set initial background
     header.style.background = headerInitialBg;
 
-    const updateHeader = (isScrolled) => {
-      if (isScrolled !== lastScrolledState) {
-        lastScrolledState = isScrolled;
-        const isShadowActive = header.classList.contains('shadow-lg');
-
-        if (isScrolled && !isShadowActive) {
+    const updateHeader = (scrolled) => {
+      // Use a state variable instead of reading classList (prevents reflow)
+      if (scrolled !== isScrolled) {
+        isScrolled = scrolled;
+        if (scrolled) {
           header.classList.add('shadow-lg', 'shadow-accent-cyan/10');
-          header.style.background = 'rgba(10, 14, 23, 0.98)';
-        } else if (!isScrolled && isShadowActive) {
+          header.style.background = headerScrolledBg;
+        } else {
           header.classList.remove('shadow-lg', 'shadow-accent-cyan/10');
-          header.style.background = 'rgba(10, 14, 23, 0.9)';
+          header.style.background = headerInitialBg;
         }
       }
     };
