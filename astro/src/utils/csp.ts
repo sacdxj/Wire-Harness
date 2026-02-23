@@ -6,6 +6,7 @@
 interface CSPConfig {
   'default-src'?: string;
   'script-src'?: string;
+  'script-src-elem'?: string;
   'style-src'?: string;
   'img-src'?: string;
   'font-src'?: string;
