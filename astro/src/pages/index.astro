@@ -61,7 +61,7 @@ import MainLayout from '../layouts/MainLayout.astro';
   <!-- Hero Section -->
   <section class="min-h-screen flex items-center px-4 py-20 md:py-32 relative overflow-hidden">
     <!-- Background Image with Overlay -->
-    <div class="absolute inset-0 z-0 hidden md:block">
+    <div class="absolute inset-0 z-0">
       <picture>
         <source srcset="/images/homepage/hero.webp" type="image/webp">
         <img
@@ -77,8 +77,6 @@ import MainLayout from '../layouts/MainLayout.astro';
       </picture>
       <div class="absolute inset-0 bg-gradient-to-r from-bg-primary/95 via-bg-primary/80 to-bg-primary/60"></div>
     </div>
-    <!-- Mobile: CSS gradient background instead of image for faster LCP -->
-    <div class="absolute inset-0 z-0 md:hidden bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary"></div>
 
     <div class="max-w-7xl mx-auto w-full relative z-10">
       <div class="max-w-3xl">
