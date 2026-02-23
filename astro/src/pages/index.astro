@@ -6,6 +6,10 @@ import MainLayout from '../layouts/MainLayout.astro';
   title="OEM Cable Sub-Assembly Manufacturer | Wire Harness Factory Direct"
   description="ISO 9001 certified OEM wire harness manufacturer. 15+ years, 5M+ monthly capacity, UL certified. Cable sub-assembly partner for global brands. JST/Molex/TE compatible at factory-direct pricing."
 >
+  <!-- Preload hero image for LCP optimization -->
+  <link rel="preload" as="image" fetchpriority="high" href="/images/homepage/hero.webp" type="image/webp" imagesizes="100vw" slot="head">
+  <link rel="preload" as="image" fetchpriority="high" href="/images/homepage/hero.jpg" type="image/jpeg" imagesizes="100vw" slot="head">
+
   <!-- Web Site Schema -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -59,15 +63,20 @@ import MainLayout from '../layouts/MainLayout.astro';
   <section class="min-h-screen flex items-center px-4 py-20 md:py-32 relative overflow-hidden">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
-      <img
-        src="/images/homepage/hero.jpg"
-        alt="Precision Terminal Wire Assembly Manufacturing"
-        class="w-full h-full object-cover"
-        loading="eager"
-        decoding="sync"
-        width="1920"
-        height="1080"
-      />
+      <picture>
+        <source srcset="/images/homepage/hero.webp" type="image/webp">
+        <source srcset="/images/homepage/hero.jpg" type="image/jpeg">
+        <img
+          src="/images/homepage/hero.jpg"
+          alt="Precision Terminal Wire Assembly Manufacturing"
+          class="w-full h-full object-cover"
+          loading="eager"
+          decoding="sync"
+          fetchpriority="high"
+          width="1920"
+          height="1080"
+        />
+      </picture>
       <div class="absolute inset-0 bg-gradient-to-r from-bg-primary/95 via-bg-primary/80 to-bg-primary/60"></div>
     </div>
 
@@ -231,6 +240,8 @@ import MainLayout from '../layouts/MainLayout.astro';
                 alt="Pre-crimped Leads"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
+                width="400"
+                height="225"
               />
             </div>
             <div class="p-6">
@@ -250,6 +261,8 @@ import MainLayout from '../layouts/MainLayout.astro';
                 alt="Wire-to-Board Assemblies"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
+                width="400"
+                height="225"
               />
             </div>
             <div class="p-6">
@@ -269,6 +282,8 @@ import MainLayout from '../layouts/MainLayout.astro';
                 alt="Wire-to-Wire Assemblies"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
+                width="400"
+                height="225"
               />
             </div>
             <div class="p-6">
@@ -288,6 +303,8 @@ import MainLayout from '../layouts/MainLayout.astro';
                 alt="Ribbon Cable Assemblies"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
+                width="400"
+                height="225"
               />
             </div>
             <div class="p-6">
@@ -381,6 +398,8 @@ import MainLayout from '../layouts/MainLayout.astro';
               alt="Consumer Electronics Applications"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
+              width="400"
+              height="225"
             />
           </div>
           <div class="p-6">
@@ -396,6 +415,8 @@ import MainLayout from '../layouts/MainLayout.astro';
               alt="Industrial Control Applications"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
+              width="400"
+              height="225"
             />
           </div>
           <div class="p-6">
@@ -411,6 +432,8 @@ import MainLayout from '../layouts/MainLayout.astro';
               alt="LED Lighting Applications"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
+              width="400"
+              height="225"
             />
           </div>
           <div class="p-6">
@@ -444,6 +467,8 @@ import MainLayout from '../layouts/MainLayout.astro';
               alt="JST Compatible Connector Series"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
+              width="640"
+              height="360"
             />
           </div>
           <div class="p-6">
@@ -469,6 +494,8 @@ import MainLayout from '../layouts/MainLayout.astro';
               alt="Molex Compatible Connector Series"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
+              width="640"
+              height="360"
             />
           </div>
           <div class="p-6">

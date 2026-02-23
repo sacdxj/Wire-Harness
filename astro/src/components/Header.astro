@@ -19,7 +19,7 @@ const navItems = [
   { href: '/compatibility', label: 'Compatibility' },
   { href: '/applications', label: 'Applications' },
   { href: '/oem-wire-cable-assembly-manufacturer', label: 'OEM Services' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/contact', label: 'Contact' }
 ];
 ---
 
@@ -136,33 +136,60 @@ const navItems = [
       ))}
     </div>
   </nav>
+
 </header>
 
-<script>
+<script define:vars={{ headerInitialBg: 'rgba(10, 14, 23, 0.9)' }}>
   const header = document.getElementById('main-header');
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
-
-  // Header scroll effect
-  if (header) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        header.classList.add('shadow-lg', 'shadow-accent-cyan/10');
-        header.style.background = 'rgba(10, 14, 23, 0.98)';
-      } else {
-        header.classList.remove('shadow-lg', 'shadow-accent-cyan/10');
-        header.style.background = 'rgba(10, 14, 23, 0.9)';
-      }
-    });
-  }
 
   // Mobile menu toggle
   mobileMenuBtn?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
   });
+
+  // Header scroll effect - optimized with requestAnimationFrame to prevent forced reflows
+  if (header) {
+    let ticking = false;
+    let lastScrolledState = false;
+    // Set initial background
+    header.style.background = headerInitialBg;
+
+    const updateHeader = (isScrolled) => {
+      if (isScrolled !== lastScrolledState) {
+        lastScrolledState = isScrolled;
+        const isShadowActive = header.classList.contains('shadow-lg');
+
+        if (isScrolled && !isShadowActive) {
+          header.classList.add('shadow-lg', 'shadow-accent-cyan/10');
+          header.style.background = 'rgba(10, 14, 23, 0.98)';
+        } else if (!isScrolled && isShadowActive) {
+          header.classList.remove('shadow-lg', 'shadow-accent-cyan/10');
+          header.style.background = 'rgba(10, 14, 23, 0.9)';
+        }
+      }
+    };
+
+    // Use passive listener for better scroll performance
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateHeader(window.scrollY > 100);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
 </script>
 
 <style>
+  /* Optimized transition to prevent layout thrashing */
+  #main-header {
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
   nav a::after {
     content: '';
     position: absolute;

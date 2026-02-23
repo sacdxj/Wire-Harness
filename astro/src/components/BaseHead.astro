@@ -23,9 +23,36 @@ const fullTitle = `${title} | Trycay`;
 const csp = getCSP();
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- Preconnect for Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Preload critical font for LCP -->
+<link rel="preload" href="https://fonts.gstatic.com/s/jetbrainsmono/v18/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjOVGa.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
+
+<!-- Async Google Fonts with font-display: swap -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"></noscript>
+
+<!-- Font fallback styles to reduce CLS -->
+<style>
+  @font-face {
+    font-family: 'JetBrains Mono Fallback';
+    src: local('Courier New');
+    size-adjust: 86%;
+    ascent-override: 95%;
+    descent-override: 25%;
+    line-gap-override: 0%;
+  }
+  @font-face {
+    font-family: 'Space Grotesk Fallback';
+    src: local('Arial');
+    size-adjust: 92%;
+    ascent-override: 95%;
+    descent-override: 25%;
+    line-gap-override: 0%;
+  }
+</style>
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />

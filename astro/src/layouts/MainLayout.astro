@@ -26,6 +26,7 @@ const { title, description, image, canonical, type, noindex = false, ...rest } =
       type={type}
       noindex={noindex}
     />
+    <slot name="head" />
   </head>
   <body class="bg-bg-primary text-text-primary font-sans antialiased">
     <!-- Technical Grid Background -->

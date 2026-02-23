@@ -8,13 +8,13 @@ export default defineConfig({
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp'
-    },
-    // Remote images for CDN
-    remotePatterns: []
+    }
   },
+  compressHTML: true,
   build: {
     format: 'directory',
-    assets: '_assets'
+    assets: '_assets',
+    inlineStylesheets: 'auto'
   },
   vite: {
     build: {
@@ -22,7 +22,9 @@ export default defineConfig({
         output: {
           assetFileNames: 'assets/[hash][extname]'
         }
-      }
+      },
+      cssCodeSplit: true,
+      minify: 'esbuild'
     }
   }
 });
