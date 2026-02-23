@@ -37,7 +37,6 @@ export function generateCSP(config: CSPConfig): string {
     'object-src': "'none'",
     'base-uri': "'self'",
     'form-action': "'self' https://formspree.io",
-    'frame-ancestors': "'none'",
     'upgrade-insecure-requests': true
   };
 
@@ -70,16 +69,15 @@ export const devCSP = generateCSP({
  * 这些内联脚本内容是静态的，风险较低
  */
 export const prodCSP = generateCSP({
-  'script-src': "'self' 'unsafe-inline' https://unpkg.com/decap-cms@3.1.0/ https://challenges.cloudflare.com",
+  'script-src': "'self' 'unsafe-inline' https://unpkg.com/decap-cms@3.1.0/ https://challenges.cloudflare.com https://static.cloudflareinsights.com",
   'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
-  'connect-src': "'self' https://formspree.io https://challenges.cloudflare.com",
+  'connect-src': "'self' https://formspree.io https://challenges.cloudflare.com https://static.cloudflareinsights.com",
   'img-src': "'self' data: https: blob:",
   'font-src': "'self' https://fonts.gstatic.com",
   'frame-src': "'self' https://challenges.cloudflare.com", // Allow Turnstile iframe
   'object-src': "'none'",
   'base-uri': "'self'",
   'form-action': "'self' https://formspree.io",
-  'frame-ancestors': "'none'",
   'upgrade-insecure-requests': true
 });
 
