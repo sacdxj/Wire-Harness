@@ -8,7 +8,6 @@ import MainLayout from '../layouts/MainLayout.astro';
 >
   <!-- Preload hero image for LCP optimization -->
   <link rel="preload" as="image" fetchpriority="high" href="/images/homepage/hero.webp" type="image/webp" imagesizes="100vw" slot="head">
-  <link rel="preload" as="image" fetchpriority="high" href="/images/homepage/hero.jpg" type="image/jpeg" imagesizes="100vw" slot="head">
 
   <!-- Web Site Schema -->
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -71,7 +70,7 @@ import MainLayout from '../layouts/MainLayout.astro';
           alt="Precision Terminal Wire Assembly Manufacturing"
           class="w-full h-full object-cover"
           loading="eager"
-          decoding="sync"
+          decoding="async"
           fetchpriority="high"
           width="1920"
           height="1080"
