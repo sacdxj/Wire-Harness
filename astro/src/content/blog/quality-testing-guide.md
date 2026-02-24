@@ -3,7 +3,7 @@ title: "Quality Testing for Wire Harnesses: Essential Procedures"
 description: "Understanding the critical testing procedures that ensure wire harness reliability and performance. From electrical testing to mechanical verification."
 pubDate: 2025-01-05
 category: Quality & Testing
-heroImage: /images/blog/quality-testing-guide.jpg
+heroImage: /images/blog/blog-quality-testing-guide.webp
 ---
 
 ## Introduction

@@ -8,15 +8,36 @@ interface Props {
   canonical?: string;
   type?: string;
   noindex?: boolean;
+  keywords?: string;
 }
+
+// Default SEO keywords - core terms + brand name
+const defaultKeywords = [
+  "custom wire harness manufacturer",
+  "OEM wire harness factory",
+  "JST connector compatible",
+  "Molex connector compatible",
+  "TE connector alternative",
+  "wire assembly",
+  "cable assembly",
+  "pre-crimped leads",
+  "wire-to-board assembly",
+  "wire-to-wire connector",
+  "ISO 9001 certified",
+  "UL certified manufacturer",
+  "China wire harness factory",
+  "wire harness supplier",
+  "Trycay"
+].join(", ");
 
 const {
   title,
   description,
-  image = '/og-default.jpg',
+  image = '/images/homepage/hero-wire-harness-manufacturing.webp',
   canonical = new URL(Astro.url.pathname, Astro.site).href,
   type = 'website',
-  noindex = true  // Development mode: block search engine indexing by default
+  noindex = false,
+  keywords = defaultKeywords
 } = Astro.props;
 
 const fullTitle = `${title} | Trycay`;
@@ -39,6 +60,7 @@ const csp = getCSP();
 <title>{fullTitle}</title>
 <meta name="title" content={fullTitle} />
 <meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
 <link rel="canonical" href={canonical} />
 
 {noindex && <meta name="robots" content="noindex, nofollow" />}

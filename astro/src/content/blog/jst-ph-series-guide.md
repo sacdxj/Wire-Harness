@@ -3,7 +3,7 @@ title: "Complete Guide to JST PH Series 2.0mm Pitch Connectors"
 description: "Everything you need to know about JST PH Series connectors - specifications, applications, wiring techniques, and compatible alternatives for your wire harness projects."
 pubDate: 2025-01-15
 category: Technical Guides
-heroImage: /images/blog/connector-selection.jpg
+heroImage: /images/blog/blog-connector-selection.webp
 ---
 
 ## Introduction

@@ -3,7 +3,7 @@ title: "Wire Harness Design: 10 Critical Factors for Manufacturing Success"
 description: "Learn the essential considerations for designing wire harnesses that are manufacturable, reliable, and cost-effective. From connector selection to testing requirements."
 pubDate: 2025-01-10
 category: Design & Engineering
-heroImage: /images/blog/wire-harness-design.jpg
+heroImage: /images/blog/blog-wire-harness-design.webp
 ---
 
 ## Introduction
