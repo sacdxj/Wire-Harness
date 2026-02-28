@@ -20,50 +20,7 @@ origin  git@github.com:sacdxj/Wire-Harness.git (push)
 
 ---
 
-## 方式二：GitHub CLI (gh)
-
-### 1. 安装
-
-**Windows (winget):**
-```bash
-winget install GitHub.cli
-```
-
-**Windows (Chocolatey):**
-```bash
-choco install gh
-```
-
-**macOS:**
-```bash
-brew install gh
-```
-
-### 2. 登录
-```bash
-gh auth login
-# 选择：GitHub.com -> SSH -> 输入本地 SSH 密钥 passphrase
-```
-
-### 3. 常用命令
-
-```bash
-# 同步仓库
-gh repo sync
-
-# 创建 Pull Request
-gh pr create --title "标题" --body "描述"
-
-# 查看 PR
-gh pr view
-
-# 推送（等同于 git push）
-gh repo push
-```
-
----
-
-## 方式三：HTTPS 方式
+## 方式二：HTTPS 方式
 
 ```bash
 # 添加远程仓库（HTTPS）
