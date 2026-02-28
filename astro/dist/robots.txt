@@ -1,13 +1,8 @@
 # robots.txt for Trycay
-# ⚠️ 开发模式 - 禁止所有搜索引擎收录
+# Allow search engines to crawl the entire site
 
 User-agent: *
-Disallow: /
+Allow: /
 
-# 禁止收录所有页面
-# 网站正式上线前，保持此配置以防止草稿内容被索引
-
-# 解除禁止收录的步骤：
-# 1. 将下面两行改为: Allow: /
-# 2. 删除或注释掉 Disallow: / 行
-# 3. 重新部署网站
+# Sitemap location
+Sitemap: https://trycay.com/sitemap-index.xml

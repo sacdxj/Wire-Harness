@@ -23,6 +23,15 @@ const { title, description, image, canonical, type, noindex = false, keywords, .
     <script src="https://www.googletagmanager.com/gtm.js?id=GTM-NGKDFN7" async></script>
     <!-- End Google Tag Manager -->
 
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-32WVPBX5YK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-32WVPBX5YK');
+    </script>
+
     <BaseHead
       title={title}
       description={description}
