@@ -25,7 +25,8 @@ const { title, description, image, canonical, type, noindex = false, keywords, .
 
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RT2CFXYQMW"></script>
-    <script>
+    <script is:inline>
+      // @ts-nocheck
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
