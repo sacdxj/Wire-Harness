@@ -29,7 +29,18 @@
       "Bash(npm astro build:*)",
       "Bash(node:*)",
       "Bash(openssl:*)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(cd E:\\\\trae\\\\Custom Wire Harness\\\\astro:*)",
+      "Bash(echo cwebp not found:*)",
+      "Bash(echo Python PIL not available:*)",
+      "Bash(cd E:\\\\trae\\\\Custom Wire Harness\\\\astro\\\\public\\\\images\\\\factory:*)",
+      "Bash(cd E:\\\\trae\\\\Custom Wire Harness\\\\astro\\\\public\\\\images\\\\about:*)",
+      "Bash(cd E:\\\\trae\\\\Custom Wire Harness\\\\astro\\\\public\\\\images\\\\services:*)",
+      "Bash(cd E:\\\\trae\\\\Custom Wire Harness\\\\astro\\\\public\\\\images\\\\blog:*)",
+      "Bash(pip install:*)",
+      "Bash(/c/Users/Administrator/AppData/Local/Programs/Python/Python310/python.exe:*)",
+      "Bash(export:*)",
+      "WebFetch(domain:trycay.com)"
     ]
   }
 }
